@@ -1,0 +1,147 @@
+*{
+    box-sizing: border-box;
+}
+body,html,h1,h2,h3,h4,h5,h6{
+    margin:0px;
+    padding:0px;
+}
+.container {
+    margin-top: 7px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 1250px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+.container__logo ul li{
+    list-style-type: none;
+}
+.container__title {
+    padding: 10px 10px;
+    background: #d2c499;
+}
+.container__title h2{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.container__logo{
+    margin-top: 7px;
+    border: 3px solid #cccccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container__logo-left{
+    width: 400px;
+    padding:5px 20px;
+}
+.container__logo-right{
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px 20px;
+    width: calc(100% - 480px);
+}
+.btn__delivery button{
+    margin-top: 10px;
+    padding:  7px;
+    border-color: #cccccc;
+    width: 100%;
+    background-color: #1ab7ea;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    outline: none;
+    transition: all ease-in-out 300ms;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.form__info-list {
+    margin-top: 7px;
+    border: 3px solid #cccccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__info-list ul {
+    margin: 2px 0px 0px 0px;
+    list-style-type: none;
+    padding: 0px 0px 5px 40px;
+}
+
+.form__info-list  li {
+    color: #333;
+    padding: 5px 0px;
+}
+.container__from table{
+    border-collapse: separate;
+    border-spacing: 50px 0;
+}
+.container__from table tr td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.form__pacakage{
+    border: 3px solid rgba(0, 0, 0,0.1);
+}
+
+.form__pacakage ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.form__pacakage-title li {
+    padding: 0px 0px 0px 10px;
+}
+.form__shipment-title{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__shipment-title {
+    color: white;
+    background-color: #1ab7ea;
+    padding: 0px 10px;
+}
+
+.form__shipment-title  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 25px;
+    width: 25px;
+    border-radius: 9999px;
+    text-align: center;
+    color: aqua;
+}
+table{
+    border: 3px solid #cccccc;
+}
+td, tr{
+    border-bottom: 3px solid #cccccc;
+}
+.main__alert{
+    display: flex;
+    flex-direction: column;
+}
+.main__alert-form {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.main__alert-form img{
+    margin-top: 14px;
+}

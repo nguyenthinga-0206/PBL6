@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Header Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"/>
+
+    <link rel="stylesheet" href="/css/styles_khoa/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_khoa/css/header.css">
+</head>
+
+<body>
+<header id="header" th:fragment="header">
+    <div class="containerHeader">
+        <div class="Item">
+                <span>CHÍNH SÁCH ĐỔI TRẢ 30 NGÀY
+                </span>
+        </div>
+        <div class="Item">
+                <span>PHÍ GIAO HÀNG : ₫ 49000
+                </span>
+        </div>
+        <div class="Item">
+                <span>TẤT CẢ SẢN PHẨM BẮT ĐẦU TỪ ₫ 1000
+                </span>
+        </div>
+        <div class="Item">
+                <span>(026)-36343599
+                </span>
+        </div>
+    </div>
+    <div class="containernavHeader">
+        <div class="row">
+            <div class="col-lg-8 navHeaderRight">
+                <img src="/css/styles_khoa/img/logo.png" class="logo" alt="logo">
+            </div>
+            <div class="col-lg-3 navHeaderLeft">
+                <div class="containerHeaderLeft">
+                    <div class="itemHeaderLeft">
+                            <span class="register" th:unless="${nguoiDung}" >
+                                <a href="/login" style="color: white">
+                                Đã có tài khoản? Đăng nhập tại đây</a></span>
+                    </div>
+                    <div class="itemHeaderLeft">
+                            <span class="register" th:if="${nguoiDung}" th:text="${nguoiDung.tenNguoiDung}">
+
+                            </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1 navHeaderLeft">
+                <div>
+                    <div class="dropdown1">
+                        <div class="dropdown__select1">
+                            <img src="/css/styles_khoa/img/vi.png" class="icon" alt="vi">
+                        </div>
+                        <ul class="dropdown__list1">
+                            <li class="dropdown__item1">
+                                <!-- <span class="dropdown__text">Tiếng Việt | Vietnamese</span>    -->
+                                <span class="dropdown__text">Tiếng Việt</span>
+                                <img src="/css/styles_khoa/img/vi.png" class="icon_con" alt="vi">
+                            </li>
+                            <li class="dropdown__item1">
+                                <!-- <span class="dropdown__text">Tiếng Anh | EngLish</span>     -->
+                                <span class="dropdown__text">Tiếng Anh</span>
+                                <img src="/css/styles_khoa/img/en.png" class="icon_con" alt="en">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/styles_khoa/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_khoa/css/header.css">
+    <link rel="stylesheet" href="/css/styles_khoa/css/style.css">
+    <link rel="stylesheet" href="/css/luan/chat.css">
+    <link href="/mot/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/mot/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/mot/js/jquery-1.11.0.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="/mot/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="/mot/css/flexslider.css" type="text/css" media="screen"/>
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="/css/luan/css-admin-member-listnhu.css"/>
+</head>
+<body>
+
+
+<header th:insert="~{/header_footer/header_admin::header}"></header>
+<nav th:fragment="headerAdmin" class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 60px">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll"
+                style="max-height: 100px;margin-left: 155px">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       data-toggle="dropdown" aria-expanded="false">
+                        Quản Lý Sản Phẩm
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <li><a class="dropdown-item" href="/admin/list">Tất Cả Sản Phẩm</a></li>
+                        <li><a class="dropdown-item" href="/admin/duyet">Sản Phẩm Chờ Phê Duyệt</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       data-toggle="dropdown" aria-expanded="false">
+                        Quản Lý Giao Dịch
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <li><a class="dropdown-item" href="/admin/admin-quanlygiaodich">Tất Cả Giao Dịch</a></li>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       data-toggle="dropdown" aria-expanded="false">
+                        Quản Lý Danh Mục
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown1">
+                        <li><a class="dropdown-item" href="/danhmuc/list">Tất cả danh mục</a></li>
+                        <li><a class="dropdown-item" href="/danhmuc/create">Thêm mới danh mục</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       data-toggle="dropdown" aria-expanded="false">
+                        Quản Lý Thành Viên
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown1">
+                        <li><a class="dropdown-item" href="http://localhost:8080/luan/admin-member-list">Tài Khoản Thành
+                            Viên</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<section class="page-container">
+    <div>
+        <h2>Thêm mới danh mục</h2>
+    </div>
+    <hr>
+    <div class="data-table">
+        <form method="post" action="/danhmuc/create" >
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Tên Danh Mục *</label>
+                    <div class="col-sm-8">
+                        <input type="text"  class="form-control is-invalid" id="inputEmail3">
+
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="submit" style="background:#1ab7ea;color: white" class="form-control"
+                               value="Thêm">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>
+
+<!--<div th:replace="~{/luan/product-detail::chat}"></div>-->
+
+</div>
+<!--effec end here-->
+<!--project star here-->
+<link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+<script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#nivo-lightbox-demo a').nivoLightbox({effect: 'fade'});
+    });
+</script>
+
+<footer style="height: 0" th:insert="~{/header_footer/footer::footer}"></footer>
+</body>
+</html>
+
+
+

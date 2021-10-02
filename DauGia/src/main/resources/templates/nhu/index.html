@@ -1,0 +1,883 @@
+<!DOCTYPE HTML>
+<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="/css/styles_khoa/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_khoa/css/header.css">
+    <link rel="stylesheet" href="/css/styles_khoa/css/style.css">
+    <link rel="stylesheet" href="/css/luan/chat.css">
+
+    <link href="/mot/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/mot/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/mot/js/jquery-1.11.0.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="/mot/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/mot/css/splide.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="/mot/css/flexslider.css" type="text/css" media="screen"/>
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    }
+    </script>
+    <meta name="keywords"
+          content="Auction Responsive web template, Bootstrap Web Templates, Flat Web Templates, AndriodCompatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"/>
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
+    <style>
+        .fa-arrow-right {
+            margin-top: 14px;
+        }
+
+        .fa-arrow-left {
+            margin-top: 14px;
+        }
+    </style>
+</head>
+<body style="font-family: 'Segoe UI'">
+<!-- //end-smoth-scrolling -->
+<!--header start here-->
+<header th:insert="~{/header_footer/header_client::header}"></header>
+<!--header end here-->
+<!--banner strip start here-->
+<script src="js/responsiveslides.min.js"></script>
+<script>
+    $(function () {
+        $("#slider").responsiveSlides({
+            auto: true,
+            speed: 500,
+            namespace: "callbacks",
+            pager: false,
+            nav: true,
+        });
+    });
+</script>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 60px">
+    <div class="container" style="margin: auto">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <form method="get" action="/timKiem" class="d-flex" style="margin-top: 20px">
+                <input class="form-control mr-2" type="search" name="tenSp" placeholder="Tên Sản Phẩm"
+                       aria-label="Search" style="width: 300px;margin-left: 20px">
+                <select name="maDanhMuc" class="form-control mr-2 custom-select">
+                    <option>Tất cả danh mục</option>
+                    <option >Sách</option>
+                    <option>Thời trang</option>
+                    <option >Điện thoại</option>
+                    <option >Đồ dùng</option>
+                </select>
+                <button type="submit" class="btn btn-secondary" style="margin-left: 20px">Tìm kiếm
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="slide__button">
+        <div class="slide__title">
+            <h3 class="btn btn-secondary">Sản phẩm Sách</h3>
+        </div>
+        <div class="slide__button">
+            <div onclick="prev()" class="control-prev-btn" style="">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div onclick="next()" class="control-next-btn">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="slider-container" class="slider">
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/3.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="overlay"></div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="slide__button">
+        <div class="slide__title">
+            <h3 class="btn btn-secondary">Sản phẩm thời trang</h3>
+        </div>
+        <div class="slide__button">
+            <div onclick="prev()" class="control-prev-btn" style="">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div onclick="next()" class="control-next-btn">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="slider-container2" class="slider">
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="overlay"></div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="slide__button">
+        <div class="slide__title">
+            <h3 class="btn btn-secondary">Sản phẩm thời trang</h3>
+        </div>
+        <div class="slide__button">
+            <div onclick="prev()" class="control-prev-btn" style="">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div onclick="next()" class="control-next-btn">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="slider-container3" class="slider">
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="overlay"></div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="slide__button">
+        <div class="slide__title">
+            <h3 class="btn btn-secondary">Sản phẩm thời trang</h3>
+        </div>
+        <div class="slide__button">
+            <div onclick="prev()" class="control-prev-btn" style="">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div onclick="next()" class="control-next-btn">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="slider-container4" class="slider">
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="slide">
+                <p hidden="hidden" class="gioKetThuc"></p>
+                <div class="img-dau-gia">
+                    <a><img
+                            src="/img/2.jpg" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a>
+                                <h3 class="nameProduct">
+                                    Áo thun
+                                </h3>
+                                <p>Thời trang</p></a>
+                        </div>
+                        <div class="img__button">
+                            <a href="#">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a href="#"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="overlay"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--services end here-->
+<!--effec start here-->
+<div class="more-category pt-5">
+    <div class="container">
+        <h4 style="text-align: center">Xem thêm những sản phẩm khác</h4>
+        <div class="row" style="border: 0px;margin-top: 40px">
+            <div class="col-sm-2 col-md-1">
+            </div>
+            <div class="col-sm-2 col-md-1">
+                <div class="background-circle" style="background-color: rgba(216,216,216,0.63); border-radius: 50%;
+                                width: 54px;   height: 51px; ">
+                    <a href="">
+                        <img class="center-block" style="padding-top: 10px"
+                             src="https://www.chilindo.com/assets/cat_icons/new/ico_20_selected.svg" alt="">
+                    </a>
+                </div>
+                <span style="text-align: center;font-size: 14px">Sản phẩm</span>
+            </div>
+            <div class="col-sm-2 col-md-1">
+                <div class="background-circle" style="background-color: rgba(216,216,216,0.63); border-radius: 50%;
+                                width: 54px;   height: 51px; ">
+                    <a href="">
+                        <img class="center-block" style="padding-top: 10px"
+                             src="https://www.chilindo.com/assets/cat_icons/new/ico_19_selected.svg" alt="">
+                    </a>
+                </div>
+                <span style="text-align: center;font-size: 14px">Sản phẩm</span>
+            </div>
+            <div class="col-sm-2 col-md-1">
+                <div class="background-circle" style="background-color: rgba(216,216,216,0.63); border-radius: 50%;
+                                width: 54px;   height: 51px; ">
+                    <a href="">
+                        <img class="center-block" style="padding-top: 10px"
+                             src="https://www.chilindo.com/assets/cat_icons/new/ico_696_selected.svg" alt="">
+                    </a>
+                </div>
+                <span style="text-align: center;font-size: 14px">Sản phẩm</span>
+            </div>
+            <div class="col-sm-2 col-md-1">
+                <div class="background-circle" style="background-color: rgba(216,216,216,0.63); border-radius: 50%;
+                                width: 54px;   height: 51px; ">
+                    <a href="">
+                        <img class="center-block" style="padding-top: 10px"
+                             src="https://www.chilindo.com/assets/cat_icons/new/ico_699_selected.svg" alt="">
+                    </a>
+                </div>
+                <span style="text-align: center;font-size: 14px">Sản phẩm</span>
+            </div>
+            <div class="col-sm-2 col-md-1">
+                <div class="background-circle" style="background-color: rgba(216,216,216,0.63); border-radius: 50%;
+                                width: 54px;   height: 51px; ">
+                    <a href="">
+                        <img class="center-block" style="padding-top: 10px"
+                             src="https://www.chilindo.com/assets/cat_icons/new/ico_765_selected.svg" alt="">
+                    </a>
+                </div>
+                <span style="text-align: center;font-size: 14px">Sản phẩm</span>
+
+            </div>
+            <div class="col-sm-2 col-md-1">
+                <div class="background-circle" style="background-color: rgba(216,216,216,0.63); border-radius: 50%;
+                                width: 54px;   height: 51px; ">
+                    <a href="">
+                        <img class="center-block" style="padding-top: 10px"
+                             src="https://www.chilindo.com/assets/cat_icons/new/ico_802_selected.svg" alt="">
+                    </a>
+                </div>
+                <span style="text-align: center;font-size: 14px">Sản phẩm</span>
+
+            </div>
+            <div class="col-sm-2 col-md-1">
+                <div class="background-circle" style="background-color: rgba(216,216,216,0.63); border-radius: 50%;
+                                width: 54px;   height: 51px; ">
+                    <a href="">
+                        <img class="center-block" style="padding-top: 10px"
+                             src="https://www.chilindo.com/assets/cat_icons/new/ico_179_selected.svg" alt="">
+                    </a>
+                </div>
+                <span style="text-align: center;font-size: 14px">Sản phẩm</span>
+
+            </div>
+            <div class="col-sm-2 col-md-1">
+                <div class="background-circle" style="background-color: rgba(216,216,216,0.63); border-radius: 50%;
+                                width: 54px;   height: 51px; ">
+                    <a href="">
+                        <img class="center-block" style="padding-top: 10px"
+                             src="https://www.chilindo.com/assets/cat_icons/new/ico_650_selected.svg" alt="">
+                    </a>
+                </div>
+                <span style="text-align: center;font-size: 14px">Sản phẩm</span>
+            </div>
+            <div class="col-sm-2 col-md-1">
+                <div class="background-circle" style="background-color: rgba(216,216,216,0.63); border-radius: 50%;
+                                width: 54px;   height: 51px; ">
+                    <a href="">
+                        <img class="center-block" style="padding-top: 10px"
+                             src="https://www.chilindo.com/assets/cat_icons/new/ico_674_selected.svg" alt="">
+                    </a>
+                </div>
+                <span style="text-align: center;font-size: 14px">Sản phẩm</span>
+
+            </div>
+            <div class="col-sm-2 col-md-1">
+                <div class="background-circle" style="background-color: rgba(216,216,216,0.63); border-radius: 50%;
+                                width: 54px;   height: 51px; ">
+                    <a href="">
+                        <img class="center-block" style="padding-top: 10px"
+                             src="https://www.chilindo.com/assets/cat_icons/new/ico_165_selected.svg" alt="">
+                    </a>
+                </div>
+                <span style="text-align: center;font-size: 14px">Sản phẩm</span>
+
+            </div>
+            <div class="col-sm-2 col-md-1">
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--<div th:replace="~{/luan/product-detail::chat}">-->
+
+</div>
+<!--effec end here-->
+<!--project star here-->
+<link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+<script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#nivo-lightbox-demo a').nivoLightbox({effect: 'fade'});
+    });
+</script>
+<script>
+    for (let i = 0; i <= 100; i++) {
+        var timeTemp = document.getElementsByClassName("gioKetThuc")[i].innerText;
+        var timeEnd = timeTemp.split(":");
+        var date = new Date();
+        var day = date.getDate();
+        var month = date.getMonth();
+        var year = date.getFullYear();
+        var hour = timeEnd[0];
+        var minute = timeEnd[1];
+        var countDownDate = new Date(year, month, day, hour, minute, 0, 0).getTime();
+
+        // Run myfunc every second
+        var myfunc = setInterval(function () {
+            var now = new Date().getTime();
+            var timeleft = countDownDate - now;
+            // var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+            hours = (hours < 10) ? "0" + hours : hours;
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+            seconds = (seconds < 10) ? "0" + seconds : seconds;
+            document.getElementsByClassName('time')[i].innerHTML = hours + ":" + minutes + ":" + seconds
+            if (timeleft < 0) {
+                clearInterval(myfunc);
+                document.getElementsByClassName('time')[i].innerHTML = "Hết giờ";
+            }
+        }, 1000);
+    }
+
+</script>
+<!--clients start here-->
+<script>
+    //0
+    function prev() {
+        document.getElementById('slider-container').scrollLeft -= 270;
+    }
+
+    function next() {
+        document.getElementById('slider-container').scrollLeft += 270;
+    }
+
+    //1
+    function prev1() {
+        document.getElementById('slider-container1').scrollLeft -= 270;
+    }
+
+    function next1() {
+        document.getElementById('slider-container1').scrollLeft += 270;
+    }
+
+    //2
+    function prev2() {
+        document.getElementById('slider-container2').scrollLeft -= 270;
+    }
+
+    function next2() {
+        document.getElementById('slider-container2').scrollLeft += 270;
+    }
+
+    //3
+    function prev3() {
+        document.getElementById('slider-container3').scrollLeft -= 270;
+    }
+
+    function next3() {
+        document.getElementById('slider-container3').scrollLeft += 270;
+    }
+
+    function prev4() {
+        document.getElementById('slider-container4').scrollLeft -= 270;
+    }
+
+    function next4() {
+        document.getElementById('slider-container4').scrollLeft += 270;
+    }
+
+</script>
+
+<footer style="height: 0" th:insert="~{/header_footer/footer::footer}"></footer>
+
+<!-- FlexSlider -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#nivo-lightbox-demo a').nivoLightbox({effect: 'fade'});
+    });
+</script>
+
+<!--<script src="/mot/js/countTime.js"></script>-->
+<script src="/static/js/chat-responses.js"></script>
+<script src="/static/js/chat.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<!--footer end here-->
+</body>
+</html>

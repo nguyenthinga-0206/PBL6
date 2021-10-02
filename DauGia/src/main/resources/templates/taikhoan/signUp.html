@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+
+
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <title>Login</title>
+    <link href="/ba/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/ba/css/bootstrap-reset.css" rel="stylesheet">
+    <link href="/ba/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/ba/css/style.css" rel="stylesheet">
+    <link href="/ba/css/style-responsive.css" rel="stylesheet"/>
+    <script src="/ba/js/ie8-responsive-file-warning.js"></script>
+    <style>
+        .form-control{
+            color: black;
+        }
+    </style>
+</head>
+<body class="login-body">
+<div class="container">
+    <form class="form-signin" action="/singup" method="post" >
+        <h2 class="form-signin-heading">ĐĂNG KÝ</h2>
+        <div class="login-wrap">
+            <p>Nhập thông tin cá nhân của bạn</p>
+
+            <input type="text" class="form-control" style="color: black" placeholder="Họ và tên"  autofocus>
+
+            <input type="text" class="form-control" placeholder="Tên đăng nhập"  autofocus>
+
+
+            <input type="text" class="form-control" placeholder="Email"  autofocus>
+
+
+            <input type="date" class="form-control" placeholder="Ngày sinh" autofocus>
+
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" value="1" id="nam" >
+                <label class="custom-control-label" for="nam">Nam</label>
+                <input type="radio" class="custom-control-input" value="0" id="nu" >
+                <label class="custom-control-label" for="nu">Nữ</label>
+            </div>
+
+            <input type="text" class="form-control" placeholder="Số điện thoại"  autofocus>
+
+            <input type="text" class="form-control" placeholder="Số CMND/CCCD"  autofocus>
+
+
+            <input type="text" class="form-control" placeholder="Địa chỉ"  autofocus>
+
+            <input type="password" class="form-control" placeholder="Mật khẩu">
+            <label class="checkbox">
+                <input type="checkbox" > Tôi đồng ý với
+                <a href="/dieukhoan">Điều khoản dịch vụ và Chính sách quyền riêng tư.</a>
+            </label>
+            <button class="btn btn-lg btn-login btn-block" type="submit">Đăng ký</button>
+            <label class="checkbox" style="margin-top: 20px;margin-left: 20px">
+                Đã đăng ký tài khoản.
+                <a class="" href="/taikhoan/signIn">
+                    Đăng nhập
+                </a>
+            </label>
+        </div>
+    </form>
+</div>
+<script src="/ba/js/jquery.js"></script>
+<script src="/ba/js/bootstrap.min.js"></script>
+</body>
+</html>

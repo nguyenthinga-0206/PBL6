@@ -1,0 +1,468 @@
+body {
+    background-color: #eaeef0;
+
+}
+.page-container{
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    width: 85%;
+}
+
+.product-image{
+    text-align: center;
+    float: left;
+    width: 50%;
+    height: 370px;
+}
+
+.product-info{
+    float: left;
+    width: 50%;
+    height: 370px;
+}
+
+* {box-sizing:border-box}
+/* thiết lập style cho slideshow container */
+.slideshow-container {
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+}
+/* ẩn hình ảnh cho phần tử slideshow */
+.mySlides {
+    display: none;
+}
+/* thiết kế nút mũi tên*/
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 10px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+/* thiết kế nút mũi tên next nằm phía bên phải */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+/* hiệu ứng thay đổi background khi hover vào nút mũi tên*/
+.prev:hover, .next:hover {
+    background-color: rgba(99, 99, 99, 0.8);
+}
+
+/* Thiết lập style cho số hiển thị của phần tử */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+/* thiết lập style  nút tròn điều khiển*/
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+/* tạo hiệu ứng chuyển động fade */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+
+.info h1{
+    color: #027ca5;
+    font-family: "Segoe UI";
+    font-weight: 800;
+    font-size: 25px;
+    margin: 0px 0px 0px 50px;
+    line-height: 30px;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: default;
+}
+
+.descript-size{
+    margin: 4px 0px 0px 51px;
+}
+
+.descript-time{
+    margin: 7px 0px -4px 1px;
+}
+
+.size-label{
+    background-color: #fce733;
+    float: left;
+    height: 25px;
+    border-radius: 6px;
+    min-width: 51px;
+    font-size: 13px;
+    padding: 0 10px;
+    font-weight: bold;
+    line-height: 25px;
+    color: #000;
+    text-align: center;
+}
+
+#time-remain{
+    color: #ff1d1d;
+    font-family: "Segoe UI";
+    font-weight: 800;
+    font-size: 20px;
+    margin: 0px 0px 0px 50px;
+    padding: 11px 0 0;
+    line-height: 30px;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: default;
+}
+
+.bid-price{
+    margin: 20px 0px 0px 50px;
+    float: left;
+    width: 130px;
+    height: 60px;
+}
+
+.bid-price small{
+    font-size: 11px;
+    line-height: 11px;
+    text-transform: uppercase;
+    color: #a5a5a6;
+    letter-spacing: .5px;
+    display: block;
+    margin-bottom: 10px;
+    font-family: Open Sans;
+}
+
+.bid-price strong{
+    color: green;
+    font-size: 21px;
+    font-weight: 400;
+    font-style: normal;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.bid-winner{
+    display: inline-block;
+    margin: 20px 0px 0px 20px;
+    width: 150px;
+    height: 60px;
+}
+
+.bid-winner small{
+    font-size: 11px;
+    line-height: 11px;
+    text-transform: uppercase;
+    color: #a5a5a6;
+    letter-spacing: .5px;
+    display: block;
+    margin-bottom: 10px;
+    font-family: Open Sans;
+}
+
+.bid-winner strong{
+    font-size: 16px;
+    display: block;
+    font-weight: 400;
+    line-height: 21px;
+    background: url(winner-icon.png) 0 50%/18px no-repeat;
+    padding-left: 24px;
+}
+
+.bid-option small{
+    font-size: 11px;
+    line-height: 11px;
+    text-transform: uppercase;
+    color: #a5a5a6;
+    letter-spacing: .5px;
+    margin: 0px 0px 10px 50px;
+    font-family: Open Sans;
+}
+
+.bid-select-option{
+    margin: 5px 0px 10px 50px;
+}
+
+.bid-select-option select{
+    font-family: Roboto,Helvetica Neue,sans-serif;
+    border-color: #1ab7ea;
+    padding: 5px;
+    width: 200px;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 5px rgb(230, 230, 230);
+    -moz-box-shadow: 5px 5px 5px rgb(230, 230, 230);
+    box-shadow: 2px 2px 2px rgb(230, 230, 230);
+}
+
+.excute-bid small{
+    font-size: 11px;
+    line-height: 11px;
+    text-transform: uppercase;
+    color: #a5a5a6;
+    letter-spacing: .5px;
+    margin: 10px 0px 10px 50px;
+    font-family: Open Sans;
+}
+
+#minus-btn{
+    height: 33px;
+    border-radius: 5px;
+    border: none;
+    background-color: #1ab7ea;
+    color: #fff;
+    width: 35px;
+    margin: 10px 0px 10px 50px;
+}
+#plus-btn{
+    height: 33px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    background-color: #1ab7ea;
+    width: 35px;
+}
+
+#input-level{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border-color: #dcdcdc ;
+    border-style: solid;
+    border-width: 1px;
+    color: #08b3ec;
+    background-color: #fff;
+    width: 125px;
+    height: 33px;
+    padding-top: 8px;
+}
+
+.bid-level, button ,input{
+    padding: 5px;
+}
+
+.bid-btn{
+    text-align: center;
+    width: 130px;
+    padding-top: 3px;
+    height: 33px;
+    margin-left: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1ab7ea;
+}
+
+.btn-text, .btn-icon{
+    font-family: Nunito,sans-serif;
+    padding: 3px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+#list-bid{
+    width: 300px;
+}
+
+table {
+    background-color: transparent
+}
+
+table col[class*=col-] {
+    position: static;
+    display: table-column;
+    float: none
+}
+
+table td[class*=col-], table th[class*=col-] {
+    position: static;
+    display: table-cell;
+    float: none
+}
+
+caption {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #777;
+    text-align: left
+}
+
+th {
+    text-align: left;
+    color: #027ca5;
+}
+
+#last-th{
+    text-align: right;
+}
+
+td{
+    color: rgb(59, 59, 59);
+    width: 25%;
+}
+
+td:nth-child(3){
+    text-align: center;
+}
+
+td:nth-child(2){
+    text-align: center;
+}
+
+th:nth-child(2){
+    text-align: center;
+}
+
+th:nth-child(3){
+    text-align: center;
+}
+
+
+td:last-child{
+    text-align: right;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+}
+
+table, tr {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd
+}
+
+.table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd
+}
+
+.table > caption + thead > tr:first-child > td, .table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > td, .table > thead:first-child > tr:first-child > th {
+    border-top: 0
+}
+
+.table > tbody + tbody {
+    border-top: 2px solid #ddd
+}
+
+.bid-attr{
+    margin-left: 20px;
+    float: left;
+    width: 170px;
+    height: 60px;
+}
+
+.bid-attr small{
+    font-size: 13px;
+    line-height: 30px;
+    color: rgb(59, 59, 59);
+    letter-spacing: .5px;
+    display: block;
+    font-family: Open Sans;
+    text-transform: uppercase;
+}
+
+.bid-data{
+    display: inline-block;
+    width: 150px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.bid-data small{
+    font-size: 13px;
+    line-height: 30px;
+    color: rgb(59, 59, 59);
+    letter-spacing: .5px;
+    display: block;
+    font-family: Open Sans;
+    text-transform: uppercase;
+}
+
+.product-detail h3{
+    color: #027ca5;
+    font-family: Nunito,sans-serif;
+    line-height: 20px;
+    padding-top: 5px;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: default;
+}
+
+.product-detail h4{
+    margin: 0px;
+    color: #474747;
+    font-family: Nunito,sans-serif;
+    line-height: 20px;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: default;
+}
+
+.product-detail p{
+    margin-top: -5px;
+    color: #474747;
+    margin-left: 20px;
+    text-align: justify;
+    line-height: 25px;
+}
+
+.list-descript{
+    list-style-type: circle;
+    font-size: 15px;
+    color: rgb(59, 59, 59);
+    line-height: 25px;
+}
+
+hr{
+    border: 0;
+    border-top: 1px solid #eee;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}

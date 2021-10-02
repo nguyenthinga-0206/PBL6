@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <title>Header Client</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/styles_khoa/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_khoa/css/header.css">
+</head>
+<body>
+<header th:fragment="header" id="header">
+    <div class="containerHeader">
+        <div class="Item">
+            <a style="color: white" href="/tuvan">
+                Tư vấn
+                </span>
+            </a>
+        </div>
+        <div class="Item">
+            <a style="color: white" href="/tuvan">
+                     <span>CHÍNH SÁCH ĐỔI TRẢ 30 NGÀY
+                </span>
+            </a>
+        </div>
+        <div class="Item">
+                <span>PHÍ GIAO HÀNG : ₫ 49000
+                </span>
+        </div>
+        <div class="Item">
+                <span>TẤT CẢ SẢN PHẨM BẮT ĐẦU TỪ ₫ 1000
+                </span>
+        </div>
+        <div class="Item">
+                <span>0968326980
+                </span>
+        </div>
+    </div>
+    <div class="containernavHeader">
+        <div class="row" style=" background: #1ab7ea;">
+            <div class="col-lg-5 navHeaderRight">
+                <a href="/">
+                    <img src="/css/styles_khoa/img/logo.png" class="logo" alt="logo">
+                </a>
+            </div>
+            <div class="col-lg-6 navHeaderLeft">
+                <div class="containerHeaderLeft">
+                    <div class="col-lg-6 itemHeaderLeft">
+                        <img src="/css/styles_khoa/img/auction-white.png" class="auction-white" alt="Đấu giá của tôi">
+                        <span class="txt"><a style="color: white" href="/login">
+                            Chưa đăng nhập? Đăng nhập ngay
+                        </a></span>
+                    </div>
+                    <div></div>
+                    <div class="col-lg-5 ">
+                        <div class="dropdown">
+                            <div class="dropdown__select">
+                                <img src="/css/styles_khoa/img/user.png" class="cart-white" alt="user">
+                                <span class="dropdown__selected">Chào mừng, quỳnh như</span>
+                                <i class="fa fa-caret-down dropdown__caret"></i>
+                            </div>
+                            <ul class="dropdown__list">
+                                <li class="dropdown__item">
+                                    <i class="fa fa-user dropdown__icon"></i>
+                                    <span class="dropdown__text">
+                                        <a style="color:#005884;">Hồ Sơ Cá Nhân</a>
+                                       </span>
+                                </li>
+                                <!--                                <li class="dropdown__item">-->
+                                <!--                                    <i class="fa fa-map-marker dropdown__icon"></i>-->
+                                <!--                                    <span class="dropdown__text">Địa chỉ</span>-->
+                                <!--                                </li>-->
+                                <li class="dropdown__item">
+                                    <i class="fa fa-bars dropdown__icon"></i>
+                                    <span class="dropdown__text"><a href="/showCart" style="color:#005884;">
+                                       Đơn hàng của tôi
+                                    </a></span>
+                                </li>
+                                <li class="dropdown__item">
+                                    <i class="fa fa-circle dropdown__icon"></i>
+                                    <span class="dropdown__text">
+                                            <a href="/logout" style="color: #005884">
+                                                Đăng Xuất
+                                            </a></span>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-5 ">
+                        <div class="dropdown">
+                            <div class="dropdown__select">
+                                <span class="dropdown__selected"> Tài khoản</span>
+                                <i class="fa fa-caret-down dropdown__caret"></i>
+                            </div>
+                            <ul class="dropdown__list">
+                                <li class="dropdown__item">
+                                    <i class="fa fa-map-marker dropdown__icon"></i>
+                                    <span class="dropdown__text">
+                                        <a class="dropdown-item" href="/sanpham/list">Sản phẩm</a>
+                                    </span>
+                                </li>
+                                <li class="dropdown__item">
+                                    <i class="fa fa-bars dropdown__icon"></i>
+                                    <span class="dropdown__text"><a class="dropdown-item" href="/sanpham/create">Thêm mới Sản phẩm</a>
+                                        </a></span>
+                                </li>
+                                <li class="dropdown__item">
+                                    <i class="fa fa-circle dropdown__icon"></i>
+                                    <span class="dropdown__text">
+                                            <a class="dropdown-item" href="/sanpham/listduyet">Sản phẩm chờ
+                                            duyệt</a>
+                                    </span>
+                                </li>
+                                <li class="dropdown__item">
+                                    <i class="fa fa-circle dropdown__icon"></i>
+                                    <span class="dropdown__text">
+                                            <a class="dropdown-item"
+                                               href="/sanpham/listkoduyet">Sản phẩm Không duyệt</a>
+                                    </span>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 itemHeaderLeft" style="    margin-left: -90px;
+    margin-top: 15px;">
+                        <a class="btn btn-sm ml-3" href="/showCart" style="color: white;font-weight: bold;">
+                            <i class="fa fa-shopping-cart" style="font-size: 22px"></i> Giỏ hàng
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+</body>
+</html>

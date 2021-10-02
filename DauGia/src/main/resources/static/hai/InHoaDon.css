@@ -1,0 +1,359 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body,h1,h2,h3,h4,h5,h6{
+    margin:0px;
+    padding:0px;
+}
+
+.form__content {
+    display: flex;
+    justify-content: center;
+}
+
+.form__left {
+    width: 700px;
+    margin-right: 30px;
+}
+
+
+.form__title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: #333;
+}
+
+.form__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.form__item {
+    margin: 0px 10px;
+    padding: 10px 25px;
+    text-align: center;
+    background-color: #DDD;
+    color: #333;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all ease-in-out 300ms;
+}
+
+.form__item:hover {
+    background-color: #1ab7ea;
+    color:white;
+}
+
+.form__option h3 {
+    color: #333;
+}
+
+.form__option-item {
+    margin: 10px 0px 0px 0px;
+    border: 3px solid rgba(0, 0, 0,0.1);
+}
+
+.form__option-item h5{
+    padding: 12px ;
+    margin: 0px 0px 0px 50px;
+    color: #333;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.form__receive {
+    margin-top: 50px;
+}
+
+.form__receive-title  {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+.form__receive-subtitle{
+    text-align: center;
+    color: #8c8c8c;
+    font-size: 16px;
+    padding: 0px 19px;
+}
+
+.form__receive-expired{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 36px;
+    margin-top: 10px;
+    border: 3px solid rgba(0, 0, 0,0.1);
+}
+
+.form__reveive-expired--left {
+    width: 400px;
+}
+
+.form__reveive-expired--left h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.form__reveive-expired--left p {
+    margin: 0px;
+    padding: 0px;
+    color: #8c8c8c;
+}
+
+
+.form__reveive-expired--right {
+    width: calc(100% - 400px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__reveive-expired--right img {
+    width: auto;
+    height: 127px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.form__info-content {
+    margin-top: 7px;
+    border: 3px solid rgba(0, 0, 0,0.1);
+}
+
+.form__info-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.form__info-name h4 {
+    color: #333;
+    padding: 0px 40px;
+}
+
+
+
+.form__info-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__info-list ul {
+    margin: 2px 0px 0px 0px;
+    list-style-type: none;
+    padding: 0px 0px 5px 40px;
+}
+
+.form__info-list  li {
+    color: #333;
+    padding: 5px 0px;
+}
+
+.btn__delivery button{
+    margin-top: 10px;
+    padding:  7px;
+    border-color: #1ab7ea;
+    width: 100%;
+    background-color: #1ab7ea;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    outline: none;
+    transition: all ease-in-out 300ms;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn__delivery button:hover {
+    background-color: white;
+    color: #1ab7ea;
+}
+
+
+.form__pacakage{
+    border: 3px solid rgba(0, 0, 0,0.1);
+}
+
+.form__pacakage ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.form__pacakage-title li {
+    padding: 0px 0px 0px 10px;
+}
+
+
+.form__shipment  {
+    margin-top: 10px;
+}
+
+.form__shipment-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__shipment-title {
+    color: white;
+    background-color: #1ab7ea;
+    padding: 0px 10px;
+}
+
+.form__shipment-title  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 25px;
+    width: 25px;
+    border-radius: 9999px;
+    text-align: center;
+    color: #1ab7ea;
+}
+
+.form__shipment-table table {
+    border: 3px solid #ededed;
+    width: 100%;
+}
+
+
+
+.form__shipment-table th {
+    padding: 10px 8px;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #333;
+    background: #FFF;
+}
+
+.form__shipment-table--thumbnail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    padding: 0px;
+}
+
+.form__shipment-table--thumbnail img{
+    width: auto;
+    height: 150px;
+    margin: 0px  0px 0px 10px;
+}
+
+.form__shipment-table--thumbnail p {
+    margin-left: 5px;
+}
+
+tbody td {
+    text-align: center;
+}
+
+
+.form__shipment-table--list {
+    border-bottom: 2px solid #333;
+}
+
+.form__shipment-table--list td {
+    text-align: center;
+}
+
+.form__checkout-content{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 20px 10px;
+    border: 3px solid rgba(0, 0, 0,0.1);
+}
+
+.form__checkout-left h3 {
+    text-align: center;
+}
+
+.form__checkout-left p {
+    color: #8c8c8c ;
+}
+
+.form__checkout-right h3 {
+    text-align: right;
+}
+
+.form__checkout-right p {
+    text-align: right;
+    font-size: 15px;
+    color: #8c8c8c ;
+}
+
+.btn__checkout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btn__checkout  button{
+    background-color: aqua;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all ease-in-out 300ms;
+}
+
+/* Form Side right */
+
+.form__right {
+    width: calc(100% - 700px);
+}
+
+.form__contact {
+    border: 1px solid #1ab7ea;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.form__question{
+    padding: 16px;
+    margin-bottom: 10px;
+    color:white;
+    background-color: #1ab7ea ;
+
+}
+
+.form__number {
+    border-radius: 0px 0px 4px 4px;
+    color: #1ab7ea;
+    background-color: white;
+    padding: 5px 0px;
+
+}
+
+.form__number p {
+    text-align: center;
+    margin: 0px;
+}
+

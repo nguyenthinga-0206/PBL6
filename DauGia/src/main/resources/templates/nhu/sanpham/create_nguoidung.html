@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="/css/styles_khoa/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_khoa/css/header.css">
+    <link rel="stylesheet" href="/css/styles_khoa/css/style.css">
+    <link rel="stylesheet" href="/css/luan/chat.css">
+
+    <link href="/mot/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/mot/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/mot/js/jquery-1.11.0.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="/mot/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="/mot/css/flexslider.css" type="text/css" media="screen"/>
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    }
+
+    </script>
+    <meta name="keywords"
+          content="Auction Responsive web template, Bootstrap Web Templates, Flat Web Templates, AndriodCompatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"/>
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
+    <style>
+        label {
+            color: #027ca5;
+        }
+    </style>
+</head>
+<body>
+<!-- //end-smoth-scrolling -->
+<!--header start here-->
+<header th:insert="~{/header_footer/header_client::header}"></header>
+<!--header end here-->
+<!--banner strip start here-->
+<script src="js/responsiveslides.min.js"></script>
+<script>
+    $(function () {
+        $("#slider").responsiveSlides({
+            auto: true,
+            speed: 500,
+            namespace: "callbacks",
+            pager: false,
+            nav: true,
+        });
+    });
+</script>
+
+<div class="container">
+    <form method="post" action="/sanpham/create" >
+        <fieldset>
+            <div class="services-top">
+                <h3 class="btn btn-secondary">Thêm Sản Phẩm</h3>
+                <!--                <p>Great design is about more than style,it,s about being yoursel</p>-->
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Tên sản phẩm *</label>
+                <div class="col-sm-8">
+                    <input type="text"  class="form-control is-invalid">
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Số Lượng *</label>
+                <div class="col-sm-8">
+                    <input type="number"  class="form-control is-invalid">
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Danh Mục *</label>
+                <div class="col-sm-8">
+                    <select class="form-control custom-select is-invalid" >
+                        <option>Sách </option>
+                        <option>Sách </option>
+                        <option>Sách </option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Hình ảnh sản phẩm *</label>
+                <div class="col-sm-8">
+                    <input type="file"  class="form-control-file is-invalid">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Giá ban đầu *</label>
+                <div class="col-sm-8">
+
+                    <input type="number" class="form-control is-invalid">
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Bước giá *</label>
+                <div class="col-sm-8">
+                    <input  type="number"
+                           class="form-control is-invalid"
+                           placeholder="Là giá thấp nhất trong mỗi lần tăng giá">
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Giờ bắt đầu *</label>
+                <div class="col-sm-5">
+                    <input type="time"  class="form-control is-invalid">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Ngày Bắt đầu *</label>
+                <div class="col-sm-5">
+                    <input type="date"  class="form-control is-invalid">
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Giờ Kết thúc *</label>
+                <div class="col-sm-5">
+                    <input type="time"  class="form-control is-invalid">
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Ngày kết thúc *</label>
+                <div class="col-sm-5">
+
+                    <input type="date" class="form-control is-invalid">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Thông tin chi tiết</label>
+                <div class="col-sm-10">
+                    <textarea type="textarea" class="form-control is-invalid" rows="6"> </textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Ngày đăng ký*</label>
+                <div class="col-sm-8">
+                    <input readonly type="date"
+                           class="form-control is-invalid" >
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Tình Trạng</label>
+                <div class="col-sm-8">
+                    <span ></span>
+                    <select class="form-control is-invalid" >
+                        <option>Chưa</option>
+                        <option>Đã duyệt</option>
+                        <option>Không duyệt</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-1">
+                    <input type="submit" style="background:#1ab7ea;color: white" class="form-control"
+                           value="Thêm">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+<div th:replace="~{/luan/product-detail::chat}">
+
+</div>
+<!--effec end here-->
+<!--project star here-->
+<link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+<script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#nivo-lightbox-demo a').nivoLightbox({effect: 'fade'});
+    });
+</script>
+
+<!--clients start here-->
+
+
+<footer style="height: 0" th:insert="~{/header_footer/footer::footer}"></footer>
+
+<!-- FlexSlider -->
+
+
+<script src="/mot/js/countTime.js"></script>
+<script src="/js/chat-responses.js"></script>
+<script src="/js/chat.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<!--footer end here-->
+</body>
+</html>

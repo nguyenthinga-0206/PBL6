@@ -34,10 +34,6 @@ public class SanPham implements Validator {
     private String ngayKetThuc;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private String ngayDangKi;
-    @NotEmpty(message = "Không được để trống giờ.")
-    private String gioBatDau;
-    @NotEmpty(message = "Không được để trống giờ.")
-    private String gioKetThuc;
     @Min(value = 1, message = "Số lượng phải lớn hơn 1.")
     private int soLuong;
 
@@ -60,7 +56,7 @@ public class SanPham implements Validator {
     public SanPham() {
     }
 
-    public SanPham(int maSanPham, @NotEmpty(message = "Tên không được để trống") String tenSanPham, String hinh, double giaKhoiDiem, String tinhTrang, String moTa, String ngayBatDau, String ngayKetThuc, String ngayDangKi, @NotEmpty(message = "Không đượ để trống giờ") String gioBatDau, @NotEmpty(message = "Không đượ để trống giờ") String gioKetThuc, @Min(value = 1, message = "Số lượng phải lớn hơn 1") int soLuong, double mucGia, DanhMuc danhMuc, DauGia dauGia, Set<ChiTietDonHang> chiTietDonHangs, TaiKhoan taiKhoans) {
+    public SanPham(int maSanPham, @NotEmpty(message = "Vui lòng nhập tên sản phẩm.") String tenSanPham, String hinh, @Min(value = 1000, message = "Giá khởi điểm vui lòng nhập lớn hơn 1000đ.") double giaKhoiDiem, String tinhTrang, @NotEmpty(message = "Vui lòng nhập mô tả.") String moTa, String ngayBatDau, String ngayKetThuc, String ngayDangKi, @Min(value = 1, message = "Số lượng phải lớn hơn 1.") int soLuong, @Min(value = 1000, message = "Bước giá phải lớn hơn 1000đ.") double mucGia, DanhMuc danhMuc, DauGia dauGia, Set<ChiTietDonHang> chiTietDonHangs, TaiKhoan taiKhoans) {
         this.maSanPham = maSanPham;
         this.tenSanPham = tenSanPham;
         this.hinh = hinh;
@@ -70,8 +66,6 @@ public class SanPham implements Validator {
         this.ngayBatDau = ngayBatDau;
         this.ngayKetThuc = ngayKetThuc;
         this.ngayDangKi = ngayDangKi;
-        this.gioBatDau = gioBatDau;
-        this.gioKetThuc = gioKetThuc;
         this.soLuong = soLuong;
         this.mucGia = mucGia;
         this.danhMuc = danhMuc;
@@ -160,21 +154,6 @@ public class SanPham implements Validator {
         this.ngayDangKi = ngayDangKi;
     }
 
-    public String getGioBatDau() {
-        return gioBatDau;
-    }
-
-    public void setGioBatDau(String gioBatDau) {
-        this.gioBatDau = gioBatDau;
-    }
-
-    public String getGioKetThuc() {
-        return gioKetThuc;
-    }
-
-    public void setGioKetThuc(String gioKetThuc) {
-        this.gioKetThuc = gioKetThuc;
-    }
 
     public int getSoLuong() {
         return soLuong;

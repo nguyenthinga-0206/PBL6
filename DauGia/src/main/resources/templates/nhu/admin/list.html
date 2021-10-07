@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/styles_khoa/css/ionicons.min.css">
-    <link rel="stylesheet" href="/css/styles_khoa/css/header.css">
-    <link rel="stylesheet" href="/css/styles_khoa/css/style.css">
-    <link rel="stylesheet" href="/css/luan/chat.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/header.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/style.css">
+    <link rel="stylesheet" href="/css/nga/chat.css">
     <link href="/mot/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="/mot/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
     <script src="/mot/js/jquery-1.11.0.min.js"></script>
@@ -26,62 +26,13 @@
     <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="/css/luan/css-admin-member-listnhu.css"/>
+    <link rel="stylesheet" href="/css/nga/css-admin-member-listnhu.css"/>
 </head>
 <body>
 
 <header th:insert="~{/header_footer/header_admin::header}"></header>
-<nav th:fragment="headerAdmin" class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 60px">
-    <div class="container">
-        <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll"
-                style="max-height: 100px;margin-left: 155px">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                       data-toggle="dropdown" aria-expanded="false">
-                        Quản Lý Sản Phẩm
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                        <li><a class="dropdown-item" href="/admin/list">Tất Cả Sản Phẩm</a></li>
-                        <li><a class="dropdown-item" href="/admin/duyet">Sản Phẩm Chờ Phê Duyệt</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                       data-toggle="dropdown" aria-expanded="false">
-                        Quản Lý Giao Dịch
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                        <li><a class="dropdown-item" href="/admin/admin-quanlygiaodich">Tất Cả Giao Dịch</a></li>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                       data-toggle="dropdown" aria-expanded="false">
-                        Quản Lý Danh Mục
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown1">
-                        <li><a class="dropdown-item" href="/danhmuc/list">Tất cả danh mục</a></li>
-                        <li><a class="dropdown-item" href="/danhmuc/create">Thêm mới danh mục</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                       data-toggle="dropdown" aria-expanded="false">
-                        Quản Lý Thành Viên
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown1">
-                        <li><a class="dropdown-item" href="http://localhost:8080/luan/admin-member-list">Tài Khoản Thành
-                            Viên</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<nav th:insert="~{/nhu/admin/duyet::headerAdmin}"></nav>
+
 
 
 <section class="page-container">
@@ -92,13 +43,23 @@
 
         <form action="/admin/search" method="get">
             <label>Tên Sản Phẩm : </label>
-            <input type="text" name="tensanpham" id="mem-name"/>
+            <input type="text" name="tensanpham" th:value="${tensanpham}" id="mem-name"/>
             <button class="filter-btn" type="submit">Lọc kết quả</button>
         </form>
-
+        <center>
+            <div>
+                <span class="alert alert-success" th:if="${mgs}"> Không tìm thấy sản phẩm</span>
+            </div>
+            <div>
+                <span class="alert alert-success" th:if="${mgs2}"> Sửa tình trạng sản phẩm thành công!</span>
+            </div>
+            <div>
+                <span class="alert alert-success" th:if="${mgsxoa1}" th:text="${mgsxoa1}">Xóa thành công! </span>
+            </div>
+        </center>
     </div>
     <hr>
-    <div class="data-table">
+    <div class="data-table" th:unless="${mgs}">
         <table id="mem-data">
             <tr>
                 <th>Tên Sản phẩm</th>
@@ -109,50 +70,108 @@
                 <th>Sửa</th>
                 <th>Xóa</th>
             </tr>
-            <tr>
-                <td>sản phẩm</td>
-                <td>Quỳnh  Như</td>
-                <td>ảnh</td>
-                <td>2303044</td>
-                <td>44555</td>
-                <td><a>Sửa</a></td>
-                <td><a>Xóa</a></td>
-            </tr>
-            <tr>
-                <td>sản phẩm</td>
-                <td>Quỳnh  Như</td>
-                <td>ảnh</td>
-                <td>2303044</td>
-                <td>44555</td>
-                <td><a>Sửa</a></td>
-                <td><a>Xóa</a></td>
-            </tr>
-            <tr>
-                <td>sản phẩm</td>
-                <td>Quỳnh  Như</td>
-                <td>ảnh</td>
-                <td>2303044</td>
-                <td>44555</td>
-                <td><a>Sửa</a></td>
-                <td><a>Xóa</a></td>
-            </tr>
-            <tr>
-                <td>sản phẩm</td>
-                <td>Quỳnh  Như</td>
-                <td>ảnh</td>
-                <td>2303044</td>
-                <td>44555</td>
-                <td><a>Sửa</a></td>
-                <td><a>Xóa</a></td>
+            <tr th:each="sanpham : ${sanphams1}">
+                <td th:text="${sanpham.tenSanPham}"></td>
+                <td th:text="${sanpham.taiKhoan.nguoiDung.tenNguoiDung}"></td>
+                <td th:text="${sanpham.danhMuc.tenDanhMuc}"></td>
+                <td th:text="${sanpham.ngayDangKi}"></td>
+                <td th:text="${sanpham.tinhTrang}"></td>
+                <td>
+                    <a th:href="@{/admin/edit(id = ${sanpham.maSanPham})}">
+                        Sửa
+                    </a>
+                </td>
+                <td>
+                    <a style="background: red" data-toggle="modal" data-target="#exampleModal"
+                       th:onclick="preparedelete([[${sanpham.maSanPham}]],[[${sanpham.tenSanPham}]])">
+                        Xóa
+                    </a>
+                </td>
             </tr>
         </table>
 
 
+
+
+        <div class="center" th:if="${tensanpham == null}">
+            <span class="pagination">
+                <a th:if="${sanphams1.hasPrevious()}" th:href="@{/admin/list(page=${sanphams1.number - 1},)}">Trước</a>
+            </span>
+            <span class="pagination">
+
+<!--                   <div class="page-current"><span th:text="${nguoidungs.number + 1}"></span>/<span-->
+                <!--                           th:text="${nguoidungs.totalPages}"></span></div>-->
+
+                    <a th:href="@{/admin/list(page = ${pageNo})}" th:text="${sanphams1.number}"></a>
+            </span>
+            <span class="pagination">
+                <a th:if="${sanphams1.hasNext()}" th:href="@{/admin/list(page=${sanphams1.number + 1})}">Sau</a>
+            </span>
+        </div>
+
+
+        <div class="center" th:if="${tensanpham != null}">
+            <span class="pagination">
+                <a th:if="${sanphams1.hasPrevious()}"
+                   th:href="@{/admin/list(page=${sanphams1.number - 1}, tensanpham=${tensanpham})}">Trước</a>
+            </span>
+            <span class="pagination">
+                    <a th:href="@{/admin/list(page = ${pageNo},tensanpham=${tensanpham})}" th:text="${pageNo}"></a>
+            </span>
+            <span class="pagination">
+                <a th:if="${sanphams1.hasNext()}"
+                   th:href="@{/admin/list(page=${sanphams1.number + 1},tensanpham=${tensanpham})}">Sau</a>
+            </span>
+        </div>
     </div>
 </section>
+<div id="exampleModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body">
+                <span id="maSanPham"></span>
+                <p>Bạn có chắc chắn muốn xóa
+                    <span id="tenSanPham"></span>
+                    Không ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy
+                </button>
+                <button style="color: red" onclick="deleteService($('#maSanPham').html())" type="button"
+                        class="btn btn-default" data-dismiss="modal">
+                    Xóa
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function preparedelete(maSanPham, tenSanPham) {
 
+        $('#maSanPham').html(maSanPham)
+        $('#tenSanPham').html(tenSanPham)
+    }
 
-<!--<div th:replace="~{/luan/product-detail::chat}"></div>-->
+    function deleteService(maSanPham) {
+        console.log(maSanPham);
+        $.ajax(
+            {
+                type: 'get',
+                url: "/admin/delete/" + maSanPham,
+                success: function () {
+                    window.location.href = "/admin/list";
+                }
+            }
+        )
+    }
+</script>
+<!--<div th:replace="~{/nga/product-detail::chat}"></div>-->
 
 </div>
 <!--effec end here-->

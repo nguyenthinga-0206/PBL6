@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,38 +33,62 @@
 <header th:insert="~{/header_footer/header_admin::header}"></header>
 <nav th:insert="~{/nhu/admin/duyet::headerAdmin}"></nav>
 
-
 <section class="page-container">
     <div>
-        <h2>Thêm mới danh mục</h2>
+        <h2>Danh sách thành viên</h2>
     </div>
-    <hr>
-    <div class="data-table">
-        <form method="post" action="/danhmuc/create" th:object="${danhmucs}">
-            <fieldset>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Tên Danh Mục *</label>
-                    <div class="col-sm-8">
-                        <input type="text" th:field="*{tenDanhMuc}" class="form-control is-invalid" id="inputEmail3">
-                        <p style="color: red" th:if="${#fields.hasErrors('tenDanhMuc')}" th:errors="*{tenDanhMuc}"></p>
-                        <p style="color: red;font-size: 13px" th:if="${mgsdm}">Danh mục đã tồn tại.</p>
-
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-sm-3">
-                    </div>
-                    <div class="col-sm-2">
-                        <input type="submit" style="background:#1ab7ea;color: white" class="form-control"
-                               value="Thêm">
-                    </div>
-                </div>
-            </fieldset>
+    <div class="filter-side">
+        <form action="/admin/filter" method="post">
+            <label>Tên</label>
+            <input type="text" name="tenNguoiDung" id="mem-name"/>
+            <label>Địa chỉ</label>
+            <input type="text" name="diaChi" id="mem-add"/>
+            <button class="filter-btn" type="submit">Lọc kết quả</button>
+            <button id="add-btn" class="filter-btn"><a th:href="@{'/admin/add_member'}">Thêm mới </a><i
+                    class="fa fa-plus"></i>
+            </button>
         </form>
     </div>
-</section>
+    <hr>
+    <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
+    <div class="data-table">
+        <table id="mem-data">
+            <tr>
+                <th>STT</th>
+                <th>Tên thành viên</th>
+                <th>Ngày sinh</th>
+                <th>Địa chỉ</th>
+                <th>Email</th>
+                <th>SĐT</th>
+                <th>CMND</th>
+                <th>Thao tác</th>
+            </tr>
+            <tr th:each="nguoidung, nguoidungStat: ${nguoidungs}">
+                <td th:text="${nguoidung.maNguoiDung}"></td>
+                <td th:text="${nguoidung.tenNguoiDung}"></td>
+                <td th:text="${nguoidung.ngaySinh}"></td>
+                <td th:text="${nguoidung.diaChi}"></td>
+                <td th:text="${nguoidung.email}"></td>
+                <td th:text="${nguoidung.soDienThoai}"></td>
+                <td th:text="${nguoidung.cmnd}"></td>
+                <td><a th:href="@{/admin/editnd/{id}(id=${nguoidung.maNguoiDung})}">Sửa | </a><a
+                        th:href="@{/admin/deletend/{id}(id=${nguoidung.maNguoiDung})}">Xóa</a></td>
+            </tr>
+        </table>
 
-<!--<div th:replace="~{/luan/product-detail::chat}"></div>-->
+        <div class="center">
+            <div class="page-current"><span th:text="${nguoidungs.number + 1}"></span>/<span
+                    th:text="${nguoidungs.totalPages}"></span></div>
+            <div class="pagination">
+                <a th:href="@{'/admin/admin-member-list'(page=${nguoidungs.number - 1})}"
+                   th:if="${nguoidungs.hasPrevious()}">Previous</a>
+                <a th:href="@{'/admin/admin-member-list'(page=${nguoidungs.number + 1})}"
+                   th:if="${nguoidungs.hasNext()}">Next</a>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 </div>
 <!--effec end here-->
@@ -80,6 +104,3 @@
 <footer style="height: 0" th:insert="~{/header_footer/footer::footer}"></footer>
 </body>
 </html>
-
-
-

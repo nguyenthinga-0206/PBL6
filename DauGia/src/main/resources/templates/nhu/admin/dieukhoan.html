@@ -4,9 +4,9 @@
 
 <head>
     <title>Tư vấn</title>
-    <link rel="stylesheet" href="/css/styles_khoa/css/ionicons.min.css">
-    <link rel="stylesheet" href="/css/styles_khoa/css/header.css">
-    <link rel="stylesheet" href="/css/styles_khoa/css/style.css">
+    <link rel="stylesheet" href="/static/css/styles_nga/css/ionicons.min.css">
+    <link rel="stylesheet" href="/static/css/styles_nga/css/header.css">
+    <link rel="stylesheet" href="/static/css/styles_nga/css/style.css">
     <link href="/mot/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="/mot/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -182,19 +182,19 @@
         <div class="row" style=" background: #1ab7ea;">
             <div class="col-lg-5 navHeaderRight">
                 <a href="/">
-                    <img src="/css/styles_khoa/img/logo.png" class="logo" alt="logo">
+                    <img src="/static/css/styles_nga/img/logo.png" class="logo" alt="logo">
                 </a>
             </div>
             <div class="col-lg-6 navHeaderLeft">
                 <div class="containerHeaderLeft">
                     <div class="col-lg-6 itemHeaderLeft" th:unless="${nguoiDung}">
-                        <img src="/css/styles_khoa/img/auction-white.png" class="auction-white" alt="Đấu giá của tôi">
+                        <img src="/static/css/styles_nga/img/auction-white.png" class="auction-white" alt="Đấu giá của tôi">
                         <span class="txt"><a style="color: white" href="/singup">
                             Quay lại trang đăng ký
                         </a></span>
                     </div>
                     <div class="col-lg-3 itemHeaderLeft" th:if="${nguoiDung}">
-                        <img src="/css/styles_khoa/img/cart-white.png" class="cart-white" alt="Giỏ hàng">
+                        <img src="/static/css/styles_nga/img/cart-white.png" class="cart-white" alt="Giỏ hàng">
                         <span class="txt"> <a href="/showCart" style="color: white">
                             Giỏ hàng
                         </a></span>
@@ -202,7 +202,7 @@
                     <div class="col-lg-5 " th:if="${nguoiDung}">
                         <div class="dropdown">
                             <div class="dropdown__select">
-                                <img src="/css/styles_khoa/img/user.png" class="cart-white" alt="user">
+                                <img src="/static/css/styles_nga/img/user.png" class="cart-white" alt="user">
                                 <span class="dropdown__selected">Chào mừng, [[${nguoiDung.tenNguoiDung}]]</span>
                                 <i class="fa fa-caret-down dropdown__caret"></i>
                             </div>

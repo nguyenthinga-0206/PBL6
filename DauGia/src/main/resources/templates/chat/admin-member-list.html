@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/static/css/styles_nga/css/ionicons.min.css">
+    <link rel="stylesheet" href="/static/css/styles_nga/css/header.css">
+    <link rel="stylesheet" href="/static/css/styles_nga/css/style.css">
+    <link rel="stylesheet" href="/static/css/nga/chat.css">
+    <link href="/thang/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/thang/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/thang/js/jquery-1.11.0.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="/thang/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="/thang/css/flexslider.css" type="text/css" media="screen"/>
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="/static/css/nga/css-admin-member-listnhu.css"/>
+</head>
+<body>
+
+<header th:insert="~{/header_footer/header_admin::header}"></header>
+<nav th:insert="~{/nhu/admin/duyet::headerAdmin}"></nav>
+
+<section class="page-container">
+    <div>
+        <h2>Danh sách thành viên</h2>
+    </div>
+    <div class="filter-side">
+        <form action="/luan/filter" method="post">
+            <label>Tên</label>
+            <input type="text" name="tenNguoiDung" id="mem-name"/>
+            <label>Địa chỉ</label>
+            <input type="text" name="diaChi" id="mem-add"/>
+            <button class="filter-btn" type="submit">Lọc kết quả</button>
+            <button id="add-btn" class="filter-btn"><a th:href="@{'/luan/add_member'}">Thêm mới </a><i
+                    class="fa fa-plus"></i>
+            </button>
+        </form>
+    </div>
+    <hr>
+    <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
+    <div class="data-table">
+        <table id="mem-data">
+            <tr>
+                <th>STT</th>
+                <th>Tên thành viên</th>
+                <th>Ngày sinh</th>
+                <th>Địa chỉ</th>
+                <th>Email</th>
+                <th>SĐT</th>
+                <th>CMND</th>
+                <th>Thao tác</th>
+            </tr>
+            <tr th:each="nguoidung, nguoidungStat: ${nguoidungs}">
+                <td th:text="${nguoidung.maNguoiDung}"></td>
+                <td th:text="${nguoidung.tenNguoiDung}"></td>
+                <td th:text="${nguoidung.ngaySinh}"></td>
+                <td th:text="${nguoidung.diaChi}"></td>
+                <td th:text="${nguoidung.email}"></td>
+                <td th:text="${nguoidung.soDienThoai}"></td>
+                <td th:text="${nguoidung.cmnd}"></td>
+                <td><a th:href="@{/luan/edit/{id}(id=${nguoidung.maNguoiDung})}">Sửa | </a><a
+                        th:href="@{/luan/{id}/delete(id=${nguoidung.maNguoiDung})}">Xóa</a></td>
+            </tr>
+        </table>
+
+       
+    </div>
+</section>
+<div th:replace="~{/luan/product-detail::chat}"></div>
+
+</div>
+<!--effec end here-->
+<!--project star here-->
+<link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+<script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#nivo-lightbox-demo a').nivoLightbox({effect: 'fade'});
+    });
+</script>
+
+<footer style="height: 0" th:insert="~{/header_footer/footer::footer}"></footer>
+</body>
+</html>

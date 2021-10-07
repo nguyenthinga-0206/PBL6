@@ -24,8 +24,8 @@
           rel="stylesheet"/>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"/>
-    <link rel="stylesheet" href="/css/styles_khoa/css/ionicons.min.css">
-    <link rel="stylesheet" href="/css/styles_khoa/css/header.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/header.css">
 </head>
 <body>
 <header th:fragment="header" id="header">
@@ -59,43 +59,36 @@
         <div class="row" style=" background: #1ab7ea;">
             <div class="col-lg-5 navHeaderRight">
                 <a href="/">
-                    <img src="/css/styles_khoa/img/logo.png" class="logo" alt="logo">
+                    <img src="/css/styles_nga/img/logo.png" class="logo" alt="logo">
                 </a>
             </div>
             <div class="col-lg-6 navHeaderLeft">
                 <div class="containerHeaderLeft">
-                    <div class="col-lg-6 itemHeaderLeft">
-                        <img src="/css/styles_khoa/img/auction-white.png" class="auction-white" alt="Đấu giá của tôi">
+                    <div class="col-lg-6 itemHeaderLeft" th:unless="${nguoiDung}">
+                        <img src="/css/styles_nga/img/auction-white.png" class="auction-white" alt="Đấu giá của tôi">
                         <span class="txt"><a style="color: white" href="/login">
                             Chưa đăng nhập? Đăng nhập ngay
                         </a></span>
                     </div>
                     <div></div>
-                    <div class="col-lg-5 ">
+                    <div class="col-lg-5 " th:if="${nguoiDung}">
                         <div class="dropdown">
                             <div class="dropdown__select">
-                                <img src="/css/styles_khoa/img/user.png" class="cart-white" alt="user">
-                                <span class="dropdown__selected">Chào mừng,Quỳnh Như</span>
+                                <img src="/css/styles_nga/img/user.png" class="cart-white" alt="user">
+                                <span class="dropdown__selected">Chào mừng, [[${nguoiDung.tenNguoiDung}]]</span>
                                 <i class="fa fa-caret-down dropdown__caret"></i>
                             </div>
                             <ul class="dropdown__list">
                                 <li class="dropdown__item">
                                     <i class="fa fa-user dropdown__icon"></i>
                                     <span class="dropdown__text">
-                                          <a style="color:#005884;"
-                                             href="/nguoidung">Hồ Sơ Cá Nhân</a>
+                                        <a style="color:#005884;" th:if="${nguoiDung}" th:href="@{/phuoc/edit/__${nguoiDung.maNguoiDung}__}">Hồ Sơ Cá Nhân</a>
                                        </span>
                                 </li>
-                                <li class="dropdown__item">
-                                    <i class="fa fa-map-marker dropdown__icon"></i>
-                                    <span class="dropdown__text">Địa chỉ</span>
-                                </li>
-                                <li class="dropdown__item">
-                                    <i class="fa fa-bars dropdown__icon"></i>
-                                    <span class="dropdown__text"><a href="/showCart" style="color:#005884;">
-                                       Đơn hàng của tôi
-                                    </a></span>
-                                </li>
+                                <!--                                <li class="dropdown__item">-->
+                                <!--                                    <i class="fa fa-map-marker dropdown__icon"></i>-->
+                                <!--                                    <span class="dropdown__text">Địa chỉ</span>-->
+                                <!--                                </li>-->
                                 <li class="dropdown__item">
                                     <i class="fa fa-circle dropdown__icon"></i>
                                     <span class="dropdown__text">
@@ -107,6 +100,7 @@
 
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

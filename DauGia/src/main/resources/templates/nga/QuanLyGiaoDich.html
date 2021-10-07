@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,92 +33,61 @@
 <header th:insert="~{/header_footer/header_admin::header}"></header>
 <nav th:insert="~{/nhu/admin/duyet::headerAdmin}"></nav>
 
-
 <section class="page-container">
     <div>
-        <h2>Tất Cả Danh Mục</h2>
+        <h2> Quản Lý Giao Dịch</h2>
+    </div>
+    <div class="filter-side">
+        <form action="/admin/pagaList" method="post">
+            <label>Tên Người Dùng</label>
+            <input type="text" name="tenNguoiDung" id="mem-name"/>
+            <label>Tên Sản Phẩm</label>
+            <input type="text" name="tenSanPham" id="mem-add"/>
+            <button class="filter-btn" type="submit">Lọc kết quả</button>
+        </form>
     </div>
     <hr>
-
-    <div>
-        <span class="alert alert-success" th:utext="${mgsedit}" th:if="${mgsedit}"></span>
-    </div>
     <div class="data-table">
         <table id="mem-data">
             <tr>
-                <th>Mã Danh Mục</th>
-                <th>Tên Danh Mục</th>
-                <th>Sửa</th>
+                <th>STT</th>
+                <th>Mã giao dịch</th>
+                <th>Thời gian đấu giá thành công</th>
+                <th>Người mua</th>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th>Tình trạng giao dịch</th>
                 <th>Xóa</th>
             </tr>
-            <tr th:each="danhmuc : ${danhmucs}">
-                <td th:text="${danhmuc.maDanhMuc}"></td>
-                <!--            <td>John</td>-->
-                <td th:text="${danhmuc.tenDanhMuc}"></td>
+            <tr th:each="chitietDonHang,iterStat:${nguoidungs}">
+                <td th:text="${iterStat.count}"></td>
+                <td th:text="${chitietDonHang.donHang.maDonHang}"></td>
+                <td th:text="${chitietDonHang.donHang.ngayMua}"></td>
+                <td th:text="${chitietDonHang.donHang.nguoiDung.tenNguoiDung}"></td>
+                <td th:text="${chitietDonHang.sanPham.tenSanPham}"></td>
+                <td th:text="${chitietDonHang.soLuong}"></td>
+                <td th:text="${chitietDonHang.donHang.tongTien}"></td>
+                <td th:text="${chitietDonHang.donHang.trangThai}"></td>
+                <!--            <td><form action="" method="post"><a th:href="@{'/delete/'+${donHang.maDonHang}}"><button class="glyphicon glyphicon-pencil">Delete</button></a></form></td>-->
                 <td>
-                    <a th:href="@{/danhmuc/edit(id = ${danhmuc.maDanhMuc})}">
-                        Sửa
-                    </a>
-                </td>
-                <td>
-                    <a style="background: red" data-toggle="modal" data-target="#exampleModal"
-                       th:onclick="preparedelete([[${danhmuc.maDanhMuc}]],[[${danhmuc.tenDanhMuc}]])">
-                        Xóa
-                    </a>
+                    <a class="btn btn-success" th:href="@{/admin/{id}/deletegd(id=${chitietDonHang.donHang.maDonHang})}">Delete</a>
+
                 </td>
             </tr>
-
         </table>
-    </div>
-</section>
-<div id="exampleModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"
-                        aria-hidden="true">
-                    &times;
-                </button>
-            </div>
-            <div class="modal-body">
-                <span id="maDanhMuc"></span>
-                <p>Bạn có chắc chắn muốn xóa
-                    <span id="tenDanhMuc"></span>
-                    Không ?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy
-                </button>
-                <button style="color: red" onclick="deleteService($('#maDanhMuc').html())" type="button"
-                        class="btn btn-default" data-dismiss="modal">
-                    Xóa
-                </button>
+        <div class="center">
+            <div class="page-current"><span th:text="${nguoidungs.number + 1}"></span>/<span
+                    th:text="${nguoidungs.totalPages}"></span></div>
+            <div class="pagination">
+                <a th:href="@{'/admin/admin-quanlygiaodich'(page=${nguoidungs.number - 1})}"
+                   th:if="${nguoidungs.hasPrevious()}">Previous</a>
+                <a th:href="@{'/admin/admin-quanlygiaodich'(page=${nguoidungs.number + 1})}"
+                   th:if="${nguoidungs.hasNext()}">Next</a>
             </div>
         </div>
     </div>
-</div>
-<script>
-    function preparedelete(maDanhMuc, tenSanPham) {
-
-        $('#maDanhMuc').html(maDanhMuc)
-        $('#tenDanhMuc').html(tenDanhMuc)
-    }
-
-    function deleteService(maDanhMuc) {
-        console.log(maDanhMuc);
-        $.ajax(
-            {
-                type: 'get',
-                url: "/danhmuc/delete/" + maDanhMuc,
-                success: function () {
-                    window.location.href = "/danhmuc/list";
-                }
-            }
-        )
-    }
-</script>
-
-<!--<div th:replace="~{/luan/product-detail::chat}"></div>-->
+</section>
 
 </div>
 <!--effec end here-->
@@ -134,4 +103,3 @@
 <footer style="height: 0" th:insert="~{/header_footer/footer::footer}"></footer>
 </body>
 </html>
-

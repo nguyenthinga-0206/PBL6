@@ -32,7 +32,7 @@ public class NguoiDungController {
         Pageable pageable = PageRequest.of(page, 5);
         nguoiDungs = nguoiDungService.findAll(pageable);
         model1.addAttribute("nguoidungs", nguoiDungs);
-        return "luan/admin-member-list";
+        return "nga/admin-member-list";
     }
 
     @PostMapping("/filter")
@@ -59,7 +59,7 @@ public class NguoiDungController {
         model.addAttribute("tenNguoiDung", tenNguoiDung);
         model.addAttribute("nguoidungs", nguoiDungs);
         model.addAttribute("diaChi", diaChi);
-        return "/luan/admin-member-list";
+        return "/nga/admin-member-list";
     }
 
     @GetMapping("/add_member")

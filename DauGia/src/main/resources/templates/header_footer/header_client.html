@@ -24,8 +24,8 @@
           rel="stylesheet"/>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"/>
-    <link rel="stylesheet" href="/css/styles_khoa/css/ionicons.min.css">
-    <link rel="stylesheet" href="/css/styles_khoa/css/header.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/header.css">
 </head>
 <body>
 <header th:fragment="header" id="header">
@@ -59,30 +59,30 @@
         <div class="row" style=" background: #1ab7ea;">
             <div class="col-lg-5 navHeaderRight">
                 <a href="/">
-                    <img src="/css/styles_khoa/img/logo.png" class="logo" alt="logo">
+                    <img src="/css/styles_nga/img/logo.png" class="logo" alt="logo">
                 </a>
             </div>
             <div class="col-lg-6 navHeaderLeft">
                 <div class="containerHeaderLeft">
-                    <div class="col-lg-6 itemHeaderLeft">
-                        <img src="/css/styles_khoa/img/auction-white.png" class="auction-white" alt="Đấu giá của tôi">
+                    <div class="col-lg-6 itemHeaderLeft" th:unless="${nguoiDung}">
+                        <img src="/css/styles_nga/img/auction-white.png" class="auction-white" alt="Đấu giá của tôi">
                         <span class="txt"><a style="color: white" href="/login">
                             Chưa đăng nhập? Đăng nhập ngay
                         </a></span>
                     </div>
                     <div></div>
-                    <div class="col-lg-5 ">
+                    <div class="col-lg-5 " th:if="${nguoiDung}">
                         <div class="dropdown">
                             <div class="dropdown__select">
-                                <img src="/css/styles_khoa/img/user.png" class="cart-white" alt="user">
-                                <span class="dropdown__selected">Chào mừng, quỳnh như</span>
+                                <img src="/css/styles_nga/img/user.png" class="cart-white" alt="user">
+                                <span class="dropdown__selected">Chào mừng, [[${nguoiDung.tenNguoiDung}]]</span>
                                 <i class="fa fa-caret-down dropdown__caret"></i>
                             </div>
                             <ul class="dropdown__list">
                                 <li class="dropdown__item">
                                     <i class="fa fa-user dropdown__icon"></i>
                                     <span class="dropdown__text">
-                                        <a style="color:#005884;">Hồ Sơ Cá Nhân</a>
+                                        <a style="color:#005884;" th:if="${nguoiDung}" th:href="@{/phuoc/edit/__${nguoiDung.maNguoiDung}__}">Hồ Sơ Cá Nhân</a>
                                        </span>
                                 </li>
                                 <!--                                <li class="dropdown__item">-->
@@ -107,45 +107,54 @@
                         </div>
                     </div>
                     <div class="col-lg-5 ">
-                        <div class="dropdown">
-                            <div class="dropdown__select">
+                        <div class="dropdown" sec:authorize ="isAuthenticated()">
+                            <div class="dropdown__select" sec:authorize="hasRole('ADMIN') or hasRole('SHOP')">
                                 <span class="dropdown__selected"> Tài khoản</span>
                                 <i class="fa fa-caret-down dropdown__caret"></i>
                             </div>
-                            <ul class="dropdown__list">
-                                <li class="dropdown__item">
+                            <ul class="dropdown__list" sec:authorize="hasRole('ADMIN') or hasRole('SHOP')">
+                                <li class="dropdown__item" th:if="${admin == null}">
                                     <i class="fa fa-map-marker dropdown__icon"></i>
                                     <span class="dropdown__text">
-                                        <a class="dropdown-item" href="/sanpham/list">Sản phẩm</a>
+                                        <a class="dropdown-item"  href="/sanpham/list">Sản phẩm</a>
                                     </span>
                                 </li>
-                                <li class="dropdown__item">
+                                <li class="dropdown__item" th:if="${admin == null}">
                                     <i class="fa fa-bars dropdown__icon"></i>
-                                    <span class="dropdown__text"><a class="dropdown-item" href="/sanpham/create">Thêm mới Sản phẩm</a>
+                                    <span class="dropdown__text" ><a class="dropdown-item"  href="/sanpham/create">Thêm mới Sản phẩm</a>
                                         </a></span>
                                 </li>
-                                <li class="dropdown__item">
+                                <li class="dropdown__item" th:if="${admin == null}" >
                                     <i class="fa fa-circle dropdown__icon"></i>
                                     <span class="dropdown__text">
-                                            <a class="dropdown-item" href="/sanpham/listduyet">Sản phẩm chờ
+                                            <a class="dropdown-item"  href="/sanpham/listduyet">Sản phẩm chờ
                                             duyệt</a>
                                     </span>
                                 </li>
-                                <li class="dropdown__item">
+                                <li class="dropdown__item" th:if="${admin == null}">
                                     <i class="fa fa-circle dropdown__icon"></i>
                                     <span class="dropdown__text">
-                                            <a class="dropdown-item"
-                                               href="/sanpham/listkoduyet">Sản phẩm Không duyệt</a>
+                                            <a class="dropdown-item"  href="/sanpham/listkoduyet">Sản phẩm Không duyệt</a>
                                     </span>
-
+                                </li>
+                                <li class="dropdown__item" th:if="${admin != null}" >
+                                    <i class="fa fa-circle dropdown__icon"></i>
+                                    <span class="dropdown__text">
+                                           <a class="dropdown-item" href="/admin/"> Truy Cập Trang Quản Trị</a>
+                                    </span>
+                                </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 itemHeaderLeft" style="    margin-left: -90px;
+                    <div class="col-lg-3 itemHeaderLeft" th:if="${nguoiDung}" style="    margin-left: -90px;
     margin-top: 15px;">
                         <a class="btn btn-sm ml-3" href="/showCart" style="color: white;font-weight: bold;">
-                            <i class="fa fa-shopping-cart" style="font-size: 22px"></i> Giỏ hàng
+                            <i class="fa fa-shopping-cart" style="font-size: 22px"></i>   Giỏ hàng
                         </a>
+                        <!--                        <img src="/css/styles_nga/img/cart-white.png" class="cart-white" alt="Giỏ hàng">-->
+                        <!--                        <span class="txt"> <a href="/showCart" style="color: white">-->
+                        <!--                            Giỏ hàng-->
+                        <!--                        </a></span>-->
                     </div>
                 </div>
             </div>

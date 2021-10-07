@@ -45,20 +45,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
 
 
-//        http.authorizeRequests().antMatchers("/sanpham/**").access("hasAnyRole('ROLE_ADMIN','ROLE_SHOP')");
-//
-//        // admin vào quản trị admiin và danh mục
-//        http.authorizeRequests().antMatchers("/admin/**", "/danhmuc/**", "/luan/**", "/hai/**").access("hasAnyRole('ROLE_ADMIN')");
-//
-//        // shop  admin và user đều đc đấu giá
-//        http.authorizeRequests().antMatchers("/daugia/**", "/afterLogin/**", "/user/**").access("hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_SHOP')");
-//
-//
-//        // nếu không có quyền trả về  /403
-//        http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
+        http.authorizeRequests().antMatchers("/sanpham/**").access("hasAnyRole('ROLE_ADMIN','ROLE_SHOP')");
+
+        // admin vào quản trị admiin và danh mục
+        http.authorizeRequests().antMatchers("/admin/**", "/danhmuc/**", "/nga/**", "/nha/**").access("hasAnyRole('ROLE_ADMIN')");
+
+        // shop  admin và user đều đc đấu giá
+        http.authorizeRequests().antMatchers("/daugia/**", "/afterLogin/**", "/user/**").access("hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_SHOP')");
+
+
+        // nếu không có quyền trả về  /403
+        http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
 
         // Các trang không yêu cầu login
-        http.authorizeRequests().antMatchers("/admin/**","/sanpham/**","/", "/login", "/logout").permitAll();
+        http.authorizeRequests().antMatchers("/", "/login", "/logout").permitAll();
 
 //
         // Trang /userInfo yêu cầu phải login với vai trò ROLE_USER hoặc ROLE_ADMIN.

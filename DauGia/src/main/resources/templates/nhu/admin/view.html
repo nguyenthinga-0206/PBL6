@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/styles_khoa/css/ionicons.min.css">
-    <link rel="stylesheet" href="/css/styles_khoa/css/header.css">
-    <link rel="stylesheet" href="/css/styles_khoa/css/style.css">
-    <link rel="stylesheet" href="/css/luan/chat.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/header.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/style.css">
+    <link rel="stylesheet" href="/css/nga/chat.css">
     <link href="/mot/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="/mot/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
     <script src="/mot/js/jquery-1.11.0.min.js"></script>
@@ -26,149 +26,135 @@
     <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="/css/luan/css-admin-member-listnhu.css"/>
+    <link rel="stylesheet" href="/css/nga/css-admin-member-listnhu.css"/>
 </head>
 <body>
-
 <header th:insert="~{/header_footer/header_admin::header}"></header>
-<nav th:fragment="headerAdmin" class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 60px">
-    <div class="container">
-        <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll"
-                style="max-height: 100px;margin-left: 155px">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                       data-toggle="dropdown" aria-expanded="false">
-                        Quản Lý Sản Phẩm
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                        <li><a class="dropdown-item" href="/admin/list">Tất Cả Sản Phẩm</a></li>
-                        <li><a class="dropdown-item" href="/admin/duyet">Sản Phẩm Chờ Phê Duyệt</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                       data-toggle="dropdown" aria-expanded="false">
-                        Quản Lý Giao Dịch
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                        <li><a class="dropdown-item" href="/admin/admin-quanlygiaodich">Tất Cả Giao Dịch</a></li>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                       data-toggle="dropdown" aria-expanded="false">
-                        Quản Lý Danh Mục
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown1">
-                        <li><a class="dropdown-item" href="/danhmuc/list">Tất cả danh mục</a></li>
-                        <li><a class="dropdown-item" href="/danhmuc/create">Thêm mới danh mục</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                       data-toggle="dropdown" aria-expanded="false">
-                        Quản Lý Thành Viên
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown1">
-                        <li><a class="dropdown-item" href="http://localhost:8080/luan/admin-member-list">Tài Khoản Thành
-                            Viên</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<nav th:insert="~{/nhu/admin/duyet::headerAdmin}"></nav>
 <div class="row">
     <div class="col-sm-2">
 
     </div>
     <div class="col-sm-8">
         <div class="container">
-            <form method="post" action="/admin/duyetok">
+            <form method="post" action="/admin/duyetok" th:object="${sanphams}">
                 <div class="services-top">
                     <h3 class="btn btn-secondary"> Chi Tiết Sản Phẩm Cần Duyệt </h3>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Mã Sản Phẩm:</label>
                     <div class="col-sm-8">
-                        <span> MSP01 </span>
+                        <span th:utext="*{maSanPham}">  </span>
+                        <input type="text" th:field="*{maSanPham}" class="form-control is-invalid" hidden="hidden">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Tên sản phẩm:</label>
                     <div class="col-sm-8">
-                        <span>Áo Khoác</span>
+                        <span th:utext="*{tenSanPham}"></span>
+                        <input type="text" th:field="*{tenSanPham}" class="form-control is-invalid" hidden="hidden">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Người đăng:</label>
                     <div class="col-sm-8">
-                        <span>Quỳnh Như</span>
-
+                        <span th:utext="${sanphams.taiKhoan.nguoiDung.tenNguoiDung}"></span>
+                        <select class="form-control  is-invalid" th:field="*{taiKhoan}" hidden="hidden">
+                            <option th:text="${sanphams.taiKhoan.nguoiDung.tenNguoiDung}"
+                                    th:value="${sanphams.taiKhoan.taiKhoan}" class="form-control is-invalid"></option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Số Lượng:</label>
                     <div class="col-sm-8">
-                        <span>77</span>
+                        <span th:utext="*{soLuong}"></span>
+                        <input type="number" th:field="*{soLuong}" class="form-control is-invalid" hidden="hidden">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label readonly class="col-sm-3 col-form-label">Danh Mục:</label>
                     <div class="col-sm-8">
-
-                        <span>Thời Trang</span>
+                        <select class="form-control  is-invalid" th:field="*{danhMuc}" hidden="hidden">
+                            <option th:text="${sanphams.danhMuc.tenDanhMuc}"
+                                    th:value="${sanphams.danhMuc.maDanhMuc}"></option>
+                        </select>
+                        <span th:utext="${sanphams.danhMuc.tenDanhMuc}"></span>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Hình ảnh sản phẩm:</label>
                     <div class="col-sm-8">
-                        <img style="height: 250px;width: auto;" src="/img/6.jpg" alt="lỗi ảnh!">
+                        <img style="height: 250px;width: auto;" th:src="@{${'/img/' + sanphams.hinh}}"  alt="lỗi ảnh!">
                         <br/>
+                        <span th:utext="*{hinh}"></span>
+                        <input type="text" th:field="*{hinh}" hidden="hidden">
                     </div>
                 </div>
 
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Giá ban đầu:</label>
+                    <div class="col-sm-8">
+                        <span th:utext="*{giaKhoiDiem}"></span>
+                        <input type="number" th:field="*{giaKhoiDiem}" class="form-control is-invalid" hidden="hidden">
+                    </div>
+                </div>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Bước giá:</label>
                     <div class="col-sm-8">
-                        <span>67</span>
-
+                        <span th:utext="*{mucGia}"></span>
+                        <input th:field="*{mucGia}" type="number" class="form-control is-invalid"
+                               placeholder="Là giá thấp nhất trong mỗi lần tăng giá" hidden="hidden">
                     </div>
                 </div>
-
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Giờ bắt đầu:</label>
+                    <div class="col-sm-5">
+                        <span th:utext="*{gioBatDau}"></span>
+                        <input type="time" th:field="*{gioBatDau}" class="form-control is-invalid" hidden="hidden">
+                    </div>
+                </div>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Ngày Bắt đầu:</label>
                     <div class="col-sm-5">
-                        <span>03/05/2003</span>
+                        <span th:utext="*{ngayBatDau}"></span>
+                        <input type="date" th:field="*{ngayBatDau}" class="form-control is-invalid" hidden="hidden">
                     </div>
                 </div>
-
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Giờ Kết thúc:</label>
+                    <div class="col-sm-5">
+                        <span th:utext="*{gioKetThuc}"></span>
+                        <input type="time" th:field="*{gioKetThuc}" class="form-control is-invalid" hidden="hidden">
+                    </div>
+                </div>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Ngày kết thúc:</label>
                     <div class="col-sm-5">
-                        <span> <span>03/05/2003</span></span>
+                        <span th:utext="*{ngayKetThuc}"></span>
+                        <input type="date" th:field="*{ngayKetThuc}" class="form-control is-invalid" hidden="hidden">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Thông tin chi tiết:</label>
-                    <div class="col-sm-8">
-                        <textarea type="textarea" class="form-control is-invalid" rows="6"> xin chàoooooooooooooooooooooooooooooo</textarea>
+                    <div class="col-sm-9">
+                        <span th:utext="*{moTa}"></span>
+                        <textarea type="textarea" th:field="*{moTa}" class="form-control is-invalid" rows="6"
+                                  hidden="hidden"> </textarea>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Ngày đăng ký:</label>
                     <div class="col-sm-7">
-                        <span>03/05/2003</span>
+                        <span th:utext="*{ngayDangKi}"></span>
+                        <input type="date" th:field="*{ngayDangKi}" class="form-control is-invalid" hidden="hidden">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Tình Trạng:</label>
                     <div class="col-sm-7">
-                        <span>Đã duyệt</span>
+                        <span th:utext="*{tinhTrang}"></span>
+                        <input type="text" th:field="*{tinhTrang}" class="form-control is-invalid" hidden="hidden">
                     </div>
                 </div>
                 <div class="form-group row">

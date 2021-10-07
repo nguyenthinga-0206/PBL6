@@ -4,10 +4,10 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <title>Trang chủ</title>
-    <link rel="stylesheet" href="/css/styles_khoa/css/ionicons.min.css">
-    <link rel="stylesheet" href="/css/styles_khoa/css/header.css">
-    <link rel="stylesheet" href="/css/styles_khoa/css/style.css">
-    <link rel="stylesheet" href="/css/luan/chat.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/header.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/style.css">
+    <link rel="stylesheet" href="/css/nga/chat.css">
 
     <link href="/mot/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="/mot/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
@@ -82,11 +82,9 @@
                 <input class="form-control mr-2" type="search" name="tenSp" placeholder="Tên Sản Phẩm"
                        aria-label="Search" style="width: 300px;margin-left: 20px">
                 <select name="maDanhMuc" class="form-control mr-2 custom-select">
-                    <option>Tất cả danh mục</option>
-                    <option >Sách</option>
-                    <option>Thời trang</option>
-                    <option >Điện thoại</option>
-                    <option >Đồ dùng</option>
+                    <option th:value="0">Tất cả danh mục</option>
+                    <option th:each="danhmuc: ${danhmucs}" th:text="${danhmuc.tenDanhMuc}"
+                            th:value="${danhmuc.maDanhMuc}"></option>
                 </select>
                 <button type="submit" class="btn btn-secondary" style="margin-left: 20px">Tìm kiếm
                 </button>
@@ -94,11 +92,54 @@
         </div>
     </div>
 </nav>
+<div class="services">
+    <div class="container">
+        <div class="services-main">
+            <div class="services-top">
+                <h3 class="btn btn-secondary">Sản phẩm thường dùng</h3>
+                <!--                <p>Great design is about more than style,it,s about being yoursel</p>-->
+            </div>
+            <center>
+                <div>
+                    <span class="alert alert-success" th:if="${mgskt}">Không có sản phẩm bạn muốn tìm kiếm</span>
+                </div>
+            </center>
+            <div class="services-bottom">
+                <div class="row">
+                    <div class="col-sm-6 col-md-2 ser item-dau-gia" th:if="${listSP}" th:each="sanPham:${listSP}">
+                        <p hidden="hidden" class="gioKetThuc" th:text="${sanPham.gioKetThuc}"></p>
+                        <div class="thumbnail itemProduct">
+                            <div class="img-dau-gia">
+                                <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}">
+                                    <img th:src="@{${'/img/' + sanPham.hinh}}"
+                                         alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}"><h3
+                                        th:text="${sanPham.tenSanPham}" class="nameProduct"></h3>
+                                    <p th:text="${sanPham.danhMuc.tenDanhMuc}"></p></a>
+                                <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                                    <span class="col-md-6 time"></span>
+                                    <p class="col-md-6 price"
+                                       th:text="${#numbers.formatDecimal(sanPham.giaKhoiDiem, 0, 'POINT', 0, 'COMMA')}+' VND'">
+                                        30.000đ</p>
+                                </div>
+                                <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}"
+                                   class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<div class="container">
+<div class="container" th:if="${thoiTrang}">
     <div class="slide__button">
         <div class="slide__title">
-            <h3 class="btn btn-secondary">Sản phẩm Sách</h3>
+            <h3 class="btn btn-secondary">Sản phẩm thời trang</h3>
         </div>
         <div class="slide__button">
             <div onclick="prev()" class="control-prev-btn" style="">
@@ -111,119 +152,33 @@
     </div>
     <div class="row">
         <div id="slider-container" class="slider">
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
+            <div class="slide" th:each="sanPham:${thoiTrang}">
+                <p hidden="hidden" class="gioKetThuc" th:text="${sanPham.gioKetThuc}"></p>
                 <div class="img-dau-gia">
-                    <a><img
-                            src="/img/3.jpg" alt=""></a>
+                    <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}"><img
+                            th:src="@{${'/img/' + sanPham.hinh}}" alt=""></a>
                 </div>
                 <div class="caption">
                     <div class="product__space">
                         <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
+                            <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}">
+                                <h3
+                                        th:text="${sanPham.tenSanPham}" class="nameProduct">
+
                                 </h3>
-                                <p>Thời trang</p></a>
+                                <p th:text="${sanPham.danhMuc.tenDanhMuc}"></p></a>
                         </div>
                         <div class="img__button">
-                            <a href="#">Đấu Giá</a>
+                            <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}">Đấu Giá</a>
                         </div>
                     </div>
 
                     <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
                         <span class="col-md-6 time"></span>
                         <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                           th:text="${#numbers.formatDecimal(sanPham.giaKhoiDiem, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
                     </div>
-                    <a href="#"
-                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
-                </div>
-            </div>
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
-                <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="product__space">
-                        <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
-                                </h3>
-                                <p>Thời trang</p></a>
-                        </div>
-                        <div class="img__button">
-                            <a href="#">Đấu Giá</a>
-                        </div>
-                    </div>
-
-                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                        <span class="col-md-6 time"></span>
-                        <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                    </div>
-                    <a href="#"
-                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
-                </div>
-            </div>
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
-                <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="product__space">
-                        <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
-                                </h3>
-                                <p>Thời trang</p></a>
-                        </div>
-                        <div class="img__button">
-                            <a href="#">Đấu Giá</a>
-                        </div>
-                    </div>
-
-                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                        <span class="col-md-6 time"></span>
-                        <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                    </div>
-                    <a href="#"
-                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
-                </div>
-            </div>
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
-                <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="product__space">
-                        <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
-                                </h3>
-                                <p>Thời trang</p></a>
-                        </div>
-                        <div class="img__button">
-                            <a href="#">Đấu Giá</a>
-                        </div>
-                    </div>
-
-                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                        <span class="col-md-6 time"></span>
-                        <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                    </div>
-                    <a href="#"
+                    <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}"
                        class="btn btn-dau-gia btn-secondary">Đấu giá</a>
                 </div>
             </div>
@@ -231,135 +186,102 @@
         </div>
     </div>
 </div>
-<div class="container">
+
+<div class="container" th:if="${sach}">
     <div class="slide__button">
         <div class="slide__title">
-            <h3 class="btn btn-secondary">Sản phẩm thời trang</h3>
+            <h3 class="btn btn-secondary">Sách</h3>
         </div>
         <div class="slide__button">
-            <div onclick="prev()" class="control-prev-btn" style="">
+            <div onclick="prev1()" class="control-prev-btn" style="">
                 <i class="fas fa-arrow-left"></i>
             </div>
-            <div onclick="next()" class="control-next-btn">
+            <div onclick="next1()" class="control-next-btn">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="slider-container1" class="slider">
+            <div class="slide" th:each="sanPham:${sach}">
+                <p hidden="hidden" class="gioKetThuc" th:text="${sanPham.gioKetThuc}"></p>
+
+                <div class="img-dau-gia">
+                    <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}"><img
+                            th:src="@{${'/img/' + sanPham.hinh}}" alt=""></a>
+                </div>
+                <div class="caption">
+                    <div class="product__space">
+                        <div class="product__info">
+                            <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}">
+                                <h3
+                                        th:text="${sanPham.tenSanPham}" class="nameProduct">
+
+                                </h3>
+                                <p th:text="${sanPham.danhMuc.tenDanhMuc}"></p></a>
+                        </div>
+                        <div class="img__button">
+                            <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}">Đấu Giá</a>
+                        </div>
+                    </div>
+
+                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
+                        <span class="col-md-6 time"></span>
+                        <p class="col-md-6 price"
+                           th:text="${#numbers.formatDecimal(sanPham.giaKhoiDiem, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                    </div>
+                    <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}"
+                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
+                </div>
+            </div>
+            <div class="overlay"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container" th:if="${phuongTien}">
+    <div class="slide__button">
+        <div class="slide__title">
+            <h3 class="btn btn-secondary">Phương tiện</h3>
+        </div>
+        <div class="slide__button">
+            <div onclick="prev2()" class="control-prev-btn" style="">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div onclick="next2()" class="control-next-btn">
                 <i class="fas fa-arrow-right"></i>
             </div>
         </div>
     </div>
     <div class="row">
         <div id="slider-container2" class="slider">
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
+            <div class="slide" th:each="sanPham:${phuongTien}">
+                <p hidden="hidden" class="gioKetThuc" th:text="${sanPham.gioKetThuc}"></p>
+
                 <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
+                    <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}"><img
+                            th:src="@{${'/img/' + sanPham.hinh}}" alt=""></a>
                 </div>
                 <div class="caption">
                     <div class="product__space">
                         <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
+                            <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}">
+                                <h3
+                                        th:text="${sanPham.tenSanPham}" class="nameProduct">
                                 </h3>
-                                <p>Thời trang</p></a>
+                                <p th:text="${sanPham.danhMuc.tenDanhMuc}"></p></a>
                         </div>
                         <div class="img__button">
-                            <a href="#">Đấu Giá</a>
+                            <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}">Đấu Giá</a>
                         </div>
                     </div>
 
                     <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
                         <span class="col-md-6 time"></span>
                         <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                           th:text="${#numbers.formatDecimal(sanPham.giaKhoiDiem, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
                     </div>
-                    <a href="#"
-                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
-                </div>
-            </div>
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
-                <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="product__space">
-                        <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
-                                </h3>
-                                <p>Thời trang</p></a>
-                        </div>
-                        <div class="img__button">
-                            <a href="#">Đấu Giá</a>
-                        </div>
-                    </div>
-
-                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                        <span class="col-md-6 time"></span>
-                        <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                    </div>
-                    <a href="#"
-                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
-                </div>
-            </div>
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
-                <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="product__space">
-                        <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
-                                </h3>
-                                <p>Thời trang</p></a>
-                        </div>
-                        <div class="img__button">
-                            <a href="#">Đấu Giá</a>
-                        </div>
-                    </div>
-
-                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                        <span class="col-md-6 time"></span>
-                        <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                    </div>
-                    <a href="#"
-                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
-                </div>
-            </div>
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
-                <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="product__space">
-                        <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
-                                </h3>
-                                <p>Thời trang</p></a>
-                        </div>
-                        <div class="img__button">
-                            <a href="#">Đấu Giá</a>
-                        </div>
-                    </div>
-
-                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                        <span class="col-md-6 time"></span>
-                        <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                    </div>
-                    <a href="#"
+                    <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}"
                        class="btn btn-dau-gia btn-secondary">Đấu giá</a>
                 </div>
             </div>
@@ -367,135 +289,50 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container" th:if="${laptop}">
     <div class="slide__button">
         <div class="slide__title">
-            <h3 class="btn btn-secondary">Sản phẩm thời trang</h3>
+            <h3 class="btn btn-secondary">Máy tính và laptop</h3>
         </div>
         <div class="slide__button">
-            <div onclick="prev()" class="control-prev-btn" style="">
+            <div onclick="prev3()" class="control-prev-btn" style="">
                 <i class="fas fa-arrow-left"></i>
             </div>
-            <div onclick="next()" class="control-next-btn">
+            <div onclick="next3()" class="control-next-btn">
                 <i class="fas fa-arrow-right"></i>
             </div>
         </div>
     </div>
     <div class="row">
         <div id="slider-container3" class="slider">
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
+            <div class="slide" th:each="sanPham:${laptop}">
+                <p hidden="hidden" class="gioKetThuc" th:text="${sanPham.gioKetThuc}"></p>
+
                 <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
+                    <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}"><img
+                            th:src="@{${'/img/' + sanPham.hinh}}" alt=""></a>
                 </div>
                 <div class="caption">
                     <div class="product__space">
                         <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
+                            <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}">
+                                <h3
+                                        th:text="${sanPham.tenSanPham}" class="nameProduct">
+
                                 </h3>
-                                <p>Thời trang</p></a>
+                                <p th:text="${sanPham.danhMuc.tenDanhMuc}"></p></a>
                         </div>
                         <div class="img__button">
-                            <a href="#">Đấu Giá</a>
+                            <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}">Đấu Giá</a>
                         </div>
                     </div>
 
                     <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
                         <span class="col-md-6 time"></span>
                         <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                           th:text="${#numbers.formatDecimal(sanPham.giaKhoiDiem, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
                     </div>
-                    <a href="#"
-                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
-                </div>
-            </div>
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
-                <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="product__space">
-                        <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
-                                </h3>
-                                <p>Thời trang</p></a>
-                        </div>
-                        <div class="img__button">
-                            <a href="#">Đấu Giá</a>
-                        </div>
-                    </div>
-
-                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                        <span class="col-md-6 time"></span>
-                        <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                    </div>
-                    <a href="#"
-                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
-                </div>
-            </div>
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
-                <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="product__space">
-                        <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
-                                </h3>
-                                <p>Thời trang</p></a>
-                        </div>
-                        <div class="img__button">
-                            <a href="#">Đấu Giá</a>
-                        </div>
-                    </div>
-
-                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                        <span class="col-md-6 time"></span>
-                        <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                    </div>
-                    <a href="#"
-                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
-                </div>
-            </div>
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
-                <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="product__space">
-                        <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
-                                </h3>
-                                <p>Thời trang</p></a>
-                        </div>
-                        <div class="img__button">
-                            <a href="#">Đấu Giá</a>
-                        </div>
-                    </div>
-
-                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                        <span class="col-md-6 time"></span>
-                        <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                    </div>
-                    <a href="#"
+                    <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}"
                        class="btn btn-dau-gia btn-secondary">Đấu giá</a>
                 </div>
             </div>
@@ -503,135 +340,49 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container" th:if="${dongHo}">
     <div class="slide__button">
         <div class="slide__title">
-            <h3 class="btn btn-secondary">Sản phẩm thời trang</h3>
+            <h3 class="btn btn-secondary">Đồng hồ</h3>
         </div>
         <div class="slide__button">
-            <div onclick="prev()" class="control-prev-btn" style="">
+            <div onclick="prev4()" class="control-prev-btn" style="">
                 <i class="fas fa-arrow-left"></i>
             </div>
-            <div onclick="next()" class="control-next-btn">
+            <div onclick="next4()" class="control-next-btn">
                 <i class="fas fa-arrow-right"></i>
             </div>
         </div>
     </div>
     <div class="row">
         <div id="slider-container4" class="slider">
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
+            <div class="slide" th:each="sanPham:${dongHo}">
+                <p hidden="hidden" class="gioKetThuc" th:text="${sanPham.gioKetThuc}"></p>
                 <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
+                    <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}"><img
+                            th:src="@{${'/img/' + sanPham.hinh}}" alt=""></a>
                 </div>
                 <div class="caption">
                     <div class="product__space">
                         <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
+                            <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}">
+                                <h3
+                                        th:text="${sanPham.tenSanPham}" class="nameProduct">
+
                                 </h3>
-                                <p>Thời trang</p></a>
+                                <p th:text="${sanPham.danhMuc.tenDanhMuc}"></p></a>
                         </div>
                         <div class="img__button">
-                            <a href="#">Đấu Giá</a>
+                            <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}">Đấu Giá</a>
                         </div>
                     </div>
 
                     <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
                         <span class="col-md-6 time"></span>
                         <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                           th:text="${#numbers.formatDecimal(sanPham.giaKhoiDiem, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
                     </div>
-                    <a href="#"
-                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
-                </div>
-            </div>
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
-                <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="product__space">
-                        <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
-                                </h3>
-                                <p>Thời trang</p></a>
-                        </div>
-                        <div class="img__button">
-                            <a href="#">Đấu Giá</a>
-                        </div>
-                    </div>
-
-                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                        <span class="col-md-6 time"></span>
-                        <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                    </div>
-                    <a href="#"
-                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
-                </div>
-            </div>
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
-                <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="product__space">
-                        <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
-                                </h3>
-                                <p>Thời trang</p></a>
-                        </div>
-                        <div class="img__button">
-                            <a href="#">Đấu Giá</a>
-                        </div>
-                    </div>
-
-                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                        <span class="col-md-6 time"></span>
-                        <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                    </div>
-                    <a href="#"
-                       class="btn btn-dau-gia btn-secondary">Đấu giá</a>
-                </div>
-            </div>
-            <div class="slide">
-                <p hidden="hidden" class="gioKetThuc"></p>
-                <div class="img-dau-gia">
-                    <a><img
-                            src="/img/2.jpg" alt=""></a>
-                </div>
-                <div class="caption">
-                    <div class="product__space">
-                        <div class="product__info">
-                            <a>
-                                <h3 class="nameProduct">
-                                    Áo thun
-                                </h3>
-                                <p>Thời trang</p></a>
-                        </div>
-                        <div class="img__button">
-                            <a href="#">Đấu Giá</a>
-                        </div>
-                    </div>
-
-                    <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                        <span class="col-md-6 time"></span>
-                        <p class="col-md-6 price"
-                           th:text="${#numbers.formatDecimal(66, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                    </div>
-                    <a href="#"
+                    <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}"
                        class="btn btn-dau-gia btn-secondary">Đấu giá</a>
                 </div>
             </div>
@@ -639,9 +390,6 @@
         </div>
     </div>
 </div>
-
-
-
 <!--services end here-->
 <!--effec start here-->
 <div class="more-category pt-5">
@@ -761,7 +509,7 @@
 
     </div>
 </div>
-<!--<div th:replace="~{/luan/product-detail::chat}">-->
+<div th:replace="~{/luan/product-detail::chat}">
 
 </div>
 <!--effec end here-->
@@ -863,9 +611,9 @@
     });
 </script>
 
-<!--<script src="/mot/js/countTime.js"></script>-->
-<script src="/static/js/chat-responses.js"></script>
-<script src="/static/js/chat.js"></script>
+<!--<script src="/thang/js/countTime.js"></script>-->
+<script src="/js/chat-responses.js"></script>
+<script src="/js/chat.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -880,4 +628,5 @@
         crossorigin="anonymous"></script>
 <!--footer end here-->
 </body>
+
 </html>

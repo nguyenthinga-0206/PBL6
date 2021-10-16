@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/static/css/styles_nga/css/ionicons.min.css">
-    <link rel="stylesheet" href="/static/css/styles_nga/css/header.css">
-    <link rel="stylesheet" href="/static/css/styles_nga/css/style.css">
-    <link rel="stylesheet" href="/static/css/nga/chat.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/header.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/style.css">
+    <link rel="stylesheet" href="/css/nga/chat.css">
     <link href="/mot/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="/mot/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
     <script src="/mot/js/jquery-1.11.0.min.js"></script>
@@ -54,145 +54,107 @@
             <div class="services-top">
                 <h3 class="btn btn-secondary">Sản phẩm Đang Chờ Admin Duyệt Của Bạn</h3>
             </div>
+            <center>
+                <div>
+                    <span class="alert alert-success" th:if="${mgsedit}">Sửa sản phẩm thành công1</span>
+                </div>
+                <div>
+                    <span class="alert alert-success" th:if="${mgsdelete}">Xóa sản phẩm thành công!</span>
+                </div>
+                <div>
+                    <span class="alert alert-success" th:if="${mgstk}">Không tìm thấy sản phẩm!</span>
+                </div>
+                <div>
+                    <span class="alert alert-success" th:if="${mgs}">Thêm mới sản phẩm thành công.Sản phẩm sẽ được đấu giá khi admin duyệt!</span>
+                </div>
+            </center>
             <div class="services-bottom">
                 <div class="row">
-                    <div class="col-sm-6 col-md-2 ser item-dau-gia">
+                    <div class="col-sm-6 col-md-2 ser item-dau-gia" th:each="sanPham:${listSP}">
                         <div class="thumbnail itemProduct">
                             <div class="img-dau-gia">
                                 <a><img
-                                        src="/img/2.jpg"
+                                        th:src="@{${'/img/' + sanPham.hinh}}"
                                         alt="lỗi ảnh!"></a>
                             </div>
                             <div class="caption">
-                                <a href="#"><h3
-                                        class="nameProduct">Áo xanh</h3>
-                                    <p>Thời trang</p></a>
+                                <a th:href="@{/product-detail/{id}(id=${sanPham.maSanPham})}"><h3
+                                        th:text="${sanPham.tenSanPham}" class="nameProduct"></h3>
+                                    <p th:text="${sanPham.danhMuc.tenDanhMuc}"></p></a>
                                 <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                                    <span class="col-md-6 "></span>
+                                    <span class="col-md-6 time"></span>
                                     <p class="col-md-6 price"
-                                       th:text="${#numbers.formatDecimal(76, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
+                                       th:text="${#numbers.formatDecimal(sanPham.giaKhoiDiem, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
                                 </div>
-                                <div class="row" style="display: flex">
-                                    <a href="#"
-                                       class="btn btn-dau-gia btn-secondary">Chi tiết</a>
-                                    <button class="btn btn-dau-gia btn-secondary" data-toggle="modal"
-                                            data-target="#exampleModal">Xóa
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-2 ser item-dau-gia">
-                        <div class="thumbnail itemProduct">
-                            <div class="img-dau-gia">
-                                <a><img
-                                        src="/img/2.jpg"
-                                        alt="lỗi ảnh!"></a>
-                            </div>
-                            <div class="caption">
-                                <a href="#"><h3
-                                        class="nameProduct">Áo xanh</h3>
-                                    <p>Thời trang</p></a>
-                                <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                                    <span class="col-md-6 "></span>
-                                    <p class="col-md-6 price"
-                                       th:text="${#numbers.formatDecimal(76, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                                </div>
-                                <div class="row" style="display: flex">
-                                    <a href="#"
-                                       class="btn btn-dau-gia btn-secondary">Chi tiết</a>
-                                    <button class="btn btn-dau-gia btn-secondary" data-toggle="modal"
-                                            data-target="#exampleModal">Xóa
-                                    </button>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <a th:href="@{/sanpham/edit(id = ${sanPham.maSanPham})}"
+                                           class="btn btn-dau-gia btn-secondary">Sửa</a>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-dau-gia btn-secondary" data-toggle="modal"
+                                                data-target="#exampleModal"
+                                                th:onclick="preparedelete([[${sanPham.maSanPham}]],[[${sanPham.tenSanPham}]])">
+                                            Xóa
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-2 ser item-dau-gia">
-                        <div class="thumbnail itemProduct">
-                            <div class="img-dau-gia">
-                                <a><img
-                                        src="/img/2.jpg"
-                                        alt="lỗi ảnh!"></a>
-                            </div>
-                            <div class="caption">
-                                <a href="#"><h3
-                                        class="nameProduct">Áo xanh</h3>
-                                    <p>Thời trang</p></a>
-                                <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                                    <span class="col-md-6 "></span>
-                                    <p class="col-md-6 price"
-                                       th:text="${#numbers.formatDecimal(76, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                                </div>
-                                <div class="row" style="display: flex">
-                                    <a href="#"
-                                       class="btn btn-dau-gia btn-secondary">Chi tiết</a>
-                                    <button class="btn btn-dau-gia btn-secondary" data-toggle="modal"
-                                            data-target="#exampleModal">Xóa
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-2 ser item-dau-gia">
-                        <div class="thumbnail itemProduct">
-                            <div class="img-dau-gia">
-                                <a><img
-                                        src="/img/2.jpg"
-                                        alt="lỗi ảnh!"></a>
-                            </div>
-                            <div class="caption">
-                                <a href="#"><h3
-                                        class="nameProduct">Áo xanh</h3>
-                                    <p>Thời trang</p></a>
-                                <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                                    <span class="col-md-6 "></span>
-                                    <p class="col-md-6 price"
-                                       th:text="${#numbers.formatDecimal(76, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                                </div>
-                                <div class="row" style="display: flex">
-                                    <a href="#"
-                                       class="btn btn-dau-gia btn-secondary">Chi tiết</a>
-                                    <button class="btn btn-dau-gia btn-secondary" data-toggle="modal"
-                                            data-target="#exampleModal">Xóa
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-2 ser item-dau-gia">
-                    <div class="thumbnail itemProduct">
-                        <div class="img-dau-gia">
-                            <a><img
-                                    src="/img/2.jpg"
-                                    alt="lỗi ảnh!"></a>
-                        </div>
-                        <div class="caption">
-                            <a href="#"><h3
-                                    class="nameProduct">Áo xanh</h3>
-                                <p>Thời trang</p></a>
-                            <div class="row rowProduct" style=" padding: 0em 0em 0.5em 0em;border-bottom: 0px">
-                                <span class="col-md-6 "></span>
-                                <p class="col-md-6 price"
-                                   th:text="${#numbers.formatDecimal(76, 0, 'POINT', 0, 'COMMA')}+'₫'"></p>
-                            </div>
-                            <div class="row" style="display: flex">
-                                <a href="#"
-                                   class="btn btn-dau-gia btn-secondary">Chi tiết</a>
-                                <button class="btn btn-dau-gia btn-secondary" data-toggle="modal"
-                                        data-target="#exampleModal">Xóa
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div id="exampleModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Mã sản Phẩm :
+                    <span id="maSanPham"></span></p>
+                <p>Bạn có chắc chắn muốn xóa
+                    <span id="tenSanPham"></span>
+                    Không ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy
+                </button>
+                <button onclick="deleteService($('#maSanPham').html())" type="button"
+                        class="btn btn-default" data-dismiss="modal">
+                    Xóa
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function preparedelete(maSanPham, tenSanPham) {
+        $('#maSanPham').html(maSanPham)
+        $('#tenSanPham').html(tenSanPham)
+    }
 
-<div th:replace="~{/luan/product-detail::chat}">
+    function deleteService(maSanPham) {
+        console.log(maSanPham);
+        $.ajax(
+            {
+                type: 'get',
+                url: "/sanpham/delete/" + maSanPham,
+                success: function () {
+                    window.location.href = "http://localhost:8080/sanpham/list";
+                }
+            }
+        )
+    }
+</script>
+
+<div th:replace="~{/chat/product-detail::chat}">
 
 </div>
 <!--effec end here-->
@@ -205,30 +167,7 @@
     });
 </script>
 
-<!--clients start here-->
-
-
 <footer style="height: 0" th:insert="~{/header_footer/footer::footer}"></footer>
-
-<!-- FlexSlider -->
-
-
-<!--<script src="/mot/js/countTime.js"></script>-->
-<!--<script src="/js/chat-responses.js"></script>-->
-<!--<script src="/js/chat.js"></script>-->
-<!--<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>-->
-<!--<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>-->
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
-<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"-->
-<!--        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"-->
-<!--        crossorigin="anonymous"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"-->
-<!--        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"-->
-<!--        crossorigin="anonymous"></script>-->
-<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"-->
-<!--        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"-->
-<!--        crossorigin="anonymous"></script>-->
-<!--footer end here-->
 </body>
 </html>
 

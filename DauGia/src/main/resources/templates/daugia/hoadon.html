@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/styles_nga/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/header.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/style.css">
+
+    <link rel="stylesheet" href="/nha/HoaDon.css">
+</head>
+<body>
+<header th:replace="~{/header_footer/header_client::header}"></header>
+<div class="container">
+    <div class="container__title">
+        <h2>Đơn hàng của bạn đã được thanh toán thành công</h2>
+        <h2>Vui lòng kiểm tra email để xem chi tiết hóa đơn</h2>
+    </div>
+    <div class="container__logo">
+        <div class="container__logo-left">
+            <h5> Mã hóa đơn: DH[[${hoaDon.donHang.maDonHang}]]</h5>
+            <h5 th:text="'Trạng thái đơn hàng: '+${hoaDon.donHang.trangThai}"></h5>
+            <h5 th:text="'Địa chỉ giao hàng: '+${hoaDon.donHang.diaChi}"></h5>
+            <h5 th:text="'Tên người nhận: '+${hoaDon.donHang.nguoiDung.tenNguoiDung}"></h5>
+            <h5 th:text="'Số điện thoại: '+${hoaDon.donHang.soDienThoai}"></h5>
+        </div>
+    </div>
+    <div class="btn__delivery">
+        <button><img src="/nha/img/Thunder-icon.png" height="24" width="24"/>GIAO HÀNG NHANH</button>
+    </div>
+    <div class="form__shipment">
+        <div class="form__shipment-title">
+            <h4 th:text="'Ngày mua: '+${hoaDon.donHang.ngayMua}"></h4>
+        </div>
+        <div class="form__shipment-table">
+            <table style="width: 100%">
+                <tr>
+                    <td>Sản Phẩm</td>
+                    <td>Số lượng</td>
+                    <td>Giá</td>
+                </tr>
+                <tr th:each="item:${listSp}">
+                    <td th:text="${item.value.getTenSanPham()}"></td>
+                    <td>1</td>
+                    <td th:text="${#numbers.formatDecimal(item.key, 0, 'POINT', 0, 'COMMA')}+' VND'"></td>
+                </tr>
+                <tr>
+                    <td><h5>Tổng</h5></td>
+                    <td><h5></h5></td>
+                    <td><h5 th:text="${#numbers.formatDecimal(hoaDon.donHang.tongTien, 0, 'POINT', 0, 'COMMA')}+' VND'"></h5></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="main__alert">
+        <div style="display: flex;justify-content: center;align-content: center"><img src="/hai/img/Email-icon.png" height="24" width="24"/> Email: support.vn@doanCG.com |<img src="/haig/FB-icon.png" height="24" width="24"/> Facebook</div>
+
+    </div>
+</div>
+<footer style="height: 0" th:insert="~{/header_footer/footer::footer}"></footer>
+</body>
+</html>

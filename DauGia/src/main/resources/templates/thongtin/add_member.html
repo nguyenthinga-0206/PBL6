@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset = UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Minh Khoa">
+    <title>edit member</title>
+    <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+    <link href="/css/styles_khoa/add-member-css/main.css" rel="stylesheet" media="all">
+    <link href="/css/styles_khoa/add-member-css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/styles_khoa/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_khoa/css/header.css">
+    <link rel="stylesheet" href="/css/styles_khoa/css/style.css">
+    <link rel="stylesheet" href="/css/luan/chat.css">
+    <link href="/thang/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/thang/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/thang/js/jquery-1.11.0.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="/thang/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="/thang/css/flexslider.css" type="text/css" media="screen"/>
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <style>
+        label {
+            color: #027ca5;
+        }
+    </style>
+</head>
+
+
+
+<body id="page-top">
+
+<header th:insert="~{/header_footer/header_client::header}"></header>
+<nav th:insert="~{/nhu/admin/duyet::headerAdmin}"></nav>
+<div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <div class="container-fluid">
+                <center>
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Thêm thành viên</h1>
+                </div></center>
+                <div class="card-body">
+                    <form id="profileForm" class="css" th:action="@{/luan/save}" th:method="post"
+                          th:object="${nguoiDung1}">
+
+                        <div class="form-row">
+                            <div class="name">Tài khoản <span>*</span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input th:field="*{taiKhoan.taiKhoan}" type="text" class="input--style-5"
+                                           required="true">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Mật khẩu <span>*</span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input th:field="*{taiKhoan.matKhau}" type="text" class="input--style-5"
+                                           required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <input th:field="*{maNguoiDung}" type="hidden" class="input--style-5">
+                        <div class="form-row">
+                            <div class="name">Họ và tên <span>*</span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input id="name" th:field="*{tenNguoiDung}" type="text" class="input--style-5"
+                                           required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Email <span>*</span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input id="email" th:field="*{email}" type="text" class="input--style-5"
+                                           required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Ngày sinh <span>*</span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input id="dateOfBirth" th:field="*{ngaySinh}" type="date" class="input--style-5"
+                                           required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Địa chỉ <span>*</span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input id="address" th:field="*{diaChi}" type="text" class="input--style-5"
+                                           required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">SĐT <span>*</span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input id="phone" th:field="*{soDienThoai}" type="number" class="input--style-5"
+                                           required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">CMND <span>*</span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input id="cmnd" th:field="*{cmnd}" type="number" class="input--style-5"
+                                           required="true" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="containerBtn">
+                            <div>
+                                <button class="btn btn--radius-2 btn--red" type="submit" value="Submit">Thêm</button>
+                            </div>
+                            <div>
+                                <button class="btn btn--radius-2 btn--red" type="submit" value="reset">Nhập Lại</button>
+                            </div>
+                            <div>
+                                <button class="btn btn--radius-2 btn--red" type="submit"><a
+                                        th:href="@{/luan/admin-member-list}">Hủy</a></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer style="height: 0" th:insert="~{/header_footer/footer::footer}"></footer>
+</body>
+</html>

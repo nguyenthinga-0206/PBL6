@@ -61,17 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/", "/login", "/logout").permitAll();
 
 
-//
-        // Trang /userInfo yêu cầu phải login với vai trò ROLE_USER hoặc ROLE_ADMIN.
-        // Nếu chưa login, nó sẽ redirect tới trang /login.
-//        http.authorizeRequests().antMatchers("/admin/**", "/customer/**", "/contract/**", "/user/**").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
 
-        // Trang chỉ dành cho ADMIN
-//        http.authorizeRequests().antMatchers("/employee/**").access("hasRole('ROLE_ADMIN')");
-
-        // Khi người dùng đã login, với vai trò XX.
-        // Nhưng truy cập vào trang yêu cầu vai trò YY,
-        // Ngoại lệ AccessDeniedException sẽ ném ra.
         http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
 
         // Cấu hình cho Login Form.

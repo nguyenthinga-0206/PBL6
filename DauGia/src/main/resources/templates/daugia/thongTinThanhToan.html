@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/styles_nga/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/header.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/style.css">
+
+
+    <link rel="stylesheet" href="/hai/ThongTin.css">
+
+    <link href="/mot/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/mot/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/mot/js/jquery-1.11.0.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="/mot/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/mot/css/splide.css" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<body style="font-family: 'Segoe UI'">
+<!--<nav class="mainNav" >-->
+<!--    <div class="mainNav__logo">-->
+<!--        <a href="#"><img src="/nha/img/logo.png"/></a>-->
+<!--    </div>-->
+<!--    <div class="mainNav__wrapper">-->
+<!--        <div class="mainNav__links">-->
+<!--            <a class="mainNav__link"><img src="/nha/img/cart-icon.png" alt="cart" width="20" height="20"/>Giỏ Hàng</a>-->
+<!--            <a class="mainNav__link"><img src="/nha/img/auction-hammer-icon.png" alt="hammer" width="20" height="20">Đấu giá của tôi</a>-->
+<!--            <a class="mainNav__link">Set Language<img src="/nha/img/Vietnam-icon.png" alt="vietnam" width="20" height="20"/></a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="mainNav__menu">-->
+<!--        <div class="mainNav__profile">-->
+<!--            <div class="mainNav__profileImage">-->
+<!--                <img src="/nha/img/user.jpg" alt="user"/>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+<header th:insert="~{/header_footer/header_client::header}"></header>
+
+<div class="container">
+    <!--    <strong class="main__title">-->
+    <!--        Thanh toán-->
+    <!--    </strong>-->
+    <div class="main__content">
+        <div class="container__left">
+            <!--            <ul class="main__list">-->
+            <!--                <li class="main__list-item">-->
+            <!--                    <a ><span>Địa chỉ thanh toán</span></a>-->
+            <!--                </li>-->
+            <!--                <li class="main__list-item">-->
+            <!--                    <a ><span>Hình thức giao hàng</span></a>-->
+            <!--                </li>-->
+            <!--                <li class="main__list-item">-->
+            <!--                    <a ><span>Tình trang đơn hàng</span></a>-->
+            <!--                </li>-->
+            <!--            </ul>-->
+            <strong class="main__title" style="margin-left: 34%;">
+                Địa Chỉ Thanh Toán
+            </strong>
+            <div>
+                <form action="/hoaDon/thanhToan" method="get" th:object="${donHang}">
+                    <input type="hidden" th:field="*{maDonHang}">
+                    <input type="hidden" th:field="*{nguoiDung}">
+                    <input type="hidden" th:field="*{trangThai}">
+                    <input type="hidden" th:field="*{tongTien}">
+                    <table class="container__ship">
+                        <tr>
+                            <td>Địa Chỉ </td>
+                            <td><input size="50" type="text" placeholder="Địa chỉ" th:field="*{diaChi}"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Email </td>
+                            <td><input size="50" ID="email" type="text" name="email" placeholder="email@gmail.com"  >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Di Động </td>
+                            <td><input type="number" value=""  th:field="*{soDienThoai}"  placeholder="Số điện thoại"></td>
+                        </tr>
+                    </table>
+                    <div class="button">
+                        <button class="btn btn-danger" style="margin-left: 136px;" type="submit">Thanh toán khi nhận hàng</button>
+                        <button class="btn btn-primary" style="margin-left: 30px" formaction="/pay"><img style="height: 20px" width="30" src="https://th.bing.com/th/id/OIP.DYFhJieoB5xq4KpQtogzjQAAAA?pid=ImgDet&rs=1">
+                            Thanh toán Paypal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container__right">
+            <div class="cart">
+                <div class="cart__contact">
+                    <h2 class="cart__title">Các Câu Hỏi</h2>
+                    <p>Vui lòng liên hệ bộ phận hỗ trợ 24h của chúng tôi</p>
+                </div>
+
+                <div class="cart__number">
+                    <p> Sdt: 0956326980</p>
+                </div>
+            </div>
+            <div class="bill">
+                <h2>Tổng Tiền</h2>
+                <ul class="bill__list">
+                    <li class="bill__list-item">Thành Tiền:</li>
+                    <li class="bill__list-item" th:text="${#numbers.formatDecimal(tongTien, 0, 'POINT', 0, 'COMMA')}+' VND'"></li>
+                </ul>
+                <div class="bill__button">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -3,12 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-
-
-
     <meta name="description" content="">
     <meta name="author" content="ThemeBucket">
     <title>Login</title>
@@ -26,39 +20,51 @@
 </head>
 <body class="login-body">
 <div class="container">
-    <form class="form-signin" action="/singup" method="post" >
+    <form class="form-signin" action="/singup" method="post" th:object="${dangkys}">
         <h2 class="form-signin-heading">ĐĂNG KÝ</h2>
         <div class="login-wrap">
             <p>Nhập thông tin cá nhân của bạn</p>
 
-            <input type="text" class="form-control" style="color: black" placeholder="Họ và tên"  autofocus>
+            <input type="text" class="form-control" style="color: black" placeholder="Họ và tên" th:field="*{tenNguoiDung1}" autofocus>
+            <p style="color: red;font-size: 13px" th:if="${#fields.hasErrors('tenNguoiDung1')}"
+               th:errors="*{tenNguoiDung1}"></p>
 
-            <input type="text" class="form-control" placeholder="Tên đăng nhập"  autofocus>
+            <input type="text" class="form-control" placeholder="Tên đăng nhập" th:field="*{taiKhoan1}" autofocus>
+            <p style="color: red;font-size: 13px" th:if="${errTK}">Tên tài khoản đã tồn tại.</p>
+            <p style="color: red;font-size: 13px" th:if="${#fields.hasErrors('taiKhoan1')}"
+               th:errors="*{taiKhoan1}"></p>
 
+            <input type="text" class="form-control" placeholder="Email" th:field="*{email1}" autofocus>
+            <p style="color: red;font-size: 13px" th:if="${errEmail}">Email đã tồn tại trong hệ thống.</p>
+            <p style="color: red;font-size: 13px" th:if="${#fields.hasErrors('email1')}" th:errors="*{email1}"></p>
 
-            <input type="text" class="form-control" placeholder="Email"  autofocus>
-
-
-            <input type="date" class="form-control" placeholder="Ngày sinh" autofocus>
+            <input type="date" class="form-control" placeholder="Ngày sinh" th:field="*{ngaySinh1}" autofocus>
+            <p style="color: red;font-size: 13px" th:if="${#fields.hasErrors('ngaySinh1')}"
+               th:errors="*{ngaySinh1}"></p>
 
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" value="1" id="nam" >
+                <input type="radio" class="custom-control-input" value="1" id="nam" th:field="*{gioiTinh1}">
                 <label class="custom-control-label" for="nam">Nam</label>
-                <input type="radio" class="custom-control-input" value="0" id="nu" >
+                <input type="radio" class="custom-control-input" value="0" id="nu" th:field="*{gioiTinh1}">
                 <label class="custom-control-label" for="nu">Nữ</label>
             </div>
 
-            <input type="text" class="form-control" placeholder="Số điện thoại"  autofocus>
+            <input type="text" class="form-control" placeholder="Số điện thoại" th:field="*{soDienThoai1}" autofocus>
+            <p style="color: red;font-size: 13px" th:if="${#fields.hasErrors('soDienThoai1')}"
+               th:errors="*{soDienThoai1}"></p>
 
-            <input type="text" class="form-control" placeholder="Số CMND/CCCD"  autofocus>
+            <input type="text" class="form-control" placeholder="Số CMND/CCCD" th:field="*{cmnd1}" autofocus>
+            <p style="color: red;font-size: 13px" th:if="${#fields.hasErrors('cmnd1')}" th:errors="*{cmnd1}"></p>
 
+            <input type="text" class="form-control" placeholder="Địa chỉ" th:field="*{diaChi1}" autofocus>
+            <p style="color: red;font-size: 13px" th:if="${#fields.hasErrors('diaChi1')}" th:errors="*{diaChi1}"></p>
 
-            <input type="text" class="form-control" placeholder="Địa chỉ"  autofocus>
-
-            <input type="password" class="form-control" placeholder="Mật khẩu">
+            <input type="password" class="form-control" placeholder="Mật khẩu" th:field="*{matKhau1}">
+            <p style="color: red;font-size: 13px" th:if="${#fields.hasErrors('matKhau1')}" th:errors="*{matKhau1}"></p>
             <label class="checkbox">
-                <input type="checkbox" > Tôi đồng ý với
+                <input type="checkbox" th:field ="*{dieukhoan}" th:value="dongy"> Tôi đồng ý với
                 <a href="/dieukhoan">Điều khoản dịch vụ và Chính sách quyền riêng tư.</a>
+                <p style="color: red;font-size: 13px" th:if="${mgsdk}">vui lòng chấp nhận điều khoản.</p>
             </label>
             <button class="btn btn-lg btn-login btn-block" type="submit">Đăng ký</button>
             <label class="checkbox" style="margin-top: 20px;margin-left: 20px">
@@ -70,7 +76,7 @@
         </div>
     </form>
 </div>
-<script src="/ba/js/jquery.js"></script>
-<script src="/ba/js/bootstrap.min.js"></script>
+<script src="/phuoc/js/jquery.js"></script>
+<script src="/phuoc/js/bootstrap.min.js"></script>
 </body>
 </html>

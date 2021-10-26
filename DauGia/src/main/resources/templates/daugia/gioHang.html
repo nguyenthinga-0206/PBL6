@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>list product</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/styles_nga/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/header.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles_nga/css/style.css">
+    <style>
+        label {
+            color: #027ca5;
+        }
+
+        @media screen and (max-width: 600px) {
+            table#cart tbody td .form-control {
+                width: 20%;
+                display: inline !important;
+            }
+
+            .actions .btn {
+                width: 36%;
+                margin: 1.5em 0;
+            }
+
+            .actions .btn-info {
+                float: left;
+            }
+
+            .actions .btn-danger {
+                float: right;
+            }
+
+            table#cart thead {
+                display: none;
+            }
+
+            table#cart tbody td {
+                display: block;
+                padding: .6rem;
+                min-width: 320px;
+            }
+
+            table#cart tbody tr td:first-child {
+                background: #333;
+                color: #fff;
+            }
+            table#cart tbody td:before {
+                content: attr(data-th);
+                font-weight: bold;
+                display: inline-block;
+                width: 8rem;
+            }
+
+            table#cart tfoot td {
+                display: block;
+            }
+
+            table#cart tfoot td .btn {
+                display: block;
+            }
+        }</style>
+</head>
+<body>
+<header th:replace="~{/header_footer/header_client::header}"></header>
+<div class="container">
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+               aria-controls="nav-home" aria-selected="true">Giỏ hàng</a>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="container">
+                <table id="cart" class="table table-hover table-condensed">
+                    <thead>
+                    <tr style="color: #027ca5">
+                        <th style="width:31%">Tên sản phẩm</th>
+                        <th style="width:14%">Hinh Sản Phẩm</th>
+                        <th style="width:12%">Giá</th>
+                        <th style="width:13%">Số lượng</th>
+                        <th style="width:20%" class="text-center">Thành tiền</th>
+                        <th style="width:10%"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:if="${carts!=null}" th:each="item,iterStat: ${carts}">
+                        <td data-th="Product">
+                            <div class="col-sm-10">
+                                <h4 style="font-size: 18px" th:text="${item.value.getSanPham().tenSanPham}"></h4>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="row">
+                                <div class="col-sm-2 hidden-xs"><img
+                                        th:src="@{${'/img/' + item.value.getSanPham().hinh}}"
+                                        alt="Sản phẩm 1" class="img-responsive" width="100">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="display: none" id="max" th:text="${iterStat.size}"></td>
+                        <td data-th="Price"
+                            th:text="${#numbers.formatDecimal(item.value.getGiaCaoNhat(), 0, 'POINT', 0, 'COMMA')}"></td>
+                        <td data-th="Quantity"><input class="form-control text-center"
+                                                      th:value="${item.value.getQuantity()}" type="number">
+                        </td>
+                        <td data-th="Subtotal" class="text-center" th:id="${'Ma'+iterStat.count}"
+                            th:text="${#numbers.formatDecimal(item.value.getGiaCaoNhat(), 0, 'POINT', 0, 'COMMA')}"></td>
+                        <td class="actions" data-th="">
+                            <div class="row">
+                                <a th:href="@{/deleteCart/{id}(id=${item.key})}" class="btn btn-danger btn-sm"><i class="fa fa-trash-o">Xóa</i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr class="visible-xs">
+                    </tr>
+                    <tr>
+                        <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i>
+                            Tiếp tục mua hàng</a>
+                        </td>
+                        <td colspan="2" class="hidden-xs"></td>
+                        <td class="hidden-xs text-center">
+                            <strong id="submit"></strong>
+                            <form action="/hoaDon/layDuLieu" method="get">
+                                <input type="hidden" id="totalMoney" name="tongTien">
+                                <button class="btn btn-block" style="background:#1ab7ea;" type="submit">Thanh toán</button>
+                            </form>
+                        </td>
+                        </td>
+                    </tr>
+                    </tfoot>
+                    <h5 th:unless="${cartSize}" >Giỏ hàng hiện đang trống,hãy đấu giá</h5>
+                </table>
+
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        </div>
+    </div>
+</div>
+<footer style="height: 0" th:insert="~{/header_footer/footer::footer}"></footer>
+<script>
+    var submit = document.getElementById("submit");
+    var totalMoney = document.getElementById("totalMoney");
+    var max = document.getElementById("max");
+    var inputmax = parseFloat(max.innerText);
+    var total = 0;
+    for (let i = 1; i <= inputmax; i++) {
+        var number = document.getElementById("Ma" + i);
+        var input = parseFloat(number.innerText);
+        total = total + input;
+    }
+    if(total<10){
+        total = total *1000000;
+    }else{
+        total = total *1000;
+    }
+    submit.innerHTML = total/1000 + ".000 VND"
+    totalMoney.value = total
+</script>
+</body>
+</html>

@@ -98,6 +98,7 @@
                 <td th:text="${#numbers.formatDecimal(itemDauGia.giaDau, 0, 'POINT', 0, 'COMMA')}+' đ'"></td>
                 <td>1</td>
                 <td th:text="${itemDauGia.thoiGianDauGia}"></td>
+
             </tr>
         </table>
     </div>
@@ -332,8 +333,8 @@
 <script>
 
     <!--    function msToTime(duration) {-->
-    <!--        var seconds = parseInt((duration / 1000) % 60), minutes = parseInt((duration / (1000 * 60)) % 60),-->
-    <!--            hours = parseInt((duration / (1000 * 60 * 60)) % 24), days = parseInt(duration / (1000 * 60 * 60 * 24));-->
+        <!--        var seconds = parseInt((duration / 1000) % 60), minutes = parseInt((duration / (1000 * 60)) % 60),-->
+            <!--            hours = parseInt((duration / (1000 * 60 * 60)) % 24), days = parseInt(duration / (1000 * 60 * 60 * 24));-->
 
         <!--        var hoursDays = parseInt(days * 24);-->
         <!--        hours += hoursDays;-->
@@ -344,29 +345,29 @@
         <!--    }-->
 
     <!--    function startCountdown() {-->
-    <!--        var timeTemp = document.getElementById("gioKetThuc").innerText;-->
-    <!--        var timeEnd = timeTemp.split(":");-->
-    <!--        var date = new Date();-->
-    <!--        var day = date.getDate();-->
-    <!--        var month = date.getMonth();-->
-    <!--        var year = date.getFullYear();-->
-    <!--        var hour = timeEnd[0];-->
-    <!--        var minute = timeEnd[1];-->
-    <!--        var btn = document.getElementById("btnNoti");-->
-    <!--        let temp = setInterval(function () {-->
-    <!--            var a = new Date().getTime();-->
-    <!--            var now = new Date(year, month, day, hour, minute, 0, 0);-->
-    <!--            var timer = now - a;-->
-    <!--            if (timer <= 0) {-->
-    <!--                document.getElementById("time-remain").innerHTML = "Hết giờ";-->
-    <!--                document.getElementById("btn-dauGia").style.display = "none";-->
-    <!--                btn.click();-->
-    <!--                clearInterval(temp);-->
-    <!--            } else {-->
-    <!--                document.getElementById("time-remain").innerHTML = msToTime(timer);-->
-    <!--            }-->
-    <!--        }, 0);-->
-    <!--    }-->
+        <!--        var timeTemp = document.getElementById("gioKetThuc").innerText;-->
+        <!--        var timeEnd = timeTemp.split(":");-->
+        <!--        var date = new Date();-->
+        <!--        var day = date.getDate();-->
+        <!--        var month = date.getMonth();-->
+        <!--        var year = date.getFullYear();-->
+        <!--        var hour = timeEnd[0];-->
+        <!--        var minute = timeEnd[1];-->
+        <!--        var btn = document.getElementById("btnNoti");-->
+        <!--        let temp = setInterval(function () {-->
+            <!--            var a = new Date().getTime();-->
+            <!--            var now = new Date(year, month, day, hour, minute, 0, 0);-->
+            <!--            var timer = now - a;-->
+            <!--            if (timer <= 0) {-->
+                <!--                document.getElementById("time-remain").innerHTML = "Hết giờ";-->
+                <!--                document.getElementById("btn-dauGia").style.display = "none";-->
+                <!--                btn.click();-->
+                <!--                clearInterval(temp);-->
+                <!--            } else {-->
+                <!--                document.getElementById("time-remain").innerHTML = msToTime(timer);-->
+                <!--            }-->
+            <!--        }, 0);-->
+        <!--    }-->
 
     <!--    startCountdown();-->
 
@@ -381,6 +382,9 @@
         if (mota[i] === sep[0]) {
             resut += mota[i] + "</br>";
         }
+            // else if(mota[i]+mota[i+1] === sep[1]){
+            //     resut += mota[i]+"</br>";
+        // }
         else {
             resut += mota[i];
         }

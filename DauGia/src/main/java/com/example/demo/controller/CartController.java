@@ -20,7 +20,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
 import java.util.List;
-
 @Controller
 public class CartController {
 
@@ -38,16 +37,28 @@ public class CartController {
     }
 
     @GetMapping("showCart")
-    public ModelAndView show(@SessionAttribute("carts") HashMap<Integer, Cart> cartMap, Model model) {
+    public String showe(@SessionAttribute("carts") HashMap<Integer, Cart> cartMap, Model model) {
         if (SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream()
                 .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_ADMIN"))) {
             model.addAttribute("admin", "là admin");
         }
-        ModelAndView modelAndView = new ModelAndView("daugia/gioHang");
-        modelAndView.addObject("carts", cartMap);
-        modelAndView.addObject("cartSize", cartMap.size());
-        return modelAndView;
+        ModelAndView modelAndView = new ModelAndView("thang/gioHang");
+        model.addAttribute("carts", cartMap);
+        model.addAttribute("cartSize", cartMap.size());
+        return "daugia/giohang";
     }
+
+//    @GetMapping("showCart")
+//    public ModelAndView show(@SessionAttribute("carts") HashMap<Integer, Cart> cartMap, Model model) {
+//        if (SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream()
+//                .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_ADMIN"))) {
+//            model.addAttribute("admin", "là admin");
+//        }
+//        ModelAndView modelAndView = new ModelAndView("daugia/gioHang");
+//        modelAndView.addObject("carts", cartMap);
+//        modelAndView.addObject("cartSize", cartMap.size());
+//        return modelAndView;
+//    }
 
     @GetMapping("addCart/{id}")
     public String addToCart(@PathVariable int id, @SessionAttribute("carts") HashMap<Integer, Cart> cartMap, Model model) {
@@ -74,10 +85,6 @@ public class CartController {
                 cart.setGiaCaoNhat(giaCaoNhat);
                 cartMap.put(id, cart);
             }
-        }
-        if (SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream()
-                .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_ADMIN"))) {
-            model.addAttribute("admin", "là admin");
         }
         model.addAttribute("carts", cartMap);
         model.addAttribute("cartSize", cartMap.size());

@@ -1,0 +1,1116 @@
+{
+  "id": "b3e19197-69fc-46eb-865d-24cfef65d84f",
+  "version": "2.0",
+  "name": "daugiaPBL6",
+  "url": "http://localhost:8082",
+  "tests": [{
+    "id": "e8c47995-24cc-40c2-8be8-5d9a6ae53691",
+    "name": "admin_qlsanpham",
+    "commands": [{
+      "id": "fd7ceeb7-95c4-46c4-bd94-26757dd98e73",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "53e330f2-91f1-4540-a10e-8bfc201cf149",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "151e5839-acca-43ae-9c5f-1b41b65ded22",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Truy Cập Trang Quản Trị",
+      "targets": [
+        ["linkText=Truy Cập Trang Quản Trị", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Truy Cập Trang Quản Trị')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[3]/div/ul/li/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/')]", "xpath:href"],
+        ["xpath=//div[3]/div/ul/li/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Truy Cập Trang Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "30136a26-ab61-47bb-8ec9-dd1b3dee4d80",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Lý Sản Phẩm",
+      "targets": [
+        ["linkText=Quản Lý Sản Phẩm", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Lý Sản Phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9cbf41ab-aca4-4a07-bb03-a5a64b7dee55",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Tất Cả Sản Phẩm",
+      "targets": [
+        ["linkText=Tất Cả Sản Phẩm", "linkText"],
+        ["css=.show > li:nth-child(1) > .dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Tất Cả Sản Phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/list')]", "xpath:href"],
+        ["xpath=//li/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Tất Cả Sản Phẩm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "524c51e6-820c-4c9e-aa0f-7a6f540d6a57",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sửa",
+      "targets": [
+        ["linkText=Sửa", "linkText"],
+        ["css=tr:nth-child(2) > td:nth-child(6) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Sửa')]", "xpath:link"],
+        ["xpath=//table[@id='mem-data']/tbody/tr[2]/td[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/edit?id=34')]", "xpath:href"],
+        ["xpath=//td[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sửa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d52d6c79-c1c4-4110-b69c-626fb1aef857",
+      "comment": "",
+      "command": "click",
+      "target": "id=tinhTrang",
+      "targets": [
+        ["id=tinhTrang", "id"],
+        ["name=tinhTrang", "name"],
+        ["css=#tinhTrang", "css:finder"],
+        ["xpath=//select[@id='tinhTrang']", "xpath:attributes"],
+        ["xpath=//div[16]/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d03adad2-676d-4551-a1f9-1ebf9662332a",
+      "comment": "",
+      "command": "select",
+      "target": "id=tinhTrang",
+      "targets": [],
+      "value": "label=Đã duyệt"
+    }, {
+      "id": "6a9105a9-af78-4ff9-85c3-e4756143319f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-sm-2 > .form-control",
+      "targets": [
+        ["css=.col-sm-2 > .form-control", "css:finder"],
+        ["xpath=//input[@value='Sửa']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "8d4f4b45-4a52-40e1-bda7-63e2a54791e1",
+    "name": "admin_duyetsp",
+    "commands": [{
+      "id": "42bb5dee-ef22-4c3b-86fe-9cf35b2bf8f8",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d6b77f52-0c6c-49c0-86ef-a7806b0bde6b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4eec05c3-f478-4e77-bfd3-1b91119b3a20",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Truy Cập Trang Quản Trị",
+      "targets": [
+        ["linkText=Truy Cập Trang Quản Trị", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Truy Cập Trang Quản Trị')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[3]/div/ul/li/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/')]", "xpath:href"],
+        ["xpath=//div[3]/div/ul/li/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Truy Cập Trang Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb5be37b-e499-44ca-b2db-9fc5003fdf46",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Lý Sản Phẩm",
+      "targets": [
+        ["linkText=Quản Lý Sản Phẩm", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Lý Sản Phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "49ae6bc5-2d6d-4e10-a1ac-5f3a8ee2cf5f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sản Phẩm Chờ Phê Duyệt",
+      "targets": [
+        ["linkText=Sản Phẩm Chờ Phê Duyệt", "linkText"],
+        ["css=.show > li:nth-child(2) > .dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Sản Phẩm Chờ Phê Duyệt')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/duyet')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sản Phẩm Chờ Phê Duyệt')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2eece8c0-ac97-4c07-aecd-854936a635b3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Chi tiết",
+      "targets": [
+        ["linkText=Chi tiết", "linkText"],
+        ["css=tr:nth-child(2) > td:nth-child(6) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Chi tiết')]", "xpath:link"],
+        ["xpath=//table[@id='mem-data']/tbody/tr[2]/td[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/view?id=1')]", "xpath:href"],
+        ["xpath=//td[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Chi tiết')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c59d04a-39da-44da-bea4-82eaa2a30123",
+      "comment": "",
+      "command": "click",
+      "target": "name=submit",
+      "targets": [
+        ["name=submit", "name"],
+        ["css=.col-sm-2 > .form-control", "css:finder"],
+        ["xpath=//button[@name='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Duyệt')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "8fb29f98-74bf-4fa5-a476-ef7a17a847b8",
+    "name": "admin_khongduyetsp",
+    "commands": [{
+      "id": "0124facf-3904-4840-8857-5bfd9d87e422",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c6e7edd6-c548-4c4e-b219-83adaba59bf5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8f6e12ba-9f64-4467-88f8-1e327ff8f82e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Truy Cập Trang Quản Trị",
+      "targets": [
+        ["linkText=Truy Cập Trang Quản Trị", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Truy Cập Trang Quản Trị')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[3]/div/ul/li/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/')]", "xpath:href"],
+        ["xpath=//div[3]/div/ul/li/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Truy Cập Trang Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fd5e345-b9e0-41df-97b3-827e0c8fd86a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Lý Sản Phẩm",
+      "targets": [
+        ["linkText=Quản Lý Sản Phẩm", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Lý Sản Phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "51143219-8d6f-4067-b5d0-6f6c1806a2fb",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sản Phẩm Chờ Phê Duyệt",
+      "targets": [
+        ["linkText=Sản Phẩm Chờ Phê Duyệt", "linkText"],
+        ["css=.show > li:nth-child(2) > .dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Sản Phẩm Chờ Phê Duyệt')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/duyet')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sản Phẩm Chờ Phê Duyệt')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "95f076c3-bbe4-48c8-a840-3bcaf499d22a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Chi tiết",
+      "targets": [
+        ["linkText=Chi tiết", "linkText"],
+        ["css=tr:nth-child(2) > td:nth-child(6) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Chi tiết')]", "xpath:link"],
+        ["xpath=//table[@id='mem-data']/tbody/tr[2]/td[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/view?id=4')]", "xpath:href"],
+        ["xpath=//td[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Chi tiết')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ce8d4bc-714a-470c-b1c5-ba8102374840",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-sm-3 > .form-control",
+      "targets": [
+        ["css=.col-sm-3 > .form-control", "css:finder"],
+        ["xpath=(//button[@name='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Không Duyệt')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "c14588da-3487-4749-a4e5-7c67f1ec4819",
+    "name": "admin_xoasanpham",
+    "commands": [{
+      "id": "80fabdc6-e8f5-4861-aeee-e0e889912871",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "da8eedee-6177-4af4-a7db-d5dc3130bdcb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "195e69af-9c86-465b-bdfe-e2f85644d489",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Truy Cập Trang Quản Trị",
+      "targets": [
+        ["linkText=Truy Cập Trang Quản Trị", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Truy Cập Trang Quản Trị')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[3]/div/ul/li/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/')]", "xpath:href"],
+        ["xpath=//div[3]/div/ul/li/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Truy Cập Trang Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cbec58e0-dde7-4b25-9ab2-c5183473d988",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Lý Sản Phẩm",
+      "targets": [
+        ["linkText=Quản Lý Sản Phẩm", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Lý Sản Phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb1dd47b-9cfa-4f9a-880a-9f465ef23ca5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Tất Cả Sản Phẩm",
+      "targets": [
+        ["linkText=Tất Cả Sản Phẩm", "linkText"],
+        ["css=.show > li:nth-child(1) > .dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Tất Cả Sản Phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/list')]", "xpath:href"],
+        ["xpath=//li/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Tất Cả Sản Phẩm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad82a857-4672-4a94-b119-97a0cb0cfe19",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Xóa",
+      "targets": [
+        ["linkText=Xóa", "linkText"],
+        ["css=tr:nth-child(2) > td:nth-child(7) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Xóa')]", "xpath:link"],
+        ["xpath=//a[@onclick='preparedelete(34,\"XE CHEVROLET COLORADO \")']", "xpath:attributes"],
+        ["xpath=//table[@id='mem-data']/tbody/tr[2]/td[7]/a", "xpath:idRelative"],
+        ["xpath=//td[7]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Xóa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eacfbeb6-cf6c-48f8-9828-425387b0d55c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='exampleModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Xóa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d039c9a0-46df-471c-ae4b-1355a5a9ba70",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Lý Sản Phẩm",
+      "targets": [
+        ["linkText=Quản Lý Sản Phẩm", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Lý Sản Phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d3cac97b-3287-4b56-9688-e04edf739017",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sản Phẩm Chờ Phê Duyệt",
+      "targets": [
+        ["linkText=Sản Phẩm Chờ Phê Duyệt", "linkText"],
+        ["css=.show > li:nth-child(2) > .dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Sản Phẩm Chờ Phê Duyệt')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/duyet')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sản Phẩm Chờ Phê Duyệt')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e80835f9-a0d1-469f-b6fb-d17fd4abddab",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Xóa",
+      "targets": [
+        ["linkText=Xóa", "linkText"],
+        ["css=tr:nth-child(2) > td:nth-child(7) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Xóa')]", "xpath:link"],
+        ["xpath=//a[@onclick='preparedelete(6,\"\\u00C1o kim tuy\\u1EBFn\")']", "xpath:attributes"],
+        ["xpath=//table[@id='mem-data']/tbody/tr[2]/td[7]/a", "xpath:idRelative"],
+        ["xpath=//td[7]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Xóa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "55e6ff56-598a-4fa8-8ad8-a9ba62f244e8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='exampleModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Xóa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "05cfe566-04d2-4c5e-bee7-82cda7fea604",
+    "name": "admin_timkiemsanpham",
+    "commands": [{
+      "id": "b416c1be-8e97-42c0-ab6b-9d811e0999c9",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7db395c1-d4fd-4ec6-8315-f99d602f12b0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b8825e47-4bfd-4095-b443-8e011e1e8a82",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Truy Cập Trang Quản Trị",
+      "targets": [
+        ["linkText=Truy Cập Trang Quản Trị", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Truy Cập Trang Quản Trị')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[3]/div/ul/li/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/')]", "xpath:href"],
+        ["xpath=//div[3]/div/ul/li/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Truy Cập Trang Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7cec5302-f123-448c-9e6c-34e5a0376313",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Lý Sản Phẩm",
+      "targets": [
+        ["linkText=Quản Lý Sản Phẩm", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Lý Sản Phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e594e72d-06d3-45a1-89b8-cf7a6af914a3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Tất Cả Sản Phẩm",
+      "targets": [
+        ["linkText=Tất Cả Sản Phẩm", "linkText"],
+        ["css=.show > li:nth-child(1) > .dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Tất Cả Sản Phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/list')]", "xpath:href"],
+        ["xpath=//li/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Tất Cả Sản Phẩm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4b228e4-56bb-4c5e-b13d-b03adeac7ae6",
+      "comment": "",
+      "command": "click",
+      "target": "id=mem-name",
+      "targets": [
+        ["id=mem-name", "id"],
+        ["name=tensanpham", "name"],
+        ["css=#mem-name", "css:finder"],
+        ["xpath=//input[@id='mem-name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58af0fd5-c431-4a4c-9e9a-ff98bd4649b2",
+      "comment": "",
+      "command": "type",
+      "target": "id=mem-name",
+      "targets": [
+        ["id=mem-name", "id"],
+        ["name=tensanpham", "name"],
+        ["css=#mem-name", "css:finder"],
+        ["xpath=//input[@id='mem-name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Váy hoa"
+    }, {
+      "id": "446682a9-8215-43d2-a8d2-200989826483",
+      "comment": "",
+      "command": "click",
+      "target": "css=.filter-btn",
+      "targets": [
+        ["css=.filter-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Lọc kết quả')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "8b919c68-98c0-4cb0-b59f-4839d8f3b5f3",
+    "name": "admin_qldanhmuc",
+    "commands": [{
+      "id": "4b3dcc00-321f-4cc2-a490-d137159ebab7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6076e103-c4a0-4912-9f8a-787f7fce6b30",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dfadd7cd-e6b4-4d6a-ad2c-87df267ab8fe",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Truy Cập Trang Quản Trị",
+      "targets": [
+        ["linkText=Truy Cập Trang Quản Trị", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Truy Cập Trang Quản Trị')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[3]/div/ul/li/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/')]", "xpath:href"],
+        ["xpath=//div[3]/div/ul/li/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Truy Cập Trang Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "47d81e10-da46-4441-8d77-d9c428c545cd",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Lý Danh Mục",
+      "targets": [
+        ["linkText=Quản Lý Danh Mục", "linkText"],
+        ["css=.nav-item:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Lý Danh Mục')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[3]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd5123ce-17ac-4959-bd45-74c5ed091f14",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Tất cả danh mục",
+      "targets": [
+        ["linkText=Tất cả danh mục", "linkText"],
+        ["css=.show > li:nth-child(1) > .dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Tất cả danh mục')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li[3]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/danhmuc/list')]", "xpath:href"],
+        ["xpath=//li[3]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Tất cả danh mục')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4aee8f03-40b5-4df1-9253-031094510da9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sửa",
+      "targets": [
+        ["linkText=Sửa", "linkText"],
+        ["css=tr:nth-child(2) > td:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Sửa')]", "xpath:link"],
+        ["xpath=//table[@id='mem-data']/tbody/tr[2]/td[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/danhmuc/edit?id=1')]", "xpath:href"],
+        ["xpath=//td[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sửa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e7641b34-407a-4c26-a144-08e309b15f1b",
+      "comment": "",
+      "command": "click",
+      "target": "id=tenDanhMuc",
+      "targets": [
+        ["id=tenDanhMuc", "id"],
+        ["name=tenDanhMuc", "name"],
+        ["css=#tenDanhMuc", "css:finder"],
+        ["xpath=//input[@id='tenDanhMuc']", "xpath:attributes"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c4e00f64-c897-4e58-86fb-dfe043d99806",
+      "comment": "",
+      "command": "type",
+      "target": "id=tenDanhMuc",
+      "targets": [
+        ["id=tenDanhMuc", "id"],
+        ["name=tenDanhMuc", "name"],
+        ["css=#tenDanhMuc", "css:finder"],
+        ["xpath=//input[@id='tenDanhMuc']", "xpath:attributes"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "Thời Trang1"
+    }, {
+      "id": "1477b289-3fcf-4a7e-ac8f-90e61f7e68d6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//input[@value='Cập Nhật']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "35127a4e-50e0-4cb2-aff5-c9d17fa9758d",
+    "name": "admin_qlxoadanhmuc",
+    "commands": [{
+      "id": "0fc8232d-3d45-47e5-9fc5-519c295cfe37",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "56f9ba48-183c-460b-9d56-07a10165731a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a073d5a8-c226-4d48-9085-ac07ea0fa6e4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-5:nth-child(3) .dropdown__list",
+      "targets": [
+        ["css=.col-lg-5:nth-child(3) .dropdown__list", "css:finder"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[3]/div/ul", "xpath:idRelative"],
+        ["xpath=//div[3]/div/ul", "xpath:position"],
+        ["xpath=//ul[contains(.,'Truy Cập Trang Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4abae63f-47f2-48e1-a302-b4799a46565a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Truy Cập Trang Quản Trị",
+      "targets": [
+        ["linkText=Truy Cập Trang Quản Trị", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Truy Cập Trang Quản Trị')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[3]/div/ul/li/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/')]", "xpath:href"],
+        ["xpath=//div[3]/div/ul/li/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Truy Cập Trang Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fee60a8a-8557-4069-96db-c087e275f712",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Lý Danh Mục",
+      "targets": [
+        ["linkText=Quản Lý Danh Mục", "linkText"],
+        ["css=.nav-item:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Lý Danh Mục')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[3]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d7b3e76-0592-4415-819a-026347d0c58d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Tất cả danh mục",
+      "targets": [
+        ["linkText=Tất cả danh mục", "linkText"],
+        ["css=.show > li:nth-child(1) > .dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Tất cả danh mục')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li[3]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/danhmuc/list')]", "xpath:href"],
+        ["xpath=//li[3]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Tất cả danh mục')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab4b19a0-f9cb-4afc-97e5-061dc0da74cc",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Xóa",
+      "targets": [
+        ["linkText=Xóa", "linkText"],
+        ["css=tr:nth-child(2) > td:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Xóa')]", "xpath:link"],
+        ["xpath=//a[@onclick='preparedelete(1,\"Th\\u1EDDi Trang1\")']", "xpath:attributes"],
+        ["xpath=//table[@id='mem-data']/tbody/tr[2]/td[4]/a", "xpath:idRelative"],
+        ["xpath=//td[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Xóa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b17e1a56-e13e-432e-b207-243b1ed70561",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Xóa",
+      "targets": [
+        ["linkText=Xóa", "linkText"],
+        ["css=tr:nth-child(2) > td:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Xóa')]", "xpath:link"],
+        ["xpath=//a[@onclick='preparedelete(1,\"Th\\u1EDDi Trang1\")']", "xpath:attributes"],
+        ["xpath=//table[@id='mem-data']/tbody/tr[2]/td[4]/a", "xpath:idRelative"],
+        ["xpath=//td[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Xóa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1545aa4a-ff50-4ea9-b038-79f8903ef916",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=Xóa",
+      "targets": [
+        ["linkText=Xóa", "linkText"],
+        ["css=tr:nth-child(2) > td:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Xóa')]", "xpath:link"],
+        ["xpath=//a[@onclick='preparedelete(1,\"Th\\u1EDDi Trang1\")']", "xpath:attributes"],
+        ["xpath=//table[@id='mem-data']/tbody/tr[2]/td[4]/a", "xpath:idRelative"],
+        ["xpath=//td[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Xóa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eae3cedf-49d4-47d6-8624-43965480617c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='exampleModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Xóa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "61696128-df74-43f8-95a1-c34b3aa3000b",
+    "name": "admin_themdanhmuc",
+    "commands": [{
+      "id": "edbb5eca-bfa6-4546-9722-a6dde22f7efb",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bcf7fcdd-c8a4-4da7-8536-74da378754a2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb543d09-1758-447f-9a3c-2eaff188feaa",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-caret-down:nth-child(2)",
+      "targets": [
+        ["css=.fa-caret-down:nth-child(2)", "css:finder"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[3]/div/div/i", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2402ac4-8436-48ec-9dd9-d7a90eeba2bf",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Truy Cập Trang Quản Trị",
+      "targets": [
+        ["linkText=Truy Cập Trang Quản Trị", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Truy Cập Trang Quản Trị')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[3]/div/ul/li/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/')]", "xpath:href"],
+        ["xpath=//div[3]/div/ul/li/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Truy Cập Trang Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a29fae72-7d57-4739-b302-a056482fad03",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Lý Danh Mục",
+      "targets": [
+        ["linkText=Quản Lý Danh Mục", "linkText"],
+        ["css=.nav-item:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Lý Danh Mục')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[3]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa069ac1-8367-4325-b2b9-4842046befa9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Tất cả danh mục",
+      "targets": [
+        ["linkText=Tất cả danh mục", "linkText"],
+        ["css=.show > li:nth-child(1) > .dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Tất cả danh mục')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li[3]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/danhmuc/list')]", "xpath:href"],
+        ["xpath=//li[3]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Tất cả danh mục')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb39f854-361a-490e-a24a-1e99f0b31df6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Lý Danh Mục",
+      "targets": [
+        ["linkText=Quản Lý Danh Mục", "linkText"],
+        ["css=.nav-item:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Lý Danh Mục')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[3]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a374dd3-d6c2-49cc-a657-7b78307263a7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Thêm mới danh mục",
+      "targets": [
+        ["linkText=Thêm mới danh mục", "linkText"],
+        ["css=.show > li:nth-child(2) > .dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Thêm mới danh mục')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li[3]/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/danhmuc/create')]", "xpath:href"],
+        ["xpath=//li[3]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Thêm mới danh mục')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e930115f-714b-4fb2-a07e-81dc97cf2f4f",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputEmail3",
+      "targets": [
+        ["id=inputEmail3", "id"],
+        ["name=tenDanhMuc", "name"],
+        ["css=#inputEmail3", "css:finder"],
+        ["xpath=//input[@id='inputEmail3']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "221b7587-9103-4e5f-89d0-7ae830155465",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputEmail3",
+      "targets": [
+        ["id=inputEmail3", "id"],
+        ["name=tenDanhMuc", "name"],
+        ["css=#inputEmail3", "css:finder"],
+        ["xpath=//input[@id='inputEmail3']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Thời Trang1"
+    }, {
+      "id": "f0965132-89aa-4c4e-b2fe-5fb62d6c3284",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-sm-2 > .form-control",
+      "targets": [
+        ["css=.col-sm-2 > .form-control", "css:finder"],
+        ["xpath=//input[@value='Thêm']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d11626a0-6bc7-4f17-9aa6-e9487d221e6d",
+    "name": "login",
+    "commands": [{
+      "id": "6495dac8-e9fb-41a2-9481-3c35ad032312",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe65ad13-479f-452b-8717-6270f6e39cc7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2c27cc2e-2a16-46c5-bea3-779f99084bc8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-5:nth-child(2) .dropdown__list",
+      "targets": [
+        ["css=.col-lg-5:nth-child(2) .dropdown__list", "css:finder"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[2]/div/ul", "xpath:idRelative"],
+        ["xpath=//ul", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9a47462-4a70-4c2e-a3be-2c6ce0924fde",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Đăng Xuất",
+      "targets": [
+        ["linkText=Đăng Xuất", "linkText"],
+        ["css=.dropdown__item:nth-child(3) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Đăng Xuất')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[2]/div/ul/li[3]/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/logout')]", "xpath:href"],
+        ["xpath=//li[3]/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Đăng Xuất')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "09f57cbf-9a83-4314-ae25-cf065906343d",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c990cc5-0cb2-4f0b-86de-60e8574cda96",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "quynhnhu"
+    }, {
+      "id": "98cec7bb-ef2a-419a-b25e-1a6d54865161",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.user-login-info > .form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a83ae801-d26b-4ccd-845b-6d22ae9b851e",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.user-login-info > .form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "172c1622-9298-4f46-a039-615811fc21ed",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-lg",
+      "targets": [
+        ["css=.btn-lg", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "1f220738-e92b-4f40-9510-c1f0932f1904",
+    "name": "admin_qlgiaodich",
+    "commands": [{
+      "id": "7d24dce1-e239-4c95-bcfc-0bbff3140d59",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2f5e9a23-005b-4c93-9753-4bc85e39f378",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "70028e00-7ff3-4856-919a-5c84c34892d4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Truy Cập Trang Quản Trị",
+      "targets": [
+        ["linkText=Truy Cập Trang Quản Trị", "linkText"],
+        ["css=.dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Truy Cập Trang Quản Trị')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[3]/div/ul/li/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/')]", "xpath:href"],
+        ["xpath=//div[3]/div/ul/li/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Truy Cập Trang Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c32ca9ec-5484-489f-9188-0071e09e2207",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Lý Giao Dịch",
+      "targets": [
+        ["linkText=Quản Lý Giao Dịch", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Lý Giao Dịch')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div/ul/li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f197cfc1-3756-4099-ab2d-8e71aea35b90",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Tất Cả Giao Dịch",
+      "targets": [
+        ["linkText=Tất Cả Giao Dịch", "linkText"],
+        ["css=.show .dropdown-item", "css:finder"],
+        ["xpath=//a[contains(text(),'Tất Cả Giao Dịch')]", "xpath:link"],
+        ["xpath=//div[@id='navbarScroll']/ul/li[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/admin-quanlygiaodich')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Tất Cả Giao Dịch')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5cc4450-2d6c-4cc7-b136-a0ea4f4d2eaf",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Delete",
+      "targets": [
+        ["linkText=Delete", "linkText"],
+        ["css=tr:nth-child(2) .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Delete')]", "xpath:link"],
+        ["xpath=//table[@id='mem-data']/tbody/tr[2]/td[9]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/admin/8/deletegd')]", "xpath:href"],
+        ["xpath=//td[9]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Delete')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "ee17b673-62d8-4095-9287-7c155c9bf33c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8082/"],
+  "plugins": []
+}

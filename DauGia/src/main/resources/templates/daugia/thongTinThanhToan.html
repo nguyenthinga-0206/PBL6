@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>list product</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -32,16 +34,59 @@
     <link rel="stylesheet" href="/css/styles_nga/css/header.css">
     <link rel="stylesheet" href="/css/styles_nga/css/ionicons.min.css">
     <link rel="stylesheet" href="/css/styles_nga/css/style.css">
+    <style>
+        label {
+            color: #027ca5;
+        }
 
+        @media screen and (max-width: 600px) {
+            table#cart tbody td .form-control {
+                width: 20%;
+                display: inline !important;
+            }
 
-    <link rel="stylesheet" href="/hai/ThongTin.css">
+            .actions .btn {
+                width: 36%;
+                margin: 1.5em 0;
+            }
 
-    <link href="/mot/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/mot/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
-    <script src="/mot/js/jquery-1.11.0.min.js"></script>
-    <!-- Custom Theme files -->
-    <link href="/mot/css/style.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="/mot/css/splide.css" rel="stylesheet" type="text/css" media="all"/>
+            .actions .btn-info {
+                float: left;
+            }
+
+            .actions .btn-danger {
+                float: right;
+            }
+
+            table#cart thead {
+                display: none;
+            }
+
+            table#cart tbody td {
+                display: block;
+                padding: .6rem;
+                min-width: 320px;
+            }
+
+            table#cart tbody tr td:first-child {
+                background: #333;
+                color: #fff;
+            }
+            table#cart tbody td:before {
+                content: attr(data-th);
+                font-weight: bold;
+                display: inline-block;
+                width: 8rem;
+            }
+
+            table#cart tfoot td {
+                display: block;
+            }
+
+            table#cart tfoot td .btn {
+                display: block;
+            }
+        }</style>
 </head>
 <body style="font-family: 'Segoe UI'">
 <!--<nav class="mainNav" >-->
@@ -109,8 +154,8 @@
                     </table>
                     <div class="button">
                         <button class="btn btn-danger" style="margin-left: 136px;" type="submit">Thanh toán khi nhận hàng</button>
-                        <button class="btn btn-primary" style="margin-left: 30px" formaction="/pay"><img style="height: 20px" width="30" src="https://th.bing.com/th/id/OIP.DYFhJieoB5xq4KpQtogzjQAAAA?pid=ImgDet&rs=1">
-                            Thanh toán Paypal</button>
+<!--                        <button class="btn btn-primary" style="margin-left: 30px" formaction="/pay"><img style="height: 20px" width="30" src="https://th.bing.com/th/id/OIP.DYFhJieoB5xq4KpQtogzjQAAAA?pid=ImgDet&rs=1">-->
+<!--                            Thanh toán Paypal</button>-->
                     </div>
                 </form>
             </div>
@@ -139,5 +184,33 @@
         </div>
     </div>
 </div>
+
+<footer style="height: 0" th:insert="~{/header_footer/footer::footer}"></footer>
+
+<!-- FlexSlider -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#nivo-lightbox-demo a').nivoLightbox({effect: 'fade'});
+    });
+</script>
+
+<!--<script src="/thang/js/countTime.js"></script>-->
+<script src="/js/chat-responses.js"></script>
+<script src="/js/chat.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<!--footer end here-->
 </body>
+
 </html>

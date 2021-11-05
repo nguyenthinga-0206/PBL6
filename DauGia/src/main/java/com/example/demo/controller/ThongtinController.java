@@ -6,6 +6,7 @@ import com.example.demo.repository.nguoi_dung.NguoiDungRepo;
 import com.example.demo.service.nguoi_dung.NguoiDungService;
 import com.example.demo.service.tai_khoan.TaiKhoanService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +27,10 @@ public class ThongtinController {
 
     @GetMapping("/edit/{id}")
     public String listMemberEdit(@PathVariable("id") int nguoidung, Model model, Principal principal) {
+        if (SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream()
+                .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_ADMIN"))) {
+            model.addAttribute("admin", "là admin");
+        }
         NguoiDung nguoiDung = nguoiDungService.findById(nguoidung);
         NguoiDung nguoiDung1 = nguoiDungRepo.findByTaiKhoan_TaiKhoan(principal.getName());
         model.addAttribute("nguoiDung", nguoiDung1);
@@ -36,6 +41,10 @@ public class ThongtinController {
 
     @PostMapping("/edit")
     public String editMember(@ModelAttribute("nguoiDung1") NguoiDung nguoiDung, Model model, Principal principal) {
+        if (SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream()
+                .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_ADMIN"))) {
+            model.addAttribute("admin", "là admin");
+        }
         NguoiDung nguoiDung1 = nguoiDungRepo.findByTaiKhoan_TaiKhoan(principal.getName());
         nguoiDung.setTaiKhoan(new TaiKhoan(principal.getName()));
         model.addAttribute("nguoiDung", nguoiDung1);
@@ -46,6 +55,10 @@ public class ThongtinController {
     }
     @GetMapping("/editPass/{id}")
     public String listEditPass(@ModelAttribute("nguoiDung1") NguoiDung nguoiDung,@PathVariable("id") String taikhoan, Model model, Principal principal) {
+        if (SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream()
+                .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_ADMIN"))) {
+            model.addAttribute("admin", "là admin");
+        }
         NguoiDung nguoiDung1 = nguoiDungRepo.findByTaiKhoan_TaiKhoan(principal.getName());
         TaiKhoan taiKhoan = taiKhoanService.find(taikhoan);
         nguoiDung.setTaiKhoan(new TaiKhoan(principal.getName()));
@@ -57,6 +70,10 @@ public class ThongtinController {
 
     @PostMapping("/editPass")
     public String editPass(@ModelAttribute("taiKhoan") TaiKhoan taiKhoan, Model model, RedirectAttributes attributes) {
+        if (SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream()
+                .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_ADMIN"))) {
+            model.addAttribute("admin", "là admin");
+        }
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         taiKhoan.setMatKhau(passwordEncoder.encode(taiKhoan.getMatKhau()));
         taiKhoanService.save(taiKhoan);

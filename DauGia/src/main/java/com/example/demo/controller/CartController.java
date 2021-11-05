@@ -62,6 +62,10 @@ public class CartController {
 
     @GetMapping("addCart/{id}")
     public String addToCart(@PathVariable int id, @SessionAttribute("carts") HashMap<Integer, Cart> cartMap, Model model) {
+        if (SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream()
+                .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_ADMIN"))) {
+            model.addAttribute("admin", "là admin");
+        }
         if (cartMap == null) {
             cartMap = new HashMap<>();
         }
@@ -100,6 +104,4 @@ public class CartController {
         }
         return "redirect:/showCart";
     }
-
-
 }

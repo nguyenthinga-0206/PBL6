@@ -156,6 +156,7 @@ public class DauGiaController {
 
     @GetMapping("/dauGia")
     public String dauGia(@RequestParam int idSP, double money, Principal principal) {
+
         NguoiDung nguoiDung = nguoiDungRepo.findByTaiKhoan_TaiKhoan(principal.getName());
         DauGia dauGia = dauGiaRepo.findBySanPham_MaSanPham(idSP);
         if (dauGia == null) {

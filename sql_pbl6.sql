@@ -1,7 +1,7 @@
 
 
 
---   drop  database bpl6; 
+ --  drop  database bpl6; 
 use bpl6;
 
 

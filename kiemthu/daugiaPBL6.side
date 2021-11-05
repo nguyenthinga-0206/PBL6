@@ -1102,14 +1102,1112 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "a27ea4d7-e415-4f9f-93b1-5d1b6386ab72",
+    "name": "longup",
+    "commands": [{
+      "id": "d9cccd96-fb09-4fde-975e-4273b36bbc9d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "17cbdb66-ed37-470f-a37b-1975d86d87c8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x820",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6ac41e92-ad47-4006-83e5-ac158be46bd1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Đăng Xuất",
+      "targets": [
+        ["linkText=Đăng Xuất", "linkText"],
+        ["css=.dropdown__item:nth-child(3) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Đăng Xuất')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[2]/div/ul/li[3]/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/logout')]", "xpath:href"],
+        ["xpath=//li[3]/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Đăng Xuất')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "96ad0c30-adb1-4cb1-ae0d-1e96412dfc70",
+      "comment": "",
+      "command": "click",
+      "target": "css=.checkbox",
+      "targets": [
+        ["css=.checkbox", "css:finder"],
+        ["xpath=//label", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f55f3d08-ee8d-4f64-a766-9ce80fd3c682",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Tạo một tài khoản",
+      "targets": [
+        ["linkText=Tạo một tài khoản", "linkText"],
+        ["css=a", "css:finder"],
+        ["xpath=//a[contains(text(),'Tạo một tài khoản')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/singup')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Tạo một tài khoản')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "94104c75-2388-47d4-bac3-04a7d41a513f",
+      "comment": "",
+      "command": "click",
+      "target": "id=tenNguoiDung1",
+      "targets": [
+        ["id=tenNguoiDung1", "id"],
+        ["name=tenNguoiDung1", "name"],
+        ["css=#tenNguoiDung1", "css:finder"],
+        ["xpath=//input[@id='tenNguoiDung1']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a1dce239-9961-4d53-a969-378575a0514e",
+      "comment": "",
+      "command": "type",
+      "target": "id=tenNguoiDung1",
+      "targets": [
+        ["id=tenNguoiDung1", "id"],
+        ["name=tenNguoiDung1", "name"],
+        ["css=#tenNguoiDung1", "css:finder"],
+        ["xpath=//input[@id='tenNguoiDung1']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Trần Văn Toản"
+    }, {
+      "id": "86df1b5a-9c4d-4aae-9fdb-52d4db898e0a",
+      "comment": "",
+      "command": "click",
+      "target": "id=taiKhoan1",
+      "targets": [
+        ["id=taiKhoan1", "id"],
+        ["name=taiKhoan1", "name"],
+        ["css=#taiKhoan1", "css:finder"],
+        ["xpath=//input[@id='taiKhoan1']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "881cc9cb-5430-46eb-9607-687dd46af478",
+      "comment": "",
+      "command": "type",
+      "target": "id=taiKhoan1",
+      "targets": [
+        ["id=taiKhoan1", "id"],
+        ["name=taiKhoan1", "name"],
+        ["css=#taiKhoan1", "css:finder"],
+        ["xpath=//input[@id='taiKhoan1']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "toan"
+    }, {
+      "id": "874f53af-b437-4e1a-86e6-de0021b2724c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "36e47ede-0e23-4f94-95fb-1eaf2590e9b8",
+      "comment": "",
+      "command": "click",
+      "target": "id=email1",
+      "targets": [
+        ["id=email1", "id"],
+        ["name=email1", "name"],
+        ["css=#email1", "css:finder"],
+        ["xpath=//input[@id='email1']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4059e82-7924-421b-b638-aa13ef662d5e",
+      "comment": "",
+      "command": "type",
+      "target": "id=email1",
+      "targets": [
+        ["id=email1", "id"],
+        ["name=email1", "name"],
+        ["css=#email1", "css:finder"],
+        ["xpath=//input[@id='email1']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "quynhnhuctcn@gmail.com"
+    }, {
+      "id": "f4e5b155-2ba0-485f-a4f5-8317252707ce",
+      "comment": "",
+      "command": "click",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f67f6215-3bc6-4a91-aedc-76756d6e97a6",
+      "comment": "",
+      "command": "type",
+      "target": "id=email1",
+      "targets": [
+        ["id=email1", "id"],
+        ["name=email1", "name"],
+        ["css=#email1", "css:finder"],
+        ["xpath=//input[@id='email1']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "toan@gmail.com"
+    }, {
+      "id": "831ac1bc-06a6-4755-b9e7-f1c147020fea",
+      "comment": "",
+      "command": "click",
+      "target": "id=ngaySinh1",
+      "targets": [
+        ["id=ngaySinh1", "id"],
+        ["name=ngaySinh1", "name"],
+        ["css=#ngaySinh1", "css:finder"],
+        ["xpath=//input[@id='ngaySinh1']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "177fd827-34ba-443e-94bb-5edcbb736031",
+      "comment": "",
+      "command": "type",
+      "target": "id=ngaySinh1",
+      "targets": [
+        ["id=ngaySinh1", "id"],
+        ["name=ngaySinh1", "name"],
+        ["css=#ngaySinh1", "css:finder"],
+        ["xpath=//input[@id='ngaySinh1']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "2021-10-20"
+    }, {
+      "id": "8aaf9865-c0a3-4eb9-9c3b-73b5d7433c65",
+      "comment": "",
+      "command": "click",
+      "target": "id=soDienThoai1",
+      "targets": [
+        ["id=soDienThoai1", "id"],
+        ["name=soDienThoai1", "name"],
+        ["css=#soDienThoai1", "css:finder"],
+        ["xpath=//input[@id='soDienThoai1']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23e3040c-ec94-405f-8401-cacc749ed98d",
+      "comment": "",
+      "command": "type",
+      "target": "id=soDienThoai1",
+      "targets": [
+        ["id=soDienThoai1", "id"],
+        ["name=soDienThoai1", "name"],
+        ["css=#soDienThoai1", "css:finder"],
+        ["xpath=//input[@id='soDienThoai1']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "0815502607"
+    }, {
+      "id": "e85a32b1-eeb4-45f1-a3c8-a07f37f99178",
+      "comment": "",
+      "command": "click",
+      "target": "id=cmnd1",
+      "targets": [
+        ["id=cmnd1", "id"],
+        ["name=cmnd1", "name"],
+        ["css=#cmnd1", "css:finder"],
+        ["xpath=//input[@id='cmnd1']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "64bed70f-b9c1-4bbf-bfe9-0ce987054392",
+      "comment": "",
+      "command": "type",
+      "target": "id=cmnd1",
+      "targets": [
+        ["id=cmnd1", "id"],
+        ["name=cmnd1", "name"],
+        ["css=#cmnd1", "css:finder"],
+        ["xpath=//input[@id='cmnd1']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "1234567890"
+    }, {
+      "id": "0a543900-ce93-4e60-92b8-e599164083d4",
+      "comment": "",
+      "command": "click",
+      "target": "id=diaChi1",
+      "targets": [
+        ["id=diaChi1", "id"],
+        ["name=diaChi1", "name"],
+        ["css=#diaChi1", "css:finder"],
+        ["xpath=//input[@id='diaChi1']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4c6a2fd7-594d-4572-ba02-c3df5ba18632",
+      "comment": "",
+      "command": "type",
+      "target": "id=diaChi1",
+      "targets": [
+        ["id=diaChi1", "id"],
+        ["name=diaChi1", "name"],
+        ["css=#diaChi1", "css:finder"],
+        ["xpath=//input[@id='diaChi1']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Thanh Hóa"
+    }, {
+      "id": "4acd4837-9a11-4f29-abdb-94fa7021093a",
+      "comment": "",
+      "command": "click",
+      "target": "id=matKhau1",
+      "targets": [
+        ["id=matKhau1", "id"],
+        ["name=matKhau1", "name"],
+        ["css=#matKhau1", "css:finder"],
+        ["xpath=//input[@id='matKhau1']", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8cb08b1-ecf5-4b70-b704-267879174a7a",
+      "comment": "",
+      "command": "type",
+      "target": "id=matKhau1",
+      "targets": [
+        ["id=matKhau1", "id"],
+        ["name=matKhau1", "name"],
+        ["css=#matKhau1", "css:finder"],
+        ["xpath=//input[@id='matKhau1']", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "7906bcfb-3e08-4646-b7fb-00e215e8c735",
+      "comment": "",
+      "command": "click",
+      "target": "id=dieukhoan1",
+      "targets": [
+        ["id=dieukhoan1", "id"],
+        ["name=dieukhoan", "name"],
+        ["css=#dieukhoan1", "css:finder"],
+        ["xpath=//input[@id='dieukhoan1']", "xpath:attributes"],
+        ["xpath=//label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "215f21bd-38c5-4d4e-a369-755dfcac01d1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f221392-6bc3-49c0-b4a4-d7cf1c639916",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "73c3ec52-5110-4048-b736-52bbdfb5e831",
+      "comment": "",
+      "command": "click",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d54ef34-763b-43f7-9ac9-6c7733653c1a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a2cb3be7-092b-4ee0-9b31-942018100f7b",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "ĐĂNG NHẬP\\nĐĂNG NHẬP\\nBạn chưa có tài khoản ? Tạo một tài khoản"
+    }]
+  }, {
+    "id": "72af6321-93c9-483d-947a-7d761e8dfe81",
+    "name": "chitietsanpham_daugiathatbai",
+    "commands": [{
+      "id": "5ebf5d13-66fd-482e-a98b-787a954d0661",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2932c5bc-b007-406b-9be5-d2a9d45868cf",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x820",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c039f14d-b91b-45a1-9dba-adff8a8632e1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Chưa đăng nhập? Đăng nhập ngay",
+      "targets": [
+        ["linkText=Chưa đăng nhập? Đăng nhập ngay", "linkText"],
+        ["css=.txt > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Chưa đăng nhập? Đăng nhập ngay')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/login')]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Chưa đăng nhập? Đăng nhập ngay')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "55a12a67-c603-4d6b-a135-ba77fd194a4b",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "35ca5b00-082c-4e73-8ee7-27e8c568b7e6",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "quynhnhu"
+    }, {
+      "id": "dde1395c-1de6-409c-bed5-c5c4179b962d",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.user-login-info > .form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d40cc5c-6997-4a97-92e1-b45d5c0ba5b7",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.user-login-info > .form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "73cb6895-5dbf-41ea-a132-cfee8c6e884b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-lg",
+      "targets": [
+        ["css=.btn-lg", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f85168a0-3103-4e9d-b22c-ba3f08798e35",
+      "comment": "",
+      "command": "click",
+      "target": "css=#slider-container img",
+      "targets": [
+        ["css=#slider-container img", "css:finder"],
+        ["xpath=//div[@id='slider-container']/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c7c437d-4687-4519-be5d-7d00c0503c1e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-secondary",
+      "targets": [
+        ["css=.btn-secondary", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='exampleModal']/div/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Đóng')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "59b3f58c-5ebe-4ce8-a3b4-8ed8f5cd0fee",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.info",
+      "targets": [
+        ["css=.info", "css:finder"],
+        ["xpath=//section/div[2]/div", "xpath:position"]
+      ],
+      "value": "Chân váy thun\\nSize xxx\\n\\nHết giờ\\nGIÁ THẦU HIỆN TẠI\\n98.000 đ\\nNGƯỜI CHIẾN THẮNG\\nkhoa06\\nLỰA CHỌN: (3 CÓ SẴN)\\nĐẤU GIÁ NGAY\\n- +"
+    }]
+  }, {
+    "id": "829e7940-c41a-403b-a552-f63525286c2f",
+    "name": "chitietsanpham",
+    "commands": [{
+      "id": "0cafa59c-6b44-4346-a5e1-ad9f46cb7c20",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "706ce823-9185-48ae-a9cc-292a07270ee1",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "36e1195e-26e8-42b0-b073-7976c3a075f7",
+      "comment": "",
+      "command": "click",
+      "target": "css=#slider-container1 > .slide:nth-child(1) img",
+      "targets": [
+        ["css=#slider-container1 > .slide:nth-child(1) img", "css:finder"],
+        ["xpath=//div[@id='slider-container1']/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b4d85fde-e45e-4578-a890-b07161b37421",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=div:nth-child(8) > h3",
+      "targets": [
+        ["css=div:nth-child(8) > h3", "css:finder"],
+        ["xpath=//div[5]/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Thanh toán')]", "xpath:innerText"]
+      ],
+      "value": "Thanh toán"
+    }]
+  }, {
+    "id": "e97f9277-d8d5-4072-98d6-6d5d75f4ada4",
+    "name": "daugiathanhcong",
+    "commands": [{
+      "id": "a25dea6b-08ad-40c7-9e7f-2672ddf3066f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "47ab16d5-6e30-4298-8b82-b13af4623727",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1113c427-c214-4914-9cd2-47751104fbeb",
+      "comment": "",
+      "command": "click",
+      "target": "css=#slider-container1 > .slide:nth-child(1) img",
+      "targets": [
+        ["css=#slider-container1 > .slide:nth-child(1) img", "css:finder"],
+        ["xpath=//div[@id='slider-container1']/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9787675c-1ae9-47d5-8335-90db60f2b1c6",
+      "comment": "",
+      "command": "click",
+      "target": "css=form",
+      "targets": [
+        ["css=form", "css:finder"],
+        ["xpath=//form[@action='/dauGia']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e6c54536-0f02-4aca-937b-6c05a2dcac40",
+      "comment": "",
+      "command": "click",
+      "target": "id=btn-dauGia",
+      "targets": [
+        ["id=btn-dauGia", "id"],
+        ["css=#btn-dauGia", "css:finder"],
+        ["xpath=//button[@id='btn-dauGia']", "xpath:attributes"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,' Đấu giá')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0207eae-cf7b-4034-87a0-40f075a9cf65",
+      "comment": "",
+      "command": "click",
+      "target": "css=.logo",
+      "targets": [
+        ["css=.logo", "css:finder"],
+        ["xpath=//img[@alt='logo']", "xpath:img"],
+        ["xpath=//header[@id='header']/div[2]/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "61310892-36a9-4aa3-aa96-9b2cc743cf58",
+      "comment": "",
+      "command": "click",
+      "target": "id=slider-container1",
+      "targets": [
+        ["id=slider-container1", "id"],
+        ["css=#slider-container1", "css:finder"],
+        ["xpath=//div[@id='slider-container1']", "xpath:attributes"],
+        ["xpath=//div[3]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aea329ce-9ce0-47cb-9985-6059e71e3aba",
+      "comment": "",
+      "command": "click",
+      "target": "css=#slider-container1 > .slide:nth-child(1) img",
+      "targets": [
+        ["css=#slider-container1 > .slide:nth-child(1) img", "css:finder"],
+        ["xpath=//div[@id='slider-container1']/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "175180c7-752c-4a26-b813-c539b0403354",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Hoàn tất ngay",
+      "targets": [
+        ["linkText=Hoàn tất ngay", "linkText"],
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//a[contains(text(),'Hoàn tất ngay')]", "xpath:link"],
+        ["xpath=//div[@id='exampleModal']/div/div/div[2]/div/div/div/div/div/div[2]/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/addCart/10')]", "xpath:href"],
+        ["xpath=//div/div/div/div[2]/div/div[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Hoàn tất ngay')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6e5e8d03-1d98-4b76-bb3f-a9321ae87097",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": "Tư vấn\\nCHÍNH SÁCH ĐỔI TRẢ 30 NGÀY\\nPHÍ GIAO HÀNG : ₫ 49000\\nTẤT CẢ SẢN PHẨM BẮT ĐẦU TỪ ₫ 1000\\n0968326980\\nChào mừng, như quỳnh\\nTài khoản\\nGiỏ hàng\\nGiỏ hàng\\nTên sản phẩm Hinh Sản Phẩm Giá Số lượng Thành tiền\\nChân váy thun\\n529.000\\n529.000\\nXóa\\nVáy hoa nhí chất mịn\\n252.000\\n252.000\\nXóa\\nTiếp tục mua hàng 781.000 VND\\nThanh toán\\nTRỢ GIÚP VÀ LIÊN HỆ\\nLiên hệ\\nThông tin giao hàng\\nĐăng ký\\nTrợ giúp\\nThanh toán & Vận chuyển\\nVỀ CGAUCTION\\nVề chúng tôi\\nĐiều khoản sử dụng\\nChính sách bảo mật\\nThông tin công ty\\nCONNECT WITH US\\nCó câu hỏi? Chúng tôi muốn nghe từ bạn!\\nEmail cho chúng tôi: support@WebDauGia.com\\nCopyright ©2021 CGAUCTION.COM. ALL RIGHTS RESERVED by WebDauGia.com"
+    }]
+  }, {
+    "id": "e3b5ed4d-67aa-4301-a5c0-bfe721d6aedf",
+    "name": "daugiakhichuadangnhap",
+    "commands": [{
+      "id": "4cfab7cb-8473-4609-8d5c-3f6e3b4655c2",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cc811090-3053-4107-871a-df9f9adcbd98",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "03fe9280-72a0-436f-8607-b216b49daf9a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Đăng Xuất",
+      "targets": [
+        ["linkText=Đăng Xuất", "linkText"],
+        ["css=.dropdown__item:nth-child(3) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Đăng Xuất')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[2]/div/ul/li[3]/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/logout')]", "xpath:href"],
+        ["xpath=//li[3]/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Đăng Xuất')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c276e40d-6a0e-4d45-9053-f89d976e59d2",
+      "comment": "",
+      "command": "click",
+      "target": "css=#slider-container2 > .slide:nth-child(1) img",
+      "targets": [
+        ["css=#slider-container2 > .slide:nth-child(1) img", "css:finder"],
+        ["xpath=//div[@id='slider-container2']/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/div/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "312803cd-843e-4763-9b8a-bdbcbfecf22e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-text",
+      "targets": [
+        ["css=.btn-text", "css:finder"],
+        ["xpath=//button[3]/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34bc6936-2afa-47a2-bc72-e19b1916bc6c",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ecc4d081-3dcc-4f43-bb53-60140b26d3e8",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.form-control:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "quynhnhu"
+    }, {
+      "id": "57f803f8-f03c-40b8-987b-979e3bf0e198",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.user-login-info > .form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "17ef1b94-2e83-470f-b1f4-2f4fdebd23d9",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.user-login-info > .form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "7ba387c3-6e1c-4816-89dd-002770cfab6f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-lg",
+      "targets": [
+        ["css=.btn-lg", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a9066b6-7605-4f13-a763-dce5d6d5ff6e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-secondary",
+      "targets": [
+        ["css=.btn-secondary", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='exampleModal']/div/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Đóng')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d36019ae-8448-4b86-b8a5-e93e48a422f6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.product-detail > div:nth-child(1)",
+      "targets": [
+        ["css=.product-detail > div:nth-child(1)", "css:finder"],
+        ["xpath=//div[5]/div", "xpath:position"]
+      ],
+      "value": "Chi tiết sản phẩm\\nMÃ PHIÊN ĐẤU GIÁ\\nMÃ SẢN PHẨM\\n1273302242\\n16-938"
+    }]
+  }, {
+    "id": "f18e3dac-25f1-4027-b46a-b16265dd5437",
+    "name": "themsanphamvaogiohangthanhcong",
+    "commands": [{
+      "id": "3471d22a-4196-45ac-b835-124ae6c2728d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "75f45864-4aaf-4f8b-b982-3f587bc65eee",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e101e7ed-e889-4ad5-8a1a-990c90b6f40e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.logo",
+      "targets": [
+        ["css=.logo", "css:finder"],
+        ["xpath=//img[@alt='logo']", "xpath:img"],
+        ["xpath=//header[@id='header']/div[2]/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c08c680-bec4-4f0d-b9c8-f47df4ab353b",
+      "comment": "",
+      "command": "click",
+      "target": "css=#slider-container1 img",
+      "targets": [
+        ["css=#slider-container1 img", "css:finder"],
+        ["xpath=//div[@id='slider-container1']/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2fda7458-88a6-40a5-91f6-22b0362399a5",
+      "comment": "",
+      "command": "click",
+      "target": "id=btn-dauGia",
+      "targets": [
+        ["id=btn-dauGia", "id"],
+        ["css=#btn-dauGia", "css:finder"],
+        ["xpath=//button[@id='btn-dauGia']", "xpath:attributes"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,' Đấu giá')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5e542de-9fb4-4a9e-8d0c-d48e74c24c1c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Hoàn tất ngay",
+      "targets": [
+        ["linkText=Hoàn tất ngay", "linkText"],
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//a[contains(text(),'Hoàn tất ngay')]", "xpath:link"],
+        ["xpath=//div[@id='exampleModal']/div/div/div[2]/div/div/div/div/div/div[2]/div/div[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/addCart/13')]", "xpath:href"],
+        ["xpath=//div/div/div/div[2]/div/div[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Hoàn tất ngay')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "cc69a3c7-38a8-4bab-aca3-6d106911ccbc",
+    "name": "thanhtoan",
+    "commands": [{
+      "id": "3a3dab92-99e7-40bc-b37a-fa0d86bc3742",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a00cf8d8-c42a-4744-92b3-97766735e355",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d002d29-e1d3-4881-8a14-bb36bbe7ca37",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Đơn hàng của tôi",
+      "targets": [
+        ["linkText=Đơn hàng của tôi", "linkText"],
+        ["css=.dropdown__item:nth-child(2) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Đơn hàng của tôi')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div[2]/div/div[2]/div/ul/li[2]/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/showCart')]", "xpath:href"],
+        ["xpath=//li[2]/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Đơn hàng của tôi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "42cbf782-c1c5-42b0-a51e-20c0eecb84ee",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-block",
+      "targets": [
+        ["css=.btn-block", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tfoot/tr[2]/td[3]/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Thanh toán')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6959832a-3d6c-48f6-bcb0-16af8d4f7cdc",
+      "comment": "",
+      "command": "click",
+      "target": "id=diaChi",
+      "targets": [
+        ["id=diaChi", "id"],
+        ["name=diaChi", "name"],
+        ["css=#diaChi", "css:finder"],
+        ["xpath=//input[@id='diaChi']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "90f1c03a-4cc4-4ebd-b869-024b4ef10293",
+      "comment": "",
+      "command": "type",
+      "target": "id=diaChi",
+      "targets": [
+        ["id=diaChi", "id"],
+        ["name=diaChi", "name"],
+        ["css=#diaChi", "css:finder"],
+        ["xpath=//input[@id='diaChi']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "Thanh Hóa"
+    }, {
+      "id": "744f5ccf-dbe4-40e9-9612-3b94737cfd4f",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "Quynhnhu2809200010@gmail.com"
+    }, {
+      "id": "94951916-4224-4ff8-9d8b-2f6da81da61f",
+      "comment": "",
+      "command": "type",
+      "target": "id=soDienThoai",
+      "targets": [
+        ["id=soDienThoai", "id"],
+        ["name=soDienThoai", "name"],
+        ["css=#soDienThoai", "css:finder"],
+        ["xpath=//input[@id='soDienThoai']", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/input", "xpath:position"]
+      ],
+      "value": "1275502607"
+    }, {
+      "id": "99bd7db2-619a-40ec-802f-17bdd2c39dff",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "668a126e-37bd-4589-aaa0-36b7f9c0f41c",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "quynhnhu2809200010@gmail.com"
+    }, {
+      "id": "f548de2b-6532-45ac-b67b-0f8f7763fa76",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8179bea9-8a3d-4ca3-97b6-5109c30ea8fa",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "quynhnhuctcn@gmail.com"
+    }, {
+      "id": "2f48e403-6af7-4037-afc9-8802e9c74839",
+      "comment": "",
+      "command": "click",
+      "target": "id=soDienThoai",
+      "targets": [
+        ["id=soDienThoai", "id"],
+        ["name=soDienThoai", "name"],
+        ["css=#soDienThoai", "css:finder"],
+        ["xpath=//input[@id='soDienThoai']", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5bf47495-7e61-4424-9e74-1d582e6fca9f",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container:nth-child(2)",
+      "targets": [
+        ["css=.container:nth-child(2)", "css:finder"],
+        ["xpath=//body/div", "xpath:position"]
+      ],
+      "value": "4.5,100"
+    }, {
+      "id": "099c2720-1b27-4a91-8aa2-4d727333a01c",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container:nth-child(2)",
+      "targets": [
+        ["css=.container:nth-child(2)", "css:finder"],
+        ["xpath=//body/div", "xpath:position"]
+      ],
+      "value": "4.5,100"
+    }, {
+      "id": "a69a9d15-b08e-4a10-b98f-d65192bcbe39",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container:nth-child(2)",
+      "targets": [
+        ["css=.container:nth-child(2)", "css:finder"],
+        ["xpath=//body/div", "xpath:position"]
+      ],
+      "value": "4.5,100"
+    }, {
+      "id": "f11c5663-3722-4198-81db-f07f0a206d77",
+      "comment": "",
+      "command": "click",
+      "target": "css=.container:nth-child(2)",
+      "targets": [
+        ["css=.container:nth-child(2)", "css:finder"],
+        ["xpath=//body/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "81c25d0a-1502-4912-b99e-418c6586f929",
+      "comment": "",
+      "command": "type",
+      "target": "id=soDienThoai",
+      "targets": [
+        ["id=soDienThoai", "id"],
+        ["name=soDienThoai", "name"],
+        ["css=#soDienThoai", "css:finder"],
+        ["xpath=//input[@id='soDienThoai']", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/input", "xpath:position"]
+      ],
+      "value": "0815502607"
+    }, {
+      "id": "3e901248-8d4d-446f-8bef-e3e1597ee687",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-danger",
+      "targets": [
+        ["css=.btn-danger", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Thanh toán khi nhận hàng')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "51338680-31f7-4dcb-b2cd-5a339048059d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.logo",
+      "targets": [
+        ["css=.logo", "css:finder"],
+        ["xpath=//img[@alt='logo']", "xpath:img"],
+        ["xpath=//header[@id='header']/div[2]/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a14e4129-6f31-492f-891d-13d938b3a914",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": "Tư vấn\\nCHÍNH SÁCH ĐỔI TRẢ 30 NGÀY\\nPHÍ GIAO HÀNG : ₫ 49000\\nTẤT CẢ SẢN PHẨM BẮT ĐẦU TỪ ₫ 1000\\n0968326980\\nChào mừng, như quỳnh\\nTài khoản\\nGiỏ hàng\\n                    Tất cả danh mục\\n                    Thời Trang\\n                    Sách\\n                    Giày\\n                    Phương tiện\\n                    Máy tính và Laptop\\n                    Đồng hồ\\n                 Tìm kiếm\\nSản phẩm thường dùng\\nSản phẩm thời trang\\nSách\\nPhương tiện\\nXe đạp Thống nhất nữ LD 24-02\\nPhương tiện\\nĐấu Giá\\n1.000.000₫\\nXe điện robot tự lái\\nPhương tiện\\nĐấu Giá\\n600.000₫\\nMáy tính và laptop\\nLaptop Lenovo ThinkPad T490s\\nMáy tính và Laptop\\nĐấu Giá\\n18.000.000₫\\nBacklight Computer Radiator Black White Thin USB\\nMáy tính và Laptop\\nĐấu Giá\\n1.000₫\\nĐồng hồ\\n-----------------------\\nXem thêm những sản phẩm khác\\nSản phẩm\\nSản phẩm\\nSản phẩm\\nSản phẩm\\nSản phẩm\\nSản phẩm\\nSản phẩm\\nSản phẩm\\nSản phẩm\\nSản phẩm\\nNeed a help? Chat with us!\\nTRỢ GIÚP VÀ LIÊN HỆ\\nLiên hệ\\nThông tin giao hàng\\nĐăng ký\\nTrợ giúp\\nThanh toán & Vận chuyển\\nVỀ CGAUCTION\\nVề chúng tôi\\nĐiều khoản sử dụng\\nChính sách bảo mật\\nThông tin công ty\\nCONNECT WITH US\\nCó câu hỏi? Chúng tôi muốn nghe từ bạn!\\nEmail cho chúng tôi: support@WebDauGia.com\\nCopyright ©2021 CGAUCTION.COM. ALL RIGHTS RESERVED by WebDauGia.com"
+    }]
   }],
   "suites": [{
-    "id": "ee17b673-62d8-4095-9287-7c155c9bf33c",
-    "name": "Default Suite",
+    "id": "ab5ec1dc-c8c3-45a2-9abd-0e495850fbf0",
+    "name": "Admin_QLsanpham",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": []
+    "tests": ["8d4f4b45-4a52-40e1-bda7-63e2a54791e1", "8fb29f98-74bf-4fa5-a476-ef7a17a847b8", "05cfe566-04d2-4c5e-bee7-82cda7fea604", "c14588da-3487-4749-a4e5-7c67f1ec4819"]
   }],
   "urls": ["http://localhost:8082/"],
   "plugins": []

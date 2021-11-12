@@ -68,7 +68,7 @@
 </script>
 
 <div class="container">
-    <form method="post" action="/sanpham/create" >
+    <form method="post" action="/sanpham/create" th:object="${sanphams}">
         <fieldset>
             <div class="services-top">
                 <h3 class="btn btn-secondary">Thêm Sản Phẩm</h3>
@@ -77,31 +77,32 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Tên sản phẩm *</label>
                 <div class="col-sm-8">
-                    <input type="text"  class="form-control is-invalid">
+                    <input type="text" th:field="*{tenSanPham}" class="form-control is-invalid">
+                    <p style="color: red" th:if="${#fields.hasErrors('tenSanPham')}" th:errors="*{tenSanPham}"></p>
 
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Số Lượng *</label>
                 <div class="col-sm-8">
-                    <input type="number"  class="form-control is-invalid">
+                    <input type="number" th:field="*{soLuong}" class="form-control is-invalid">
+                    <p style="color: red" th:if="${#fields.hasErrors('soLuong')}" th:errors="*{soLuong}"></p>
 
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Danh Mục *</label>
                 <div class="col-sm-8">
-                    <select class="form-control custom-select is-invalid" >
-                        <option>Sách </option>
-                        <option>Sách </option>
-                        <option>Sách </option>
+                    <select class="form-control custom-select is-invalid" th:field="*{danhMuc}">
+                        <option th:each="danhmuc: ${danhmucs}" th:text="${danhmuc.tenDanhMuc}"
+                                th:value="${danhmuc.maDanhMuc}"></option>
                     </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Hình ảnh sản phẩm *</label>
                 <div class="col-sm-8">
-                    <input type="file"  class="form-control-file is-invalid">
+                    <input type="file" th:field="*{hinh}" class="form-control-file is-invalid">
                 </div>
             </div>
 
@@ -109,36 +110,41 @@
                 <label class="col-sm-2 col-form-label">Giá ban đầu *</label>
                 <div class="col-sm-8">
 
-                    <input type="number" class="form-control is-invalid">
+                    <input type="number" th:field="*{giaKhoiDiem}" class="form-control is-invalid">
+                    <p style="color: red" th:if="${#fields.hasErrors('giaKhoiDiem')}" th:errors="*{giaKhoiDiem}"></p>
 
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Bước giá *</label>
                 <div class="col-sm-8">
-                    <input  type="number"
+                    <input th:field="*{mucGia}" type="number"
                            class="form-control is-invalid"
                            placeholder="Là giá thấp nhất trong mỗi lần tăng giá">
+                    <p style="color: red" th:if="${#fields.hasErrors('mucGia')}" th:errors="*{mucGia}"></p>
 
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Giờ bắt đầu *</label>
                 <div class="col-sm-5">
-                    <input type="time"  class="form-control is-invalid">
+                    <input type="time" th:field="*{gioBatDau}" class="form-control is-invalid">
+                    <p style="color: red" th:if="${#fields.hasErrors('gioBatDau')}" th:errors="*{gioBatDau}"></p>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Ngày Bắt đầu *</label>
                 <div class="col-sm-5">
-                    <input type="date"  class="form-control is-invalid">
+                    <input type="date" th:field="*{ngayBatDau}" class="form-control is-invalid">
+                    <p style="color: red" th:if="${#fields.hasErrors('ngayBatDau')}" th:errors="*{ngayBatDau}"></p>
 
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Giờ Kết thúc *</label>
                 <div class="col-sm-5">
-                    <input type="time"  class="form-control is-invalid">
+                    <input type="time" th:field="*{gioKetThuc}" class="form-control is-invalid">
+                    <p style="color: red" th:if="${#fields.hasErrors('gioKetThuc')}" th:errors="*{gioKetThuc}"></p>
 
                 </div>
             </div>
@@ -146,35 +152,47 @@
                 <label class="col-sm-2 col-form-label">Ngày kết thúc *</label>
                 <div class="col-sm-5">
 
-                    <input type="date" class="form-control is-invalid">
+                    <input type="date" th:field="*{ngayKetThuc}" class="form-control is-invalid">
+                    <p style="color: red" th:if="${#fields.hasErrors('ngayKetThuc')}" th:errors="*{ngayKetThuc}"></p>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Thông tin chi tiết</label>
                 <div class="col-sm-10">
-                    <textarea type="textarea" class="form-control is-invalid" rows="6"> </textarea>
+                    <textarea type="textarea" th:field="*{moTa}" class="form-control is-invalid" rows="6"> </textarea>
+                    <p style="color: red" th:if="${#fields.hasErrors('moTa')}" th:errors="*{moTa}"></p>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Ngày đăng ký*</label>
                 <div class="col-sm-8">
-                    <input readonly type="date"
-                           class="form-control is-invalid" >
+                    <input readonly type="date" th:field="*{ngayDangKi}" th:value="*{ngayDangKi}"
+                           class="form-control is-invalid" hidden="hidden">
+                    <span th:utext="*{ngayDangKi}"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Tình Trạng</label>
                 <div class="col-sm-8">
-                    <span ></span>
-                    <select class="form-control is-invalid" >
-                        <option>Chưa</option>
-                        <option>Đã duyệt</option>
-                        <option>Không duyệt</option>
+                    <span th:utext="${chuaduyet}"></span>
+                    <select class="form-control is-invalid" th:field="*{tinhTrang}" hidden="hidden">
+                        <option th:value="${chuaduyet}">
+                            <span th:utext="${chuaduyet}"></span>
+                        </option>
                     </select>
-
                 </div>
             </div>
-
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Tài Khoản bán *</label>
+                <div class="col-sm-8">
+                    <span th:utext="${usernams}"></span>
+                    <select class="form-control custom-select is-invalid" th:field="*{taiKhoan}" hidden="hidden">
+                        <option th:text="${usernams}"
+                                th:value="${usernams}">
+                        </option>
+                    </select>
+                </div>
+            </div>
 
             <div class="form-group row">
                 <div class="col-sm-2">
@@ -188,7 +206,7 @@
     </form>
 
 </div>
-<div th:replace="~{/chat/product-detail::chat}">
+<div th:replace="~{/luan/product-detail::chat}">
 
 </div>
 <!--effec end here-->
@@ -209,7 +227,7 @@
 <!-- FlexSlider -->
 
 
-<script src="/mot/js/countTime.js"></script>
+<script src="/thang/js/countTime.js"></script>
 <script src="/js/chat-responses.js"></script>
 <script src="/js/chat.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

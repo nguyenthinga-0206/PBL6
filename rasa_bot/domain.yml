@@ -1,0 +1,75 @@
+#version: "2.0"
+
+session_config:
+  session_expiration_time: 60.0
+  carry_over_slots_to_new_session: true
+intents:
+  - greet
+  - goodbye
+  - thankyou
+  - cau3
+  - nhu1
+  - nhu2
+  - nhu3
+  - nhu4
+  - nhu5
+  - nhu6
+  - nhu7
+  - nhu8
+  - nhu9
+  - nhu10
+  - nhu11
+responses:
+  utter_greet:
+  - text: "Em chào anh(chị) ạ. \nEm là chatbot. \nKhông biết em có thể giúp được gì cho anh chị không ạ."
+  utter_goodbye:
+  - text: "Hẹn gặp lại anh chị ạ ^^"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_thankyou:
+  - text: "Không có gì ạ ^^"
+  utter_cau3:
+  - text: "Dạ cảm ơn bạn đã thông cảm ạ!"
+  utter_nhu1:
+  - text: "Cảm ơn bạn đã liên hệ shop! \nTất cả đối tượng bạn nhé!"
+  utter_nhu2:
+  - text: "Cảm ơn bạn đã liên hệ shop! \nNếu bạn vừa mới đặt hàng thành công thì ngay  ngày mai shop sẽ chuyển hàng ạ!"
+  utter_nhu3:
+  - text: "Cảm ơn bạn đã liên hệ shop! \nBạn hãy để lại số điện thoại nhận hàng. Shop sẽ xem lại đơn hàng và bán lại bạn tình hình nhé. !"
+  utter_nhu4:
+  - text: "Cảm ơn bạn! \nMình có thư tiền hộ nha bạn yên tâm nhé!"
+  utter_nhu5:
+  - text: "Chào bạn! \nDù dịch shop vẫn giao hàng bình thường bạn nhé!"
+  utter_nhu6:
+  - text: "Cảm ơn bạn! \nShop giao hàng 3-7 ngày bạn nhé!"
+  utter_nhu7:
+  - text: "Cảm ơn bạn đã liên hệ shop! \nNếu sản phẩm còn nguyên vẹn chưa được sử dùng và sau 24h kể từ lúc nhận hàng bạn có thể trả hàng và không mất phí ship nhé!"
+  utter_nhu8:
+  - text: "Cảm ơn bạn đã liên hệ shop! \nShop sẽ thường giảm giá khi có dịp lễ tết, 30.5 các ngày lễ bạn nhé!"
+  utter_nhu9:
+  - text: "Cảm ơn bạn đã liên hệ shop! \nPhí vận chuyển đồng giá 15k trong nội thành và 30k ngoại tỉnh nhé bạn!"
+  utter_nhu10:
+  - text: "Cảm ơn bạn đã liên hệ shop! \ncó 3 hình thức vận chuyênt! Vận chuyển nhanh, vận chuyển xtra và vận chuyển cấp tốc bạn nhé"
+  utter_nhu11:
+  - text: "Cảm ơn bạn đã liên hệ shop! \nBạn có thể chọn phường thức thanh toán cấp tốc bạn nhé!"
+  utter_fallback:
+  - text: "Em xin lỗi, em chưa hiểu ý muốn của anh(chị) ạ. Anh chị có thể nói lại được không ạ!"
+actions:
+  - utter_greet
+  - utter_happy
+  - utter_goodbye
+  - utter_sorry
+  - utter_thankyou
+  - action_recommend
+  - utter_cau3
+  - utter_nhu1
+  - utter_nhu2
+  - utter_nhu3
+  - utter_nhu4
+  - utter_nhu5
+  - utter_nhu6
+  - utter_nhu7
+  - utter_nhu8
+  - utter_nhu9
+  - utter_nhu10
+  - utter_nhu11
+  - utter_fallback

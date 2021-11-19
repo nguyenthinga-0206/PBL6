@@ -1,0 +1,133 @@
+version: "2.0"
+
+nlu:
+## intent:greet
+- Chào shop
+- Hello shop
+- Hi shop
+- Shop ơi, cho mik hỏi
+- Shop ơi
+- Cho mình hỏi chút
+
+## intent:goodbye
+- Good bye
+- Bye bye
+- Tạm biệt shop
+- Tạm biệt shop nhá
+
+## intent:thankyou
+- Cảm ơn shop nhá
+- Thanks shop nha
+- Cảm ơn nha
+- Good job
+- Thank you
+- Cảm ơn shop nha
+- Thanks bot
+- Cảm ơn
+- Thank you so much
+- Great! Thanks
+
+## intent:cau3
+- Không có lần sau nha
+- ok shop
+- cảm ơn shop
+- hi vong lần sau shop cần thận hơn
+
+## intent:nhu1
+- Dịch vụ giao nhận hàng tận nơi áp dụng cho đối tượng nào?
+- Dịch vụ này có áp dụng trên phạm vi toàn quốc?
+- Những khu đối tượng nào được áp dụng dịch vụ này vậy?
+- giao hàng tận nơi áp dụng những đối tượng nào
+- giao hàng tận nơi áp dụng những ai
+- đối tượng được giao hàng tận nơi là những ai
+
+## intent:nhu2
+- Khi nào thì nhân viên công ty vận chuyển
+- Khi nào lô hàng của tôi được chuyển phát?
+- Tôi mới đặt hàng, khi nào shop giao nhỉ
+- Giao hàng chưa shop ơi
+- Shop ơi, tui muốn nhận hàng nhanh
+- Shop ơi, mình vừa đặt hàng á, nào shop giao hàng ta
+- Shop giao hàng luôn chứ
+- Mình hóng hàng quá, giao hàng lẹ nha shop
+- bao giờ mới có hàng vậy shop
+
+## intent:nhu3
+- Nếu tôi liên tiếp nhiều lần không bắt được điện thoại của nhân viên giao hàng thì sẽ như thế nào
+- Tôi không nhận được bất kỳ cuộc gọi nào của nhân viên giao hàng, tôi phải làm thế nào?
+- Vì sao tình trạng lô hàng của tôi không thay đổi?
+- Thuế và thuế quan trong trường hợp này là gì?
+- Vì sao lô hàng của tôi bị hải quan giữ lại?
+- Khách hàng không nhận/không giao được thì sao?
+- làm thế nào nếu bỏ lỡ cuộc gọi của nhân viên giao hàng
+
+## intent:nhu4
+- Phí dịch vụ thu hộ?
+- Có thu tiền hộ không?
+- ship thu tiền hộp được không?
+- mình không có sử dùng chuyên tiền, mình thu tiền khi nhận hàng được không ạ
+- Mình chỉ có tiền mặt thôi, thu hộ nha shop
+
+## intent:nhu5
+- Dịch như này thì shop có giao hàng không ạ
+- Dịch giao hàng không shop ơi
+- Dịch này giao hàng có chậm không shop nhỉ
+- Dịch quá shop ơi, Shop  giao hàng được thì thật tuyệt vời
+- Nhiều nơi không giao hàng vì dịch quá, không biết shop mình sao
+
+## intent:nhu6
+- Shop giao hàng trong bao lâu ạ
+- Thời gian vận chuyển mất khoảng bao lâu?
+- Nhanh nhất khi nào nhận được hàng ạ
+- Giao trong mấy ngày
+- bao lâu thì có hàng vậy
+- Nào mình nhận được hàng
+- Giao hàng trong khoảng bao lâu
+
+## intent:nhu7
+- Nếu tôi phát hiện Xetreem giao hàng lỗi hỏng hoặc hàng giả, người mua hàng phải làm sao?
+- Nếu khi nhận hàng tôi muốn trả lại thì phí tính như thế nào?
+- Hàng không tốt tôi muốn trả hàng
+- Hàng không đúng như quảng cáo , tôi trả hàng phí ship sao?
+- Tôi trả hàng vì không phải sản phẩm tôi muốn mua
+- Tôi trả hàng, sản phẩm quá tồi
+- Lô hàng của tôi bị hư hại hoặc thiếu hàng bên trong. Tôi có thể làm gì?
+- tôi muốn hủy đơn hàng thì làm sao ạ
+
+## intent:nhu8
+- Phí ship hàng trên Shop được miễn phí khi nào?
+- Khi nào thì được miến ship vậy
+- Làm thế nào để giảm phí ship ?
+- Khi nào được giảm giá ha
+- giám giá khi nào vậy
+- vào dịp nào thì được giảm giá vậy
+- dịp giảm giá của shop thường là khi nào nhỉ?
+- nếu mua nhiều được miến ship không ạ
+
+## intent:nhu9
+- Cách tính phí vận chuyển
+- Vận chuyển trong tỉnh thì phí ship có giảm không shop nhỉ
+- Vận chuyển như thế nào shop nhỉ
+- Ship tính thế nào vậy ạ
+- Phí chuyển phát tính kiểu gì vậy shop
+- Ship bao nhiêu vậy ạ
+- Chi phí sẽ tính như thế nào?
+- Phí vận chuyển ra Đà Nẵng là bao  nhiêu
+- Phí vận chuyển vào Hồ Chí Minh là bao nhiêu
+- Vận chuyển ra Hà Nội là bao nhêu
+
+## intent:nhu10
+- Có những hình thức vận chuyển nào shop nhỉ
+- có nhứng phương thức vận chuyển như thế nào vậy
+- Bên shop có những hình thức vận chuyển nào
+- Vận chuyển như thế nào shop nhỉ
+- Shop có những hình thức giao hàng nào
+- Hình thức vận chuyển
+
+## intent:nhu11
+- Shop có thể giúp mình vận chuyển hàng nhanh nhất có thể không
+- Thời gian vận chuyển nhanh nhất là bao lâu
+- Thời gian giao hang nhanh nhất là bao lâu
+- Có thể gửi nhanh được không
+- nhanh nhất bao lâu thì có hàng
+- muốn nhận hàng nhanh nhất có thể thì phải làm sao

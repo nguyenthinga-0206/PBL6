@@ -1,0 +1,72 @@
+version: "2.0"
+
+stories:
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: cau3
+  steps:
+  - intent: cau3
+  - action: utter_cau3
+
+- story: nhu1
+  steps:
+  - intent: nhu1
+  - action: utter_nhu1
+
+- story: nhu2
+  steps:
+  - intent: nhu2
+  - action: utter_nhu2
+
+- story: nhu3
+  steps:
+  - intent: nhu3
+  - action: utter_nhu3
+
+- story: nhu4
+  steps:
+  - intent: nhu4
+  - action: utter_nhu4
+
+- story: nhu5
+  steps:
+  - intent: nhu5
+  - action: utter_nhu5
+
+- story: nhu6
+  steps:
+  - intent: nhu6
+  - action: utter_nhu6
+
+- story: nhu7
+  steps:
+  - intent: nhu7
+  - action: utter_nhu7
+
+- story: nhu8
+  steps:
+  - intent: nhu8
+  - action: utter_nhu8
+
+- story: nhu9
+  steps:
+  - intent: nhu9
+  - action: utter_nhu9
+
+- story: nhu10
+  steps:
+  - intent: nhu10
+  - action: utter_nhu10
+
+- story: nhu11
+  steps:
+  - intent: nhu11
+  - action: utter_nhu11

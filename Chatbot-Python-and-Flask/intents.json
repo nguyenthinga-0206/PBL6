@@ -1,0 +1,397 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Xin chào",
+        "shop ơi",
+        "cho mình hỏi được không",
+        "Bạn có khỏe không",
+        "Có ai ở đó không?",
+        "Xin chào",
+        "Chúc một ngày tốt lành"
+      ],
+      "responses": [
+        "Xin chào, cảm ơn bạn đã ghé thăm",
+        "Rất vui được gặp lại",
+        "Xin chào, tôi có thể giúp gì cho bạn?"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "intents1",
+      "patterns": [
+        "mình cần mua một cái điện thoại mới",
+        "mình chưa biết, bạn có thể tư vấn mình không ?",
+        "shop còn hàng ạ",
+        "Anh ơi shop mình có bán Iphone 12 không ạ"
+      ],
+      "responses": [
+        "còn bạn nhé"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "xoan2",
+      "patterns": [
+        "Phí dịch vụ thu hộ?",
+        "Có thu tiền hộ không?",
+        "ship thu tiền hộp được không?",
+        " mình không có sử dùng chuyên tiền, mình thu tiền khi nhận hàng được không ạ",
+        " Mình chỉ có tiền mặt thôi, thu hộ nha shop"
+      ],
+      "responses": [
+        "Cảm ơn bạn! \nMình có thư tiền hộ nha bạn yên tâm nhé!"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Hẹn gặp lại",
+        "Tạm biệt",
+        "bye"
+      ],
+      "responses": [
+        "Hẹn gặp lại, cảm ơn đã ghé thăm",
+        "Chúc một ngày tốt lành",
+        "Tạm biệt! Quay lại sớm."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Cảm ơn",
+        "Cảm ơn",
+        "Rất hữu ích"
+      ],
+      "responses": [
+        "Rất vui được trợ giúp!",
+        "Bất cứ lúc nào!",
+        "Niềm vui của tôi"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "hours",
+      "patterns": [
+        "Shop mở cửa mấy giờ?",
+        "giờ của bạn là gì?",
+        "Khi nào mở cửa?"
+      ],
+      "responses": [
+        " giờ làm việc của chúng tôi từ  9h sáng-9h tối mỗi ngày",
+        "Chúng tôi mở cửa từ 9h sáng đến 9h tối"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "payments",
+      "patterns": [
+        "Bạn có muốn nhận thẻ tín dụng ko",
+        "Bạn có chấp nhận thẻ Mastercard không?",
+        "Bạn chỉ có tiền mặt?"
+      ],
+      "responses": [
+        "Chúng tôi chấp nhận VISA, Mastercard và AMEX",
+        "Chúng tôi chấp nhận thẻ tín dụng"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "opentoday",
+      "patterns": [
+        "Bạn có mở cửa hôm nay ko?",
+        "Khi nào bạn mở cửa hôm nay?",
+        "Mấy giờ hôm nay của bạn?"
+      ],
+      "responses": [
+        "Chúng tôi mở cửa hàng ngày từ 9 giờ sáng - 9 giờ tối",
+        "Giờ làm việc của chúng tôi là 9 giờ sáng - 9 giờ tối hàng ngày"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "xoan3",
+      "patterns": [
+        " Shop giao hàng trong bao lâu ạ",
+        "Thời gian vận chuyển mất khoảng bao lâu?",
+        " Nhanh nhất khi nào nhận được hàng ạ",
+        " Giao trong mấy ngày",
+        " bao lâu thì có hàng vậy",
+        " Nào mình nhận được hàng",
+        " Giao hàng trong khoảng bao lâu"
+      ],
+      "responses": [
+        "Shop giao hàng 3-7 ngày bạn nhé!"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "xoan1",
+      "patterns": [
+        "Có những hình thức vận chuyển nào shop nhỉ",
+        "có nhứng phương thức vận chuyển như thế nào vậy",
+        "Bên shop có những hình thức vận chuyển nào",
+        "Vận chuyển như thế nào shop nhỉ",
+        " Shop có những hình thức giao hàng nào",
+        " Hình thức vận chuyển"
+      ],
+      "responses": [
+        "Cảm ơn bạn đã liên hệ shop! \ncó 3 hình thức vận chuyênt! Vận chuyển nhanh, vận chuyển xtra và vận chuyển cấp tốc bạn nhé"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "sanphamhoodie",
+      "patterns": [
+        "còn áo hoodie ko ạ",
+        "hoodie cặp có không ạ",
+        "Mình có hoodie cho trẻ em không shop nhỉ"
+      ],
+      "responses": [
+        "còn bạn nhé. bên mình còn nhiều mẫu hoodie đẹp lắm.\n"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "giahoodie",
+      "patterns": [
+        "giá áo hoodie bao nhiêu ạ ",
+        "mẫu hoodie giá bao nhiêu 1 cái "
+      ],
+      "responses": [
+        "áo này giá 320k bạn nhé. bạn cho mình chiều cao cân nặng để mình tư vấn ạ"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "hotro",
+      "patterns": [
+        "Ai đó có thể hỗ trợ cho tôi không? ",
+        "hỗ trợ giúp tôi được không ",
+        "có ai ở đây không "
+      ],
+      "responses": [
+        "Cảm ơn bạn đã quan tâm đến sản phẩm của UniShop\nNhân viên sẽ trả lời trong ít phút nữa!"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "mauhoodie",
+      "patterns": [
+        "Cho em xin hỏi bên mình áo hoodie trắng còn mẫu nào khác không ạ ",
+        "hoodie trắng còn mẫu khác ko  "
+      ],
+      "responses": [
+        "còn bạn nhé. bên mình còn nhiều mẫu hoodie đẹp và chất lượng lắm"
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "khuyenmai",
+      "patterns": [
+        "khi nào có chương trình khuyến mãi ",
+        "có chương trình ưu đãi không"
+      ],
+      "responses": [
+        "dạ có khuyến mãi,ưu đãi  vào những dịp lễ ạ"
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "ưudai",
+      "patterns": [
+        "tôi mua nhiều có được khuyến mãi không",
+        "mua nhiều sản phẩm được ưu đãi không"
+      ],
+      "responses": [
+        "Dạ khi khách hàng mua trên 10 thì được giảm ạ"
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "sizeao",
+      "patterns": [
+        "Áo này mình có mấy size ạ",
+        "áo này có size S không ạ"
+      ],
+      "responses": [
+        "Áo có đầy đủ size nhé bạn( s,m,l,xl, xxl, xxxl).Bạn gửi số đo để mình tư vấn nhé "
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "giamgia",
+      "patterns": [
+        "cho em hỏi áo này có giảm giá không",
+        "sản phẩm này có giảm giá không ạ "
+      ],
+      "responses": [
+        "sản phẩm này hiện tại không giảm giá á bạn "
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "baohanhlaptop",
+      "patterns": [
+        "laptop bảo hành bao nhiêu năm vậy ạ ",
+        " laptop có bảo hành không"
+      ],
+      "responses": [
+        "laptop bảo hành 2 năm bạn nhé. bạn muốn mua hãng nào để mình tư vấn ạ"
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "tuvanlaptop",
+      "patterns": [
+        "Shop ơi, cho em hỏi em muốn mua một con máy tính để học lập trình thì nên chọn con nào vậy"
+      ],
+      "responses": [
+        "Chào anh, bên em có cung cấp nhiều dòng máy hỗ trợ nhiều nhu cầu khác nhau, có cả việc lập trình, không biết anh muốn mua dòng của hãng nào ?"
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "hanglaptop",
+      "patterns": [
+        "Bên mình có hãng nào vậy ?",
+        " có hãng laptop nào vậy"
+      ],
+      "responses": [
+        " Bên em phân phối các dòng máy của các hãng: Asus, Acer, MSI, Dell, HP... nha chị"
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "tuvanthem",
+      "patterns": [
+        "Ngoài việc lập trình anh còn thích chơi game nữa, vậy nên chọn con nào em.",
+        " thích chơi game nên chọn máy nào nữa"
+      ],
+      "responses": [
+        "Bên em hiện có máy laptop Asus TUF Gaming vừa nhập về, giá 19tr, cấu hình hấp dẫn, phù hợp với nhu cầu của anh"
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "hoivedongho",
+      "patterns": [
+        "còn đồng hồ không nhỉ ",
+        "đồng hồ giá dưới 100 có không shop ",
+        "đồng hồ nam còn không ",
+        "đồng hồ nữ có không shop nhỉ",
+        "mình muốn xem đồng hồ đôi",
+        "shop có đồng hồ Gucci không ",
+        "Đồ đeo tay"
+      ],
+      "responses": [
+        "Đồng hồ còn rất nhiều mẫu bạn nhé!"
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "hoivegiay",
+      "patterns": [
+        "còn giày không nhỉ ",
+        " giày giá dưới 100 có không shop ",
+        " Giày nam còn không ",
+        " Giày nữ có không shop nhỉ",
+        "mình muốn xem  Giày đôi",
+        "shop có  Giày Gucci không "
+      ],
+      "responses": [
+        " Giày còn rất nhiều mẫu bạn nhé!"
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "hoiadmin",
+      "patterns": [
+        "admin ơi. Mình muốn mở shop trên web thì làm như thế nào nhỉ",
+        "admin ơi. Mình muốn đăng ký shop",
+        "Shop muốn thêm danh mục sản phẩm admin hỗ trợ không",
+        "Làm cách nào để liên hệ với admin nhỉ",
+        "admin có thể cấp quyền shop cho mình được không",
+        "mình muốn bán hàng làm sao admin nhỉ",
+        " tôi muốn bán hàng thì như thế nào admin nhỉ"
+      ],
+      "responses": [
+        "Bạn muốn có tài khoản để đăng sản phẩm đấu giá.\n Hãy liên hệ với chúng tôi \nSDT :0815502607\n Email : daugia@gmail.com \ngặp Bạn: Như !\n để được tư vấn rõ hơn nhé"
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "hoivesach",
+      "patterns": [
+        "còn sách không nhỉ ",
+        "sách giá dưới 100 có không shop ",
+        "sách cho em bé có không ",
+        "sách Tranh thiếu nhi có không shop nhỉ",
+        "có sách tiếng nhật không ",
+        "có sách hội thoại không"
+      ],
+      "responses": [
+        "bạn hãy tìm kiếm theo danh mục Sách để xem thông tin sách nhé!"
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "hoivehinhthuc",
+      "patterns": [
+        "hình thức đấu giá sao nhỉ ",
+        "đấu giá hình thức như nào ta",
+        "hình thức như nào nhỉ",
+        "sau  mỗi lần đấu giá, hình thức tiền có tăng lên không",
+        "làm sao để đấu giá thắng ta"
+      ],
+      "responses": [
+        "Sản phẩm sẽ có thời gian đấu giá cụ thể!Hết giờ đấu giá bạn là người đấu giá cuối cùng thì bạn là người chiến thắng"
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "hoivesuckhoe",
+      "patterns": [
+        "bạn khỏe không",
+        "Khỏe không chatbox",
+        "khỏe lắm không shop",
+        "Chat hoài vậy bạn sẽ mệt đó",
+        " MỆt không chat box",
+        "hihi chat  làm việc được cả ngày hi"
+      ],
+      "responses": [
+        "Cảm ơn bạn. Tôi rất khỏe."
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "hoivehopdungcom",
+      "patterns": [
+        "có đồ đựng cơm đi làm không",
+        "Nồi cơm điện shop có không",
+        "tôi muốn mua đồ đựng cơm đi làm",
+        "hộp cơm giữ nhiệt còn không shop",
+        "đồ đựng cơm có không",
+        "shop có nồi cơm điện không"
+      ],
+      "responses": [
+        "ồ. Shop hết rồi bạn ạ."
+      ],
+      "context set": ""
+    },
+    {
+      "tag": "giahoivehopdungcom",
+      "patterns": [
+        "giá nồi cơm điện bao nhiêu",
+      "bao nhiêu một cái nồi cơm điện"
+      ],
+      "responses": [
+        "1tr bạn nhé.nồi chất lượng và okela lắm"
+      ],
+      "context set": ""
+    }
+  ]
+}

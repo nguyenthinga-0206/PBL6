@@ -20,15 +20,10 @@ words = pickle.load(open("words.pkl", "rb"))
 classes = pickle.load(open("classes.pkl", "rb"))
 
 app = Flask(__name__)
-run_with_ngrok(app) 
+run_with_ngrok(app)
 
-@app.route("/")
-def home():
-    return render_template("index.html")
-
-
-@app.route("/get", methods=["POST"])
-def chatbot_response():
+@app.route("/send/<msg>", methods=["GET"])
+def chatbot_response(msg):
     msg = request.form["msg"]
     if msg.startswith('my name is'):
         name = msg[11:]

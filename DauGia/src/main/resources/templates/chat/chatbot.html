@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="static/chat/style.css"/>
+    <link rel="stylesheet" type="text/css" href="static/chat/css.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+<div class="row">
+    <div class="col-md-10 mr-auto ml-auto">
+        <h1>AI ChatBot</h1>
+        <div id="chatbox">
+            <div class="col-md-8 ml-auto mr-auto">
+                <p class="botText"><span>Xin chào tôi là Bot!</span></p>
+            </div>
+        </div>
+        <div id="userInput" class="row">
+            <div class="col-md-10">
+                <input id="text" type="text" name="text" placeholder="Message" class="form-control">
+                <button onclick="send();" id="send" class="btn btn-warning">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function send() {
+        const msg = $("#text").val();
+        $.ajax({
+            contentType: 'application/json',
+            url: "/chatbot",
+            type: "post",
+            data: {msg: msg},
+            success: function (data) {
+                var result =
+                    `<div class="col-md-8 ml-auto mr-auto">
+                    <p class="botText"><span>${data}</span></p>
+                </div>`
+                $("#chatbox").html(result);
+            }
+        });
+    }
+</script>
+</body>
+</html>

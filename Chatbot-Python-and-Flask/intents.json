@@ -3,6 +3,8 @@
     {
       "tag": "greeting",
       "patterns": [
+        "hi",
+        "hello",
         "Xin chào",
         "shop ơi",
         "cho mình hỏi được không",
@@ -13,7 +15,7 @@
       ],
       "responses": [
         "Xin chào, cảm ơn bạn đã ghé thăm",
-        "Rất vui được gặp lại",
+        "Rất vui được gặp bạn",
         "Xin chào, tôi có thể giúp gì cho bạn?"
       ],
       "context_set": ""

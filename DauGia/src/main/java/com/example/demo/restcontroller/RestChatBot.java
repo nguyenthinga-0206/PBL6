@@ -8,8 +8,8 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @RequestMapping("/api")
 public class RestChatBot {
-    private final String PATH_URL_AI = "http://localhost:5000/";
-//    private final String PATH_URL_AI = "http://e5dc-113-185-115-151.ngrok.io/";
+//    private final String PATH_URL_AI = "http://localhost:5000/";
+    private final String PATH_URL_AI = "http://01ca-113-185-115-151.ngrok.io/";
 
     @RequestMapping(value = "/chatbot",
             method = RequestMethod.POST)

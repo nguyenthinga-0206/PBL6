@@ -1,61 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/chat/style.css"/>
-    <link rel="stylesheet" type="text/css" href="/chat/css.css"/>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
+package com.example.demo.restcontroller;
 
-<body>
-<div class="row">
-    <div class="col-md-10 mr-auto ml-auto">
-        <h1>ChatBot</h1>
-        <form>
-            <div id="chatbox">
-                <div class="col-md-8 ml-auto mr-auto">
-                    <p class="botText"><span>Xin chào tôi là Bot!</span></p>
-                </div>
-            </div>
-            <div id="userInput" class="row">
-                <div class="col-md-10">
-                    <input id="text" type="text" name="msg" placeholder="Message" class="form-control">
-                    <button type="submit" id="send" class="btn btn-warning">Gửi</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
-<script>
-    $(document).ready(function() {
-        $("form").on("submit", function(event) {
-            var rawText = $("#text").val();
-            var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
-            $("#text").val("");
-            $("#chatbox").append(userHtml);
-            document.getElementById("userInput").scrollIntoView({
-                block: "start",
-                behavior: "smooth",
-            });
-            $.ajax({
-                data: {
-                    msg: rawText,
-                },
-                type: "get",
-                url: "/api/chatbot",
-            }).done(function(data) {
-                var botHtml = '<p class="botText"><span>' + data + "</span></p>";
-                $("#chatbox").append($.parseHTML(botHtml));
-                document.getElementById("userInput").scrollIntoView({
-                    block: "start",
-                    behavior: "smooth",
-                });
-            });
-            event.preventDefault();
-        });
-    });
+@RestController
+@RequestMapping("/api")
+public class RestChatBot {
+    private final String PATH_URL_AI = "http://localhost:5000/";
+//    private final String PATH_URL_AI = "http://e5dc-113-185-115-151.ngrok.io/";
 
-</script>
-</body>
-</html>
+    @RequestMapping(value = "/chatbot",
+            method = RequestMethod.POST)
+    @ResponseBody
+    public String Send(@RequestParam String msg) {
+        String uri = PATH_URL_AI + "send/" + msg;
+        RestTemplate restTemplate = new RestTemplate();
+        String result = restTemplate.getForObject(uri, String.class);
+        return result;
+    }
+}

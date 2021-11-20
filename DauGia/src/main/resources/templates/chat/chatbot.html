@@ -29,11 +29,11 @@
     function send() {
         const msg = $("#text").val();
         $.ajax({
-            contentType: 'application/json',
-            url: "/chatbot",
-            type: "post",
+            url: "/api/chatbot",
+            type: "get",
             data: {msg: msg},
             success: function (data) {
+                alert(JSON.stringify(data));
                 var result =
                     `<div class="col-md-8 ml-auto mr-auto">
                     <p class="botText"><span>${data}</span></p>

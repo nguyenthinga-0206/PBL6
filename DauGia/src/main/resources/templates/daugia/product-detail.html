@@ -251,95 +251,43 @@
 
     <!--     CHAT BAR BLOCK -->
     <div th:fragment="chat" class="chat-bar-collapsible">
-<!--        <button id="chat-button" type="button" class="collapsible">Need a help? Chat with us!-->
-<!--            <i style="color: #fff;" class="fa fa-fw fa-comments-o"></i>-->
-<!--        </button>-->
+        <button id="chat-button" type="button" class="collapsible">Need a help? Chat with us!
+            <i style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+        </button>
 
-<!--        <div class="content">-->
-<!--            <div class="full-chat-block">-->
-<!--                &lt;!&ndash; Message Container &ndash;&gt;-->
-<!--                <div class="outer-container">-->
-<!--                    <div class="chat-container">-->
-<!--                        &lt;!&ndash; Messages &ndash;&gt;-->
-<!--                        <div id="chatbox">-->
-<!--                            <h5 id="chat-timestamp"></h5>-->
-<!--                            <p id="botStarterMessage" class="botText"><span>Loading...</span></p>-->
-<!--                        </div>-->
-
-<!--                        &lt;!&ndash; User input box &ndash;&gt;-->
-<!--                        <div class="chat-bar-input-block">-->
-<!--                            <div id="userInput">-->
-<!--                                <input id="textInput" class="input-box" type="text" name="msg"-->
-<!--                                       placeholder="Tap 'Enter' to send a message">-->
-<!--                                <p></p>-->
-<!--                            </div>-->
-
-<!--                            <div class="chat-bar-icons">-->
-<!--                                <i style="color: #dc143c;" class="fa fa-fw fa-heart"-->
-<!--                                   onclick="heartButton()"></i>-->
-<!--                                <i style="color: #333;" class="fa fa-fw fa-send"-->
-<!--                                   onclick="sendButton()"></i>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div id="chat-bar-bottom">-->
-<!--                            <pZ></pZ>-->
-<!--                        </div>-->
-
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--            </div>-->
-<!--        </div>-->
-        <div class="row">
-            <div class="col-md-10 mr-auto ml-auto">
-                <h1>ChatBot</h1>
-                <form>
-                    <div id="chatbox">
-                        <div class="col-md-8 ml-auto mr-auto">
-                            <p class="botText"><span>Xin chào tôi là Bot!</span></p>
+        <div class="content">
+            <div class="full-chat-block">
+                <!-- Message Container -->
+                <div class="outer-container">
+                    <div class="chat-container">
+                        <!-- Messages -->
+                        <div id="chatbox">
+                            <p id="botStarterMessage" class="botText"><span>Xin chào tôi là Bot!</span></p>
                         </div>
-                    </div>
-                    <div id="userInput" class="row">
-                        <div class="col-md-10">
-                            <input id="text" type="text" name="msg" placeholder="Message" class="form-control">
-                            <button type="submit" id="send" class="btn btn-warning">Gửi</button>
+                        <!-- User input box -->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput" class="input-box" type="text" name="msg"
+                                       placeholder="Enter messeger">
+                                <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+
+                                <i style="color: #333;" class="fa fa-fw fa-send"
+                                   onclick="sendButton()"></i>
+                            </div>
                         </div>
+
+                        <div id="chat-bar-bottom">
+                            <pZ></pZ>
+                        </div>
+
                     </div>
-                </form>
+                </div>
+
             </div>
         </div>
-
-        <script>
-            $(document).ready(function() {
-                $("form").on("submit", function(event) {
-                    var rawText = $("#text").val();
-                    var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
-                    $("#text").val("");
-                    $("#chatbox").append(userHtml);
-                    document.getElementById("userInput").scrollIntoView({
-                        block: "start",
-                        behavior: "smooth",
-                    });
-                    $.ajax({
-                        data: {
-                            msg: rawText,
-                        },
-                        type: "get",
-                        url: "/api/chatbot",
-                    }).done(function(data) {
-                        var botHtml = '<p class="botText"><span>' + data + "</span></p>";
-                        $("#chatbox").append($.parseHTML(botHtml));
-                        document.getElementById("userInput").scrollIntoView({
-                            block: "start",
-                            behavior: "smooth",
-                        });
-                    });
-                    event.preventDefault();
-                });
-            });
-
-        </script>
     </div>
     <p hidden="hidden" id="gioKetThuc" th:text="${gioKetThuc}"></p>
 </section>
@@ -445,7 +393,6 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script language="javascript" src="/js/js-product-detail.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="/js/chat-responses.js"></script>
-<script src="/js/chat.js"></script>
+<script src="/js/send.js"></script>
 </body>
 </html>

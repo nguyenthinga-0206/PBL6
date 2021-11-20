@@ -5,10 +5,11 @@
 <head>
     <title>Trang chủ</title>
     <link rel="stylesheet" href="/css/styles_nga/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet"/>
     <link rel="stylesheet" href="/css/styles_nga/css/header.css">
     <link rel="stylesheet" href="/css/styles_nga/css/style.css">
     <link rel="stylesheet" href="/css/nga/chat.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="/mot/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="/mot/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
     <script src="/mot/js/jquery-1.11.0.min.js"></script>
@@ -35,6 +36,8 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
           type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+          rel="stylesheet">
     <!-- start-smoth-scrolling -->
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
@@ -513,73 +516,46 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-10 mr-auto ml-auto">
-        <h1>ChatBot</h1>
-        <form  id ="formchat">
-            <div id="chatbox">
-                <div class="col-md-8 ml-auto mr-auto">
-                    <p class="botText"><span>Xin chào tôi là Bot!</span></p>
+<!--     CHAT BAR BLOCK -->
+<div th:fragment="chat" class="chat-bar-collapsible">
+    <button id="chat-button" type="button" class="collapsible">Need a help? Chat with us!
+        <i style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+    </button>
+
+    <div class="content">
+        <div class="full-chat-block">
+            <!-- Message Container -->
+            <div class="outer-container">
+                <div class="chat-container">
+                    <!-- Messages -->
+                    <div id="chatbox">
+                        <p id="botStarterMessage" class="botText"><span>Xin chào tôi là Bot!</span></p>
+                    </div>
+                    <!-- User input box -->
+                    <div class="chat-bar-input-block">
+                        <div id="userInput">
+                            <input id="textInput" class="input-box" type="text" name="msg"
+                                   placeholder="Enter messeger">
+                            <p></p>
+                        </div>
+
+                        <div class="chat-bar-icons">
+                            <i style="color: #333;" class="fa fa-fw fa-send"
+                               onclick="sendButton()"></i>
+                        </div>
+                    </div>
+
+                    <div id="chat-bar-bottom">
+                        <pZ></pZ>
+                    </div>
+
                 </div>
             </div>
-            <div id="userInput" class="row">
-                <div class="col-md-10">
-                    <input id="text" type="text" name="" placeholder="Message" class="form-control">
-                    <button type="submit" id="send" class="btn btn-warning"  >Gửi</button>
-                </div>
-            </div>
-        </form>
+
+        </div>
     </div>
 </div>
 
-<script>
-    $(document).ready(function() {
-        $("#formchat").on("submit", function(event) {
-            var rawText = $("#text").val();
-            var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
-            $("#text").val("");
-            $("#chatbox").append(userHtml);
-            document.getElementById("userInput").scrollIntoView({
-                block: "start",
-                behavior: "smooth",
-            });
-            $.ajax({
-                data: {
-                    msg: rawText,
-                },
-                type: "get",
-                url: "/api/chatbot",
-            }).done(function(data) {
-                var botHtml = '<p class="botText"><span>' + data + "</span></p>";
-                $("#chatbox").append($.parseHTML(botHtml));
-                document.getElementById("userInput").scrollIntoView({
-                    block: "start",
-                    behavior: "smooth",
-                });
-            });
-            event.preventDefault();
-        });
-    });
-    // function send() {
-    //     const msg = $("#text").val();
-    //     $.ajax({
-    //         url: "/api/chatbot",
-    //         type: "get",
-    //         data: {msg: msg},
-    //         success: function (data) {
-    //             alert(JSON.stringify(data));
-    //             var result =
-    //                 `<div class="col-md-8 ml-auto mr-auto">
-    //                 <p class="botText"><span>${data}</span></p>
-    //             </div>`
-    //             $("#chatbox").html(result);
-    //         }
-    //     });
-    // }
-</script>
-
-<!--effec end here-->
-<!--project star here-->
 <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
 <script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
 <script type="text/javascript">
@@ -716,9 +692,8 @@
     });
 </script>
 
-<!--<script src="/thang/js/countTime.js"></script>-->
-<script src="/js/chat-responses.js"></script>
-<script src="/js/chat.js"></script>
+<script src="/js/send.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

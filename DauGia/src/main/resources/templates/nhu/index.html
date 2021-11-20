@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/styles_nga/css/header.css">
     <link rel="stylesheet" href="/css/styles_nga/css/style.css">
     <link rel="stylesheet" href="/css/nga/chat.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="/mot/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="/mot/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
     <script src="/mot/js/jquery-1.11.0.min.js"></script>
@@ -24,6 +24,7 @@
     <script type="application/x-javascript"> addEventListener("load", function () {
         setTimeout(hideURLbar, 0);
     }, false);
+
     function hideURLbar() {
         window.scrollTo(0, 1);
     }
@@ -511,6 +512,7 @@
 
     </div>
 </div>
+
 <div class="row">
     <div class="col-md-10 mr-auto ml-auto">
         <h1>ChatBot</h1>
@@ -575,6 +577,7 @@
     //     });
     // }
 </script>
+
 <!--effec end here-->
 <!--project star here-->
 <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
@@ -613,7 +616,7 @@
         document.getElementById("time").innerHTML = hours + ":" + minutes + ":" + seconds
         // Display the message when countdown is over
         if (timeleft < 0) {
-            var gio  =0 ;
+            var gio = 0;
             clearInterval(myfunc);
             document.getElementById("time").innerHTML = "Hết giờ";
             btn.click();

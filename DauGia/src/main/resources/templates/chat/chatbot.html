@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/chat/style.css"/>
     <link rel="stylesheet" type="text/css" href="/chat/css.css"/>
-    <link rel="stylesheet" type="text/css" href="/chat/send.js"/>
-    <script src="/js/list.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
@@ -14,7 +12,7 @@
     <button id="chat-button" type="button" class="collapsible">ChatBot
         <i style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
     </button>
-<!--    <form>-->
+    <form>
         <div id="chatbox">
             <div class="col-md-8 ml-auto mr-auto">
                 <p class="botText"><span>Xin chào tôi là Bot!</span></p>
@@ -23,40 +21,39 @@
         <div id="userInput" class="row">
             <div class="col-md-10">
                 <input id="text" type="text" name="" placeholder="Message" class="form-control">
-                <button onclick="send();" class="btn btn-warning">Gửi</button>
+                <button type="submit" class="btn btn-warning">Gửi</button>
             </div>
         </div>
-<!--    </form>-->
+    </form>
+    <script>
+        $(document).ready(function () {
+            $("form").on("submit", function (event) {
+                var rawText = $("#text").val();
+                var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+                $("#text").val("");
+                $("#chatbox").append(userHtml);
+                document.getElementById("userInput").scrollIntoView({
+                    block: "start",
+                    behavior: "smooth",
+                });
+                $.ajax({
+                    url: "/api/chatbot",
+                    type: "post",
+                    data: {
+                        msg: rawText,
+                    },
+                }).done(function (data) {
+                    var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+                    $("#chatbox").append($.parseHTML(botHtml));
+                    document.getElementById("userInput").scrollIntoView({
+                        block: "start",
+                        behavior: "smooth",
+                    });
+                });
+                event.preventDefault();
+            });
+        });
+    </script>
 </div>
-
-<!--<script>-->
-<!--    $(document).ready(function () {-->
-<!--        $("form").on("submit", function (event) {-->
-<!--            var rawText = $("#text").val();-->
-<!--            var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";-->
-<!--            $("#text").val("");-->
-<!--            $("#chatbox").append(userHtml);-->
-<!--            document.getElementById("userInput").scrollIntoView({-->
-<!--                block: "start",-->
-<!--                behavior: "smooth",-->
-<!--            });-->
-<!--            $.ajax({-->
-<!--                url: "/api/chatbot",-->
-<!--                type: "post",-->
-<!--                data: {-->
-<!--                    msg: rawText,-->
-<!--                },-->
-<!--            }).done(function (data) {-->
-<!--                var botHtml = '<p class="botText"><span>' + data + '</span></p>';-->
-<!--                $("#chatbox").append($.parseHTML(botHtml));-->
-<!--                document.getElementById("userInput").scrollIntoView({-->
-<!--                    block: "start",-->
-<!--                    behavior: "smooth",-->
-<!--                });-->
-<!--            });-->
-<!--            event.preventDefault();-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
 </body>
 </html>

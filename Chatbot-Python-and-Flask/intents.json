@@ -29,7 +29,7 @@
         "Anh ơi shop mình có bán Iphone 12 không ạ"
       ],
       "responses": [
-        "còn bạn nhé"
+        "còn bạn nhé,bên mình nhiều mẫu xịn với đẹp lắm nhé"
       ],
       "context_set": ""
     },
@@ -66,7 +66,8 @@
       "patterns": [
         "Cảm ơn",
         "Cảm ơn",
-        "Rất hữu ích"
+        "Rất hữu ích",
+        "Cảm ơn shop"
       ],
       "responses": [
         "Rất vui được trợ giúp!",
@@ -388,12 +389,110 @@
       "tag": "giahoivehopdungcom",
       "patterns": [
         "giá nồi cơm điện bao nhiêu",
-      "bao nhiêu một cái nồi cơm điện"
+        "bao nhiêu một cái nồi cơm điện"
       ],
       "responses": [
         "1tr bạn nhé.nồi chất lượng và okela lắm"
       ],
       "context set": ""
+    },
+    {
+      "tag": "xoan4",
+      "patterns": [
+        "Ad ơi, cho mình xin giá mẫu này với ạ?",
+        "mẫu này có giá bao nhiêu ạ?"
+      ],
+      "responses": [
+        "Chào bạn, mẫu bạn quan tâm có giá là 120k bạn ạ"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "cauhinh",
+      "patterns": [
+        "Cấu hình máy tính như thế nào",
+        "Máy cấu hình như thế nào"
+      ],
+      "responses": [
+        " Cấu hình là RAM 8G, Core i5"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "gialaptop",
+      "patterns": [
+        "Giá máy tính như thế nào",
+        "Laptop có giá bao nhiêu ",
+        "Giá Laptop bao nhiêu"
+      ],
+      "responses": [
+        "Máy tính này có giá 15 triệu bạn nhé"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "HangLaptop",
+      "patterns": [
+        "Hãng Asus có những máy nào em",
+        "Cho chị xem máy hãng Asus với em  "
+      ],
+      "responses": [
+        "Bên em có nhiều máy tùy phân khúc: thấp, trung, cao.Chị muốn xem giá như nào"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "",
+      "patterns": [
+        "Giá tầm trung dao động nhiêu em "
+      ],
+      "responses": [
+        "Dạ từ 15-20 triệu ạ ?"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "xoan5",
+      "patterns": [
+        "Có khuyến mãi gì không ạ"
+      ],
+      "responses": [
+        "Được giảm giá với freeship bạn nhé"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "xoan5",
+      "patterns": [
+        "Đợt này shop có chương trình khuyến mãi gì không ạ ",
+        "Có chương trình khuyễn mãi gì ko"
+      ],
+      "responses": [
+        "Mua với hoá đơn trên 5 triệu sẽ được giảm giá 500k và còn nhiều phần quà hấp dẫn khác ạ"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "xoan6",
+      "patterns": [
+        "Khi nào cửa hàng còn khuyễn mãi ạ"
+      ],
+      "responses": [
+        "Dạ khuyến mãi vào trong những dịp lễ ạ"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "noanswer",
+      "patterns": [],
+      "responses": [
+        "Sorry, can't understand you",
+        "Please give me more info",
+        "Not sure I understand"
+      ],
+      "context": [
+        ""
+      ]
     }
   ]
 }

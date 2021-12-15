@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="/css/styles_nga/css/header.css">
     <link rel="stylesheet" href="/css/styles_nga/css/style.css">
     <link rel="stylesheet" href="/css/nga/chat.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
     <link href="/mot/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="/mot/css/bootstrap4.css" rel="stylesheet" type="text/css" media="all">
     <script src="/mot/js/jquery-1.11.0.min.js"></script>
@@ -531,31 +534,33 @@
                     <div id="chatbox">
                         <p id="botStarterMessage" class="botText"><span>Xin chào tôi là Bot!</span></p>
                     </div>
-                    <!-- User input box -->
-                    <div class="chat-bar-input-block">
-                        <div id="userInput">
-                            <input id="textInput" class="input-box" type="text" name="msg"
-                                   placeholder="Enter messeger">
-                            <p></p>
-                        </div>
-
-                        <div class="chat-bar-icons">
-                            <i style="color: #333;" class="fa fa-fw fa-send"
-                               onclick="sendButton()"></i>
-                        </div>
-                    </div>
 
                     <div id="chat-bar-bottom">
                         <pZ></pZ>
                     </div>
 
                 </div>
+
             </div>
 
+        </div>
+        <div class="chat-bar-input-block">
+            <div id="userInput">
+                <input id="textInput" class="input-box" type="text" name="msg"
+                       placeholder="Enter messeger">
+                <p></p>
+            </div>
+
+            <div class="chat-bar-icons">
+
+                <i style="color: #333;" class="fa fa-fw fa-send"
+                   onclick="sendButton()"></i>
+            </div>
         </div>
     </div>
 </div>
 
+<script src="/js/send.js"></script>
 <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
 <script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
 <script type="text/javascript">
@@ -602,38 +607,6 @@
     alert(gio);
 
 </script>
-<!--<script>-->
-<!--    for (let i = 0; i <= 100; i++) {-->
-<!--        var timeTemp = document.getElementsByClassName("gioKetThuc")[i].innerText;-->
-<!--        var timeEnd = timeTemp.split(":");-->
-<!--        var date = new Date();-->
-<!--        var day = date.getDate();-->
-<!--        var month = date.getMonth();-->
-<!--        var year = date.getFullYear();-->
-<!--        var hour = timeEnd[0];-->
-<!--        var minute = timeEnd[1];-->
-<!--        var countDownDate = new Date(year, month, day, hour, minute, 0, 0).getTime();-->
-
-<!--        // Run myfunc every second-->
-<!--        var myfunc = setInterval(function () {-->
-<!--            var now = new Date().getTime();-->
-<!--            var timeleft = countDownDate - now;-->
-<!--            // var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));-->
-<!--            var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));-->
-<!--            var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));-->
-<!--            var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);-->
-<!--            hours = (hours < 10) ? "0" + hours : hours;-->
-<!--            minutes = (minutes < 10) ? "0" + minutes : minutes;-->
-<!--            seconds = (seconds < 10) ? "0" + seconds : seconds;-->
-<!--            document.getElementsByClassName('time')[i].innerHTML = hours + ":" + minutes + ":" + seconds-->
-<!--            if (timeleft < 0) {-->
-<!--                clearInterval(myfunc);-->
-<!--                document.getElementsByClassName('time')[i].innerHTML = "Hết giờ";-->
-<!--            }-->
-<!--        }, 1000);-->
-<!--    }-->
-
-<!--</script>-->
 <!--clients start here-->
 <script>
     //0
@@ -691,15 +664,13 @@
         $('#nivo-lightbox-demo a').nivoLightbox({effect: 'fade'});
     });
 </script>
-
-<script src="/js/send.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"-->
+<!--        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"-->
+<!--        crossorigin="anonymous"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
